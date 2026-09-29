@@ -7,8 +7,8 @@ import { Vector4 } from '../math/Vector4.js';
 import { Matrix3 } from '../math/Matrix3.js';
 import { Matrix4 } from '../math/Matrix4.js';
 
-import default_vertex from '../renderers/shaders/ShaderChunk/default_vertex.glsl.js';
-import default_fragment from '../renderers/shaders/ShaderChunk/default_fragment.glsl.js';
+import default_vertex from '../renderers/shaders/ShaderChunk/default_element.css.js';
+import default_fragment from '../renderers/shaders/ShaderChunk/default_rule.css.js';
 
 /**
  * A material rendered with custom shaders. A shader is a small program written in GLSL.

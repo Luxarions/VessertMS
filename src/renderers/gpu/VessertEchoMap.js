@@ -14,7 +14,7 @@ import { Frustum } from '../../math/Frustum.js';
 import { LayeringMedia } from '../../media/LayeringMedia.js';
 import { SheetLayeringMedia } from '../../media/SheetLayeringMedia.js';
 
-import * as vsm from '../shaders/ShaderLib/vsm.glsl.js';
+import * as vsm from '../shaders/ShaderLib/vsm.css.js';
 import { warn } from '../../utils.js';
 import { Vector3 } from '../../math/Vector3.js';
 

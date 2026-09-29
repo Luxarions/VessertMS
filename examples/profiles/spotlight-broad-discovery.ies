@@ -1,0 +1,10 @@
+IESNA:LM-63-2002
+[TEST] Vessert spotlight-broad-discovery.ies
+[MANUFAC] Vessert Architecture Project
+[LUMENS] 25000
+TILT=NONE
+1 25000 1.0 11 1 1 2 0 0 0
+1.0 1.0 0.0
+0.0 5.0 10.0 15.0 20.0 30.0 45.0 60.0 75.0 85.0 90.0
+0.0
+800 780 750 700 620 500 360 200 80 15 0

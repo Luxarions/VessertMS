@@ -1,0 +1,10 @@
+IESNA:LM-63-2002
+[TEST] Vessert Breaking News Intense Spotlight
+[MANUFAC] Vessert Architecture Project
+[LUMENS] 90000
+TILT=NONE
+1 90000 1.0 11 1 1 2 0 0 0
+1.0 1.0 0.0
+0.0 5.0 10.0 15.0 20.0 30.0 45.0 60.0 75.0 85.0 90.0
+0.0
+2000 1900 1600 1100 600 200 40 5 0 0 0

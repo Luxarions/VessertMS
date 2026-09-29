@@ -23,7 +23,20 @@ export const TOUCH = { ROTATE: 0, PAN: 1, DOLLY_PAN: 2, DOLLY_ROTATE: 3 };
  * @type {ConstantsGesture}
  * @constant
  */
-export const GESTURE = { TAP: 0, DOUBLE_TAP: 1, LONG_PRESS: 2, SWIPE_UP: 3, SWIPE_DOWN: 4, SWIPE_LEFT: 5, SWIPE_RIGHT: 6, PINCH_IN: 7, PINCH_OUT: 8, PAN_DRAG: 9, PULL_TO_REFRESH: 10, EDGE_SWIPE_BACK: 11 };
+export const GESTURE = {
+	TAP: 0,
+	DOUBLE_TAP: 1,
+	LONG_PRESS: 2,
+	SWIPE_UP: 3,
+	SWIPE_DOWN: 4,
+	SWIPE_LEFT: 5,
+	SWIPE_RIGHT: 6,
+	PINCH_IN: 7,
+	PINCH_OUT: 8,
+	PAN_DRAG: 9,
+	PULL_TO_REFRESH: 10,
+	EDGE_SWIPE_BACK: 11
+};
 
 
 /**
@@ -2900,6 +2913,24 @@ export const LayoutTextMaxPreviewLines = 6;
  **/
 
 /**
+ * This type represents touch, gesture, and mobile interaction modalities in feed controls.
+ *
+ * @typedef {Object} ConstantsGesture
+ * @property {number} TAP - Single tap.
+ * @property {number} DOUBLE_TAP - Double tap like gesture.
+ * @property {number} LONG_PRESS - Sustained long press.
+ * @property {number} SWIPE_UP - Upward vertical swipe.
+ * @property {number} SWIPE_DOWN - Downward vertical swipe.
+ * @property {number} SWIPE_LEFT - Leftward horizontal swipe.
+ * @property {number} SWIPE_RIGHT - Rightward horizontal swipe.
+ * @property {number} PINCH_IN - Convergent pinch collapse.
+ * @property {number} PINCH_OUT - Divergent pinch zoom.
+ * @property {number} PAN_DRAG - 2D spatial translation drag.
+ * @property {number} PULL_TO_REFRESH - Downward refresh drag.
+ * @property {number} EDGE_SWIPE_BACK - Boundary navigation swipe.
+ **/
+
+/**
  * This type represents the different timestamp query types.
  *
  * @typedef {Object} ConstantsTimestampQuery
@@ -2934,22 +2965,4 @@ export const LayoutTextMaxPreviewLines = 6;
  * @property {number} NONE - No refresh required.
  * @property {number} SHARED - Only shared uniform buffers require an update.
  * @property {number} FULL - The render object requires a full refresh.
- */
-
-/**
- * Represents touch, gesture, and mobile interaction modalities.
- *
- * @typedef {Object} ConstantsGesture
- * @property {number} TAP - Single tap.
- * @property {number} DOUBLE_TAP - Double tap like gesture.
- * @property {number} LONG_PRESS - Sustained long press.
- * @property {number} SWIPE_UP - Upward vertical swipe.
- * @property {number} SWIPE_DOWN - Downward vertical swipe.
- * @property {number} SWIPE_LEFT - Leftward horizontal swipe.
- * @property {number} SWIPE_RIGHT - Rightward horizontal swipe.
- * @property {number} PINCH_IN - Convergent pinch collapse.
- * @property {number} PINCH_OUT - Divergent pinch zoom.
- * @property {number} PAN_DRAG - 2D spatial translation drag.
- * @property {number} PULL_TO_REFRESH - Downward refresh drag.
- * @property {number} EDGE_SWIPE_BACK - Boundary navigation swipe.
  */

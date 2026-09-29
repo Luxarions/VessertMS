@@ -1,0 +1,1 @@
+import { NodeSkin } from './NodeSkin.js'; export class ProxyNodeSkin extends NodeSkin { constructor() { super(); } }

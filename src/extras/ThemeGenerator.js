@@ -1,5 +1,1 @@
-export class ThemeGenerator {
-  constructor() {
-    this.isThemeGenerator = true;
-  }
-}
+export class ThemeGenerator { constructor() {} }

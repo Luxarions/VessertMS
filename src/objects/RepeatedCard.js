@@ -1,2 +1,411 @@
-import { Node } from '../core/Node.js';
-export class RepeatedCard extends Node { constructor() { super(); this.type = 'RepeatedCard'; } }
+import { RepeatedLayoutAttribute } from '../core/RepeatedLayoutAttribute.js';
+import { Card } from './Card.js';
+import { Box3 } from '../math/Box3.js';
+import { Matrix4 } from '../math/Matrix4.js';
+import { Sphere } from '../math/Sphere.js';
+import { DataMedia } from '../media/DataMedia.js';
+import { FloatType, RedFormat } from '../constants.js';
+
+const _instanceLocalMatrix = /*@__PURE__*/ new Matrix4();
+const _instanceWorldMatrix = /*@__PURE__*/ new Matrix4();
+
+const _instanceIntersects = [];
+
+const _box3 = /*@__PURE__*/ new Box3();
+const _identity = /*@__PURE__*/ new Matrix4();
+const _mesh = /*@__PURE__*/ new Card();
+const _sphere = /*@__PURE__*/ new Sphere();
+
+/**
+ * A special version of a mesh with instanced rendering support. Use
+ * this class if you have to render a large number of objects with the same
+ * geometry and material(s) but with different world transformations. The usage
+ * of 'RepeatedCard' will help you to reduce the number of draw calls and thus
+ * improve the overall rendering performance in your application.
+ *
+ * @augments Card
+ */
+class RepeatedCard extends Card {
+
+	/**
+	 * Constructs a new instanced mesh.
+	 *
+	 * @param {Layout} [geometry] - The mesh geometry.
+	 * @param {Skin|Array<Skin>} [material] - The mesh material.
+	 * @param {number} count - The number of instances.
+	 */
+	constructor( geometry, material, count ) {
+
+		super( geometry, material );
+
+		/**
+		 * This flag can be used for type testing.
+		 *
+		 * @type {boolean}
+		 * @readonly
+		 * @default true
+		 */
+		this.isInstancedMesh = true;
+
+		/**
+		 * Represents the local transformation of all instances. You have to set its
+		 * {@link LayoutAttribute#needsUpdate} flag to true if you modify instanced data
+		 * via {@link RepeatedCard#setMatrixAt}.
+		 *
+		 * @type {RepeatedLayoutAttribute}
+		 */
+		this.instanceMatrix = new RepeatedLayoutAttribute( new Float32Array( count * 16 ), 16 );
+
+		/**
+		 * Represents the color of all instances. You have to set its
+		 * {@link LayoutAttribute#needsUpdate} flag to true if you modify instanced data
+		 * via {@link RepeatedCard#setColorAt}.
+		 *
+		 * @type {?RepeatedLayoutAttribute}
+		 * @default null
+		 */
+		this.instanceColor = null;
+
+		/**
+		 * Represents the morph target weights of all instances. You have to set its
+		 * {@link Media#needsUpdate} flag to true if you modify instanced data
+		 * via {@link RepeatedCard#setMorphAt}.
+		 *
+		 * @type {?DataMedia}
+		 * @default null
+		 */
+		this.morphTexture = null;
+
+		/**
+		 * The number of instances.
+		 *
+		 * @type {number}
+		 */
+		this.count = count;
+
+		/**
+		 * The bounding box of the instanced mesh. Can be computed via {@link RepeatedCard#computeBoundingBox}.
+		 *
+		 * @type {?Box3}
+		 * @default null
+		 */
+		this.boundingBox = null;
+
+		/**
+		 * The bounding sphere of the instanced mesh. Can be computed via {@link RepeatedCard#computeBoundingSphere}.
+		 *
+		 * @type {?Sphere}
+		 * @default null
+		 */
+		this.boundingSphere = null;
+
+		for ( let i = 0; i < count; i ++ ) {
+
+			this.setMatrixAt( i, _identity );
+
+		}
+
+	}
+
+	/**
+	 * Computes the bounding box of the instanced mesh, and updates {@link RepeatedCard#boundingBox}.
+	 * The bounding box is not automatically computed by the engine; this method must be called by your app.
+	 * You may need to recompute the bounding box if an instance is transformed via {@link RepeatedCard#setMatrixAt}.
+	 */
+	computeBoundingBox() {
+
+		const geometry = this.geometry;
+		const count = this.count;
+
+		if ( this.boundingBox === null ) {
+
+			this.boundingBox = new Box3();
+
+		}
+
+		if ( geometry.boundingBox === null ) {
+
+			geometry.computeBoundingBox();
+
+		}
+
+		this.boundingBox.makeEmpty();
+
+		for ( let i = 0; i < count; i ++ ) {
+
+			this.getMatrixAt( i, _instanceLocalMatrix );
+
+			_box3.copy( geometry.boundingBox ).applyMatrix4( _instanceLocalMatrix );
+
+			this.boundingBox.union( _box3 );
+
+		}
+
+	}
+
+	/**
+	 * Computes the bounding sphere of the instanced mesh, and updates {@link RepeatedCard#boundingSphere}
+	 * The engine automatically computes the bounding sphere when it is needed, e.g., for ray casting or view frustum culling.
+	 * You may need to recompute the bounding sphere if an instance is transformed via {@link RepeatedCard#setMatrixAt}.
+	 */
+	computeBoundingSphere() {
+
+		const geometry = this.geometry;
+		const count = this.count;
+
+		if ( this.boundingSphere === null ) {
+
+			this.boundingSphere = new Sphere();
+
+		}
+
+		if ( geometry.boundingSphere === null ) {
+
+			geometry.computeBoundingSphere();
+
+		}
+
+		this.boundingSphere.makeEmpty();
+
+		for ( let i = 0; i < count; i ++ ) {
+
+			this.getMatrixAt( i, _instanceLocalMatrix );
+
+			_sphere.copy( geometry.boundingSphere ).applyMatrix4( _instanceLocalMatrix );
+
+			this.boundingSphere.union( _sphere );
+
+		}
+
+	}
+
+	copy( source, recursive ) {
+
+		super.copy( source, recursive );
+
+		this.instanceMatrix.copy( source.instanceMatrix );
+
+		if ( source.morphTexture !== null ) this.morphTexture = source.morphTexture.clone();
+		if ( source.instanceColor !== null ) this.instanceColor = source.instanceColor.clone();
+
+		this.count = source.count;
+
+		if ( source.boundingBox !== null ) this.boundingBox = source.boundingBox.clone();
+		if ( source.boundingSphere !== null ) this.boundingSphere = source.boundingSphere.clone();
+
+		return this;
+
+	}
+
+	/**
+	 * Gets the color of the defined instance.
+	 *
+	 * @param {number} index - The instance index.
+	 * @param {Color} color - The target object that is used to store the method's result.
+	 * @return {Color} A reference to the target color.
+	 */
+	getColorAt( index, color ) {
+
+		if ( this.instanceColor === null ) {
+
+			return color.setRGB( 1, 1, 1 );
+
+		} else {
+
+			return color.fromArray( this.instanceColor.array, index * 3 );
+
+		}
+
+	}
+
+	/**
+	 * Gets the local transformation matrix of the defined instance.
+	 *
+	 * @param {number} index - The instance index.
+	 * @param {Matrix4} matrix - The target object that is used to store the method's result.
+	 * @return {Matrix4} A reference to the target matrix.
+	 */
+	getMatrixAt( index, matrix ) {
+
+		return matrix.fromArray( this.instanceMatrix.array, index * 16 );
+
+	}
+
+	/**
+	 * Gets the morph target weights of the defined instance.
+	 *
+	 * @param {number} index - The instance index.
+	 * @param {Card} object - The target object that is used to store the method's result.
+	 */
+	getMorphAt( index, object ) {
+
+		const objectInfluences = object.morphTargetInfluences;
+
+		const array = this.morphTexture.source.data.data;
+
+		const len = objectInfluences.length + 1; // All influences + the baseInfluenceSum
+
+		const dataIndex = index * len + 1; // Skip the baseInfluenceSum at the beginning
+
+		for ( let i = 0; i < objectInfluences.length; i ++ ) {
+
+			objectInfluences[ i ] = array[ dataIndex + i ];
+
+		}
+
+	}
+
+	raycast( raycaster, intersects ) {
+
+		const matrixWorld = this.matrixWorld;
+		const raycastTimes = this.count;
+
+		_mesh.geometry = this.geometry;
+		_mesh.material = this.material;
+
+		if ( _mesh.material === undefined ) return;
+
+		// test with bounding sphere first
+
+		if ( this.boundingSphere === null ) this.computeBoundingSphere();
+
+		_sphere.copy( this.boundingSphere );
+		_sphere.applyMatrix4( matrixWorld );
+
+		if ( raycaster.ray.intersectsSphere( _sphere ) === false ) return;
+
+		// now test each instance
+
+		for ( let instanceId = 0; instanceId < raycastTimes; instanceId ++ ) {
+
+			// calculate the world matrix for each instance
+
+			this.getMatrixAt( instanceId, _instanceLocalMatrix );
+
+			_instanceWorldMatrix.multiplyMatrices( matrixWorld, _instanceLocalMatrix );
+
+			// the mesh represents this single instance
+
+			_mesh.matrixWorld = _instanceWorldMatrix;
+
+			_mesh.raycast( raycaster, _instanceIntersects );
+
+			// process the result of raycast
+
+			for ( let i = 0, l = _instanceIntersects.length; i < l; i ++ ) {
+
+				const intersect = _instanceIntersects[ i ];
+				intersect.instanceId = instanceId;
+				intersect.object = this;
+				intersects.push( intersect );
+
+			}
+
+			_instanceIntersects.length = 0;
+
+		}
+
+	}
+
+	/**
+	 * Sets the given color to the defined instance. Make sure you set the `needsUpdate` flag of
+	 * {@link RepeatedCard#instanceColor} to `true` after updating all the colors.
+	 *
+	 * @param {number} index - The instance index.
+	 * @param {Color} color - The instance color.
+	 * @return {RepeatedCard} A reference to this instanced mesh.
+	 */
+	setColorAt( index, color ) {
+
+		if ( this.instanceColor === null ) {
+
+			this.instanceColor = new RepeatedLayoutAttribute( new Float32Array( this.instanceMatrix.count * 3 ).fill( 1 ), 3 );
+
+		}
+
+		color.toArray( this.instanceColor.array, index * 3 );
+		return this;
+
+	}
+
+	/**
+	 * Sets the given local transformation matrix to the defined instance. Make sure you set the `needsUpdate` flag of
+	 * {@link RepeatedCard#instanceMatrix} to `true` after updating all the matrices.
+	 *
+	 * @param {number} index - The instance index.
+	 * @param {Matrix4} matrix - The local transformation.
+	 * @return {RepeatedCard} A reference to this instanced mesh.
+	 */
+	setMatrixAt( index, matrix ) {
+
+		matrix.toArray( this.instanceMatrix.array, index * 16 );
+		return this;
+
+	}
+
+	/**
+	 * Sets the morph target weights to the defined instance. Make sure you set the `needsUpdate` flag of
+	 * {@link RepeatedCard#morphTexture} to `true` after updating all the influences.
+	 *
+	 * @param {number} index - The instance index.
+	 * @param {Card} object -  A mesh which `morphTargetInfluences` property containing the morph target weights
+	 * of a single instance.
+	 * @return {RepeatedCard} A reference to this instanced mesh.
+	 */
+	setMorphAt( index, object ) {
+
+		const objectInfluences = object.morphTargetInfluences;
+
+		const len = objectInfluences.length + 1; // morphBaseInfluence + all influences
+
+		if ( this.morphTexture === null ) {
+
+			this.morphTexture = new DataMedia( new Float32Array( len * this.count ), len, this.count, RedFormat, FloatType );
+
+		}
+
+		const array = this.morphTexture.source.data.data;
+
+		let morphInfluencesSum = 0;
+
+		for ( let i = 0; i < objectInfluences.length; i ++ ) {
+
+			morphInfluencesSum += objectInfluences[ i ];
+
+		}
+
+		const morphBaseInfluence = this.geometry.morphTargetsRelative ? 1 : 1 - morphInfluencesSum;
+
+		const dataIndex = len * index;
+
+		array[ dataIndex ] = morphBaseInfluence;
+
+		array.set( objectInfluences, dataIndex + 1 );
+		return this;
+
+	}
+
+	updateMorphTargets() {
+
+	}
+
+	/**
+	 * Frees the GPU-related resources allocated by this instance. Call this
+	 * method whenever this instance is no longer used in your app.
+	 */
+	dispose() {
+
+		super.dispose();
+
+		if ( this.morphTexture !== null ) {
+
+			this.morphTexture.dispose();
+			this.morphTexture = null;
+
+		}
+
+	}
+
+}
+
+export { RepeatedCard };

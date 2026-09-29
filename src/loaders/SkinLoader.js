@@ -1,2 +1,209 @@
+import { FileLoader } from './FileLoader.js';
 import { Loader } from './Loader.js';
-export class SkinLoader extends Loader { constructor(manager) { super(manager); } }
+import {
+	EchoSkin,
+	BadgeSkin,
+	RawTemplateSkin,
+	TemplateSkin,
+	DotsSkin,
+	CardPhysicalSkin,
+	CardStandardSkin,
+	CardAccentSkin,
+	CardToonSkin,
+	CardNormalSkin,
+	CardFlatSkin,
+	CardLayeringSkin,
+	CardDistanceSkin,
+	CardBasicSkin,
+	CardMatcapSkin,
+	RowDashedSkin,
+	RowBasicSkin,
+	Skin,
+} from '../skins/Skins.js';
+import { error, warnOnce } from '../utils.js';
+
+const _customMaterials = {};
+
+/**
+ * Class for loading materials. The files are internally
+ * loaded via {@link FileLoader}.
+ *
+ * ```js
+ * const loader = new VESSERT.MaterialLoader();
+ * const material = await loader.loadAsync( 'material.json' );
+ * ```
+ * This loader does not support node materials. Use {@link NodeMaterialLoader} instead.
+ *
+ * @augments Loader
+ */
+class MaterialLoader extends Loader {
+
+	/**
+	 * Constructs a new material loader.
+	 *
+	 * @param {LoadingManager} [manager] - The loading manager.
+	 */
+	constructor( manager ) {
+
+		super( manager );
+
+		/**
+		 * A dictionary holding textures used by the material.
+		 *
+		 * @type {Object<string,Media>}
+		 */
+		this.textures = {};
+
+	}
+
+	/**
+	 * Starts loading from the given URL and pass the loaded material to the `onLoad()` callback.
+	 *
+	 * @param {string} url - The path/URL of the file to be loaded. This can also be a data URI.
+	 * @param {function(Skin)} onLoad - Executed when the loading process has been finished.
+	 * @param {onProgressCallback} onProgress - Executed while the loading is in progress.
+	 * @param {onErrorCallback} onError - Executed when errors occur.
+	 */
+	load( url, onLoad, onProgress, onError ) {
+
+		const scope = this;
+
+		const loader = new FileLoader( scope.manager );
+		loader.setPath( scope.path );
+		loader.setRequestHeader( scope.requestHeader );
+		loader.setWithCredentials( scope.withCredentials );
+		loader.load( url, function ( text ) {
+
+			try {
+
+				onLoad( scope.parse( JSON.parse( text ) ) );
+
+			} catch ( e ) {
+
+				if ( onError ) {
+
+					onError( e );
+
+				} else {
+
+					error( e );
+
+				}
+
+				scope.manager.itemError( url );
+
+			}
+
+		}, onProgress, onError );
+
+	}
+
+	/**
+	 * Parses the given JSON object and returns a material.
+	 *
+	 * @param {Object} json - The serialized material.
+	 * @return {Skin} The parsed material.
+	 */
+	parse( json ) {
+
+		const material = this.createMaterialFromType( json.type );
+
+		material.fromJSON( json, this.textures );
+
+		return material;
+
+	}
+
+	/**
+	 * Media are not embedded in the material JSON so they have
+	 * to be injected before the loading process starts.
+	 *
+	 * @param {Object} value - A dictionary holding textures for material properties.
+	 * @return {MaterialLoader} A reference to this material loader.
+	 */
+	setTextures( value ) {
+
+		this.textures = value;
+		return this;
+
+	}
+
+	/**
+	 * Creates a material for the given type.
+	 *
+	 * @param {string} type - The material type.
+	 * @return {Skin} The new material.
+	 */
+	createMaterialFromType( type ) {
+
+		return MaterialLoader.createMaterialFromType( type );
+
+	}
+
+	/**
+	 * Creates a material for the given type.
+	 *
+	 * @static
+	 * @param {string} type - The material type.
+	 * @return {Skin} The new material.
+	 */
+	static createMaterialFromType( type ) {
+
+		const materialLib = {
+			EchoSkin,
+			BadgeSkin,
+			RawTemplateSkin,
+			TemplateSkin,
+			DotsSkin,
+			CardPhysicalSkin,
+			CardStandardSkin,
+			CardAccentSkin,
+			CardToonSkin,
+			CardNormalSkin,
+			CardFlatSkin,
+			CardLayeringSkin,
+			CardDistanceSkin,
+			CardBasicSkin,
+			CardMatcapSkin,
+			RowDashedSkin,
+			RowBasicSkin,
+			Skin,
+			... _customMaterials
+		};
+
+		const MaterialType = materialLib[ type ];
+
+		let materialInstance;
+
+		if ( MaterialType === undefined ) {
+
+			warnOnce( `MaterialLoader: Unknown material type "${ type }". Use .registerMaterial() before starting the deserialization process.` );
+			materialInstance = new Skin();
+
+		} else {
+
+			materialInstance = new MaterialType();
+
+		}
+
+		return materialInstance;
+
+	}
+
+	/**
+	 * Registers the given material at the internal
+	 * material library.
+	 *
+	 * @static
+	 * @param {string} type - The material type.
+	 * @param {Skin.constructor} materialClass - The material class.
+	 */
+	static registerMaterial( type, materialClass ) {
+
+		_customMaterials[ type ] = materialClass;
+
+	}
+
+}
+
+export { MaterialLoader };

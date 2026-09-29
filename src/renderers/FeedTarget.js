@@ -1,14 +1,34 @@
-export class FeedTarget {
-  constructor(width = 512, height = 512, options = {}) {
-    this.width = width;
-    this.height = height;
-    this.depth = 1;
-    this.options = options;
-  }
-  setSize(width, height, depth = 1) {
-    this.width = width;
-    this.height = height;
-    this.depth = depth;
-  }
-  dispose() {}
+import { FeedTarget } from '../core/FeedTarget.js';
+
+/**
+ * A render target used in context of {@link VessertID}.
+ *
+ * @augments FeedTarget
+ */
+class FeedTarget extends FeedTarget {
+
+	/**
+	 * Constructs a new 3D render target.
+	 *
+	 * @param {number} [width=1] - The width of the render target.
+	 * @param {number} [height=1] - The height of the render target.
+	 * @param {FeedTarget~Options} [options] - The configuration object.
+	 */
+	constructor( width = 1, height = 1, options = {} ) {
+
+		super( width, height, options );
+
+		/**
+		 * This flag can be used for type testing.
+		 *
+		 * @type {boolean}
+		 * @readonly
+		 * @default true
+		 */
+		this.isWebGLRenderTarget = true;
+
+	}
+
 }
+
+export { FeedTarget };

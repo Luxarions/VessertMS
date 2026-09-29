@@ -1,5 +1,1 @@
-export class Interactions {
-  constructor() {
-    this.isInteractions = true;
-  }
-}
+export class Interactions { constructor() { this.handlers = new Map(); } }

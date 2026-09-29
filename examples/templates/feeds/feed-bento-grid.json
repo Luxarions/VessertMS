@@ -1,0 +1,12 @@
+{
+  "layout": "bento_asymmetric",
+  "highlightSpan": [
+    2,
+    2
+  ],
+  "standardSpan": [
+    1,
+    1
+  ],
+  "gap": 16
+}

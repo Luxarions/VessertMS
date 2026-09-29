@@ -1,0 +1,5 @@
+event_id,user_id,card_id,dwell_time_ms,scroll_depth_ratio,interaction_count
+e_101,u_1,card_post_standard,4200,0.85,3
+e_102,u_2,card_media_carousel,9500,1.0,7
+e_103,u_3,card_poll_interactive,6100,0.92,2
+e_104,u_1,card_quote_repost,3100,0.65,1

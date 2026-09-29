@@ -1,0 +1,11 @@
+{
+  "template": "CardEventCountdown",
+  "timeFields": [
+    "days",
+    "hours",
+    "minutes",
+    "seconds"
+  ],
+  "rsvpAction": true,
+  "calendarExport": true
+}

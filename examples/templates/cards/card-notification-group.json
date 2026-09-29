@@ -1,0 +1,6 @@
+{
+  "template": "CardNotificationGroup",
+  "stackedAvatars": 5,
+  "highlightUnread": true,
+  "swipeToDismiss": true
+}

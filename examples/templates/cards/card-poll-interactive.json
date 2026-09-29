@@ -1,0 +1,7 @@
+{
+  "template": "CardPollInteractive",
+  "maxOptions": 4,
+  "showPercentageAnimation": true,
+  "durationHours": 24,
+  "barStyle": "pill-gradient"
+}

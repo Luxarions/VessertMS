@@ -1,0 +1,6 @@
+{
+  "pull_refresh": {
+    "src": "pull-refresh.wav",
+    "vibrate_ms": 25
+  }
+}

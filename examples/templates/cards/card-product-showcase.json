@@ -1,0 +1,6 @@
+{
+  "template": "CardProductShowcase",
+  "priceTagBadge": true,
+  "inventoryStatus": "in_stock",
+  "directCheckoutUrl": true
+}

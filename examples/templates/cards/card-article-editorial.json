@@ -1,0 +1,6 @@
+{
+  "template": "CardArticleEditorial",
+  "readTimeBadge": true,
+  "heroBannerRatio": "16:9",
+  "typographyScale": "editorial_serif"
+}

@@ -1,0 +1,8 @@
+{
+  "metrics": [
+    "followers",
+    "engagement_rate",
+    "total_reach",
+    "streak_days"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "layout": "linear_vertical",
+  "maxWidth": 640,
+  "spacing": 16,
+  "cullingOverscan": 3
+}

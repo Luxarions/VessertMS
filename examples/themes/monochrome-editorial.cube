@@ -1,11 +1,11 @@
-# VessertID Color Grading LUT - Monochrome Editorial
+# VessertID Color Grading LUT - MonochromeEditorial
 TITLE "MonochromeEditorial"
 LUT_3D_SIZE 2
 0.0 0.0 0.0
 0.3 0.3 0.3
+0.0 0.95 0.0
 0.5 0.5 0.5
-0.7 0.7 0.7
+0.05 0.0 0.9
 0.2 0.2 0.2
-0.6 0.6 0.6
-0.8 0.8 0.8
+0.05 0.95 0.9
 1.0 1.0 1.0

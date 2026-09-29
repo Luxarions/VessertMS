@@ -1,0 +1,6 @@
+{
+  "chime": {
+    "src": "notification-chime.wav",
+    "gain": 0.8
+  }
+}

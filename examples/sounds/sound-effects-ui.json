@@ -1,0 +1,10 @@
+{
+  "tap": {
+    "src": "tap-like.wav",
+    "volume": 0.4
+  },
+  "swipe": {
+    "src": "swipe-card.wav",
+    "volume": 0.3
+  }
+}

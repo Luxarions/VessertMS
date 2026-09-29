@@ -1,0 +1,40 @@
+{
+  "template": "CardPostStandard",
+  "version": "1.2.0",
+  "structure": {
+    "header": {
+      "type": "Row",
+      "items": [
+        {
+          "type": "AvatarLayout",
+          "size": 44
+        },
+        {
+          "type": "AuthorBioBlock"
+        },
+        {
+          "type": "ActionMenuButton"
+        }
+      ]
+    },
+    "body": {
+      "type": "ContentBlock",
+      "richText": true,
+      "maxLines": 6,
+      "mediaContainer": {
+        "aspectRatio": "4:5",
+        "carousel": true
+      }
+    },
+    "footer": {
+      "type": "EngagementBar",
+      "actions": [
+        "like",
+        "comment",
+        "repost",
+        "share",
+        "bookmark"
+      ]
+    }
+  }
+}

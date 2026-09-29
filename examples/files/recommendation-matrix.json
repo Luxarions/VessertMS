@@ -1,0 +1,15 @@
+{
+  "algorithm": "collaborative_filtering_v4",
+  "user_affinity_clusters": {
+    "cluster_tech": [
+      "@bayu",
+      "@gisella",
+      "@luxarion"
+    ],
+    "cluster_design": [
+      "@creatives",
+      "@ui_lab",
+      "@typography_hub"
+    ]
+  }
+}

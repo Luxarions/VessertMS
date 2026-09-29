@@ -1,0 +1,22 @@
+{
+  "info": {
+    "face": "space-grotesk",
+    "size": 32
+  },
+  "common": {
+    "lineHeight": 40,
+    "base": 28,
+    "scaleW": 512,
+    "scaleH": 512
+  },
+  "chars": [
+    {
+      "id": 65,
+      "x": 10,
+      "y": 10,
+      "width": 28,
+      "height": 34,
+      "xadvance": 24
+    }
+  ]
+}

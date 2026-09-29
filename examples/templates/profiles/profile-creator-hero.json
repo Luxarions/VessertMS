@@ -1,0 +1,10 @@
+{
+  "headerHeight": 220,
+  "avatarSize": 96,
+  "tabs": [
+    "posts",
+    "reels",
+    "tagged",
+    "badges"
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "min_cluster_similarity": 0.78,
+  "damping_factor": 0.85
+}

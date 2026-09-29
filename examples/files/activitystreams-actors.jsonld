@@ -1,0 +1,29 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "type": "Collection",
+  "totalItems": 4,
+  "items": [
+    {
+      "type": "Person",
+      "id": "https://vessert.network/u/bayu",
+      "name": "Bayu Prasetyo",
+      "role": "Architect"
+    },
+    {
+      "type": "Person",
+      "id": "https://vessert.network/u/gisella",
+      "name": "Gisella Ambar",
+      "role": "Lead Engineer"
+    },
+    {
+      "type": "Organization",
+      "id": "https://vessert.network/org/luxarion",
+      "name": "Luxarions Tech"
+    },
+    {
+      "type": "Service",
+      "id": "https://vessert.network/bot/indexer",
+      "name": "Vessert Graph Indexer"
+    }
+  ]
+}

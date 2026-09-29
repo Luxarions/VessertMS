@@ -1,7 +1,5 @@
 {
-  "profile": "proximity-weight",
-  "mutual_follows_multiplier": 2.5,
-  "direct_mention_multiplier": 3.5,
-  "second_degree_hops": 0.4,
-  "topic_affinity_scale": 1.8
+  "mutuals": 2.5,
+  "mentions": 3.5,
+  "second_degree": 0.4
 }

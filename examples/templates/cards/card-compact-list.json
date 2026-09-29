@@ -1,0 +1,6 @@
+{
+  "template": "CardCompactList",
+  "itemHeight": 56,
+  "leftThumbnail": 40,
+  "trailingAction": "chevron"
+}

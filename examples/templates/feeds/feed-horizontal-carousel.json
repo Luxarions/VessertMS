@@ -1,0 +1,5 @@
+{
+  "layout": "horizontal_snap",
+  "cardWidthRatio": 0.85,
+  "snapType": "mandatory"
+}

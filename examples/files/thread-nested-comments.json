@@ -1,0 +1,18 @@
+{
+  "root_post_id": "p_9001",
+  "author": "@bayu",
+  "comments": [
+    {
+      "id": "c_1",
+      "author": "@gisella",
+      "text": "Arsitektur 6 lapis VessertID ini membuat render time turun drastis di WebGPU.",
+      "replies": [
+        {
+          "id": "c_1_1",
+          "author": "@luxarion",
+          "text": "Setuju, memory footprint-nya juga sangat stabil!"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "familyName": "vessert-serif",
+  "ascender": 1000,
+  "descender": -200,
+  "resolution": 1000,
+  "glyphs": {
+    "A": {
+      "ha": 1400,
+      "o": "m 0 0 l 700 1500 l 1400 0 z"
+    }
+  }
+}

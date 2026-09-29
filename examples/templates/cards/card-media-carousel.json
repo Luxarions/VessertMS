@@ -1,0 +1,8 @@
+{
+  "template": "CardMediaCarousel",
+  "maxSheets": 10,
+  "indicators": "dots_overlay",
+  "aspectRatio": "1:1",
+  "zoomable": true,
+  "preloadAdjacent": 2
+}

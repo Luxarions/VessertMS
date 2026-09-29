@@ -1,0 +1,11 @@
+{
+  "template": "CardAudioWaveform",
+  "barCount": 48,
+  "interactiveScrubbing": true,
+  "playbackSpeedOptions": [
+    1,
+    1.5,
+    2
+  ],
+  "hapticTick": true
+}

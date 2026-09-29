@@ -1,0 +1,7 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "type": "OrderedCollection",
+  "totalItems": 100,
+  "first": "https://vessert.network/u/bayu/outbox?page=true",
+  "last": "https://vessert.network/u/bayu/outbox?min_id=0&page=true"
+}

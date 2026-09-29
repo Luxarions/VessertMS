@@ -1,0 +1,5 @@
+{
+  "layout": "timeline_tree",
+  "nodeConnector": "svg_curved_line",
+  "markerStyle": "dot_ring"
+}

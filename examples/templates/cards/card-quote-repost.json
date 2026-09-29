@@ -1,0 +1,6 @@
+{
+  "template": "CardQuoteRepost",
+  "nestedDepthLimit": 2,
+  "outerCardPadding": 16,
+  "innerCardBorder": "1px solid rgba(255,255,255,0.1)"
+}

@@ -1,0 +1,6 @@
+{
+  "layout": "masonry_multi_column",
+  "columnsMobile": 2,
+  "columnsDesktop": 3,
+  "gap": 12
+}

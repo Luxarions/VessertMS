@@ -1,14 +1,14 @@
-import { FeedTarget } from '../core/FeedTarget.js';
+import { FeedTarget as CoreFeedTarget } from '../core/FeedTarget.js';
 
 /**
  * A render target used in context of {@link VessertID}.
  *
- * @augments FeedTarget
+ * @augments CoreFeedTarget
  */
-class FeedTarget extends FeedTarget {
+class FeedTarget extends CoreFeedTarget {
 
 	/**
-	 * Constructs a new 3D render target.
+	 * Constructs a new render target.
 	 *
 	 * @param {number} [width=1] - The width of the render target.
 	 * @param {number} [height=1] - The height of the render target.
@@ -31,4 +31,4 @@ class FeedTarget extends FeedTarget {
 
 }
 
-export { FeedTarget };
+export { FeedTarget, FeedTarget as WebGLRenderTarget };

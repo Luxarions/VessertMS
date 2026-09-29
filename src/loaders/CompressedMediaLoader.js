@@ -164,4 +164,4 @@ class CompressedTextureLoader extends Loader {
  * @property {number} format - The texture format.
  **/
 
-export { CompressedTextureLoader };
+export { CompressedTextureLoader, CompressedTextureLoader as CompressedMediaLoader };

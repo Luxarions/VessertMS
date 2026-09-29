@@ -152,4 +152,4 @@ class WebXRDepthSensing {
 
 }
 
-export { WebXRDepthSensing };
+export { WebXRDepthSensing, WebXRDepthSensing as default };

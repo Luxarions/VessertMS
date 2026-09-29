@@ -71,4 +71,4 @@ class TextureLoader extends Loader {
 }
 
 
-export { TextureLoader };
+export { TextureLoader, TextureLoader as MediaLoader };

@@ -1123,4 +1123,4 @@ class WebXRManager extends EventDispatcher {
 
 }
 
-export { WebXRManager };
+export { WebXRManager, WebXRManager as ImmersiveManager, WebXRManager as default };

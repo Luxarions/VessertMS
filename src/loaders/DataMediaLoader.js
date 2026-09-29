@@ -202,4 +202,4 @@ class DataTextureLoader extends Loader {
  * @property {Array<Object>} [mipmaps] - The mipmaps.
  **/
 
-export { DataTextureLoader };
+export { DataTextureLoader, DataTextureLoader as DataMediaLoader };

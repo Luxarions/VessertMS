@@ -344,4 +344,4 @@ function setPoint( point, pointMap, geometry, camera, x, y, z ) {
 
 }
 
-export { CameraHelper };
+export { CameraHelper, CameraHelper as LensHelper };

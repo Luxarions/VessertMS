@@ -69,3 +69,5 @@ class Binding {
 }
 
 export default Binding;
+
+export * from './Uniform.js';

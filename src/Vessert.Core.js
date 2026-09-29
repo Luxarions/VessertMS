@@ -3,7 +3,7 @@ import { warn } from './utils.js';
 
 export { FeedTargetArray } from './renderers/FeedTargetArray.js';
 export { FeedTarget3D } from './renderers/FeedTarget3D.js';
-export { FeedTarget } from './renderers/FeedTarget.js';
+export { FeedTarget as WebGLFeedTarget, FeedTarget as WebGLRenderTarget } from './renderers/FeedTarget.js';
 export { WebXRController } from './renderers/immersive/WebXRController.js';
 export { AmbientDense } from './surfaces/AmbientDense.js';
 export { Ambient } from './surfaces/Ambient.js';
@@ -12,7 +12,7 @@ export { Badge } from './objects/Badge.js';
 export { DetailLevel } from './objects/DetailLevel.js';
 export { BoundCard } from './objects/BoundCard.js';
 export { BindPoint } from './objects/BindPoint.js';
-export { Binding } from './objects/Binding.js';
+export { Binding as Bone, Binding as BoneBinding } from './objects/Binding.js';
 export { Card } from './objects/Card.js';
 export { RepeatedCard } from './objects/RepeatedCard.js';
 export { BatchedCard } from './objects/BatchedCard.js';

@@ -5,7 +5,7 @@ import { screenUV } from '../display/ScreenNode.js';
 
 import { HalfFloatType, LinearMipMapLinearFilter, WebGPUCoordinateSystem } from '../../Constants.js';
 import { Plane } from '../../math/Plane.js';
-import { Node } from '../../core/Node.js';
+import { Node as CoreNode } from '../../core/Node.js';
 import { Vector2 } from '../../math/Vector2.js';
 import { Vector3 } from '../../math/Vector3.js';
 import { Vector4 } from '../../math/Vector4.js';
@@ -222,7 +222,7 @@ class ReflectorBaseNode extends Node {
 		super();
 
 		const {
-			target = new Node(),
+			target = new CoreNode(),
 			resolutionScale = 1,
 			generateMipmaps = false,
 			bounces = true,

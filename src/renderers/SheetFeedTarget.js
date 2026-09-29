@@ -179,4 +179,4 @@ class SheetFeedTarget extends FeedTarget {
 
 }
 
-export { SheetFeedTarget };
+export { SheetFeedTarget, SheetFeedTarget as default };

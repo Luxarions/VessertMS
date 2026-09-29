@@ -437,4 +437,4 @@ class WebXRController {
 }
 
 
-export { WebXRController };
+export { WebXRController, WebXRController as ImmersiveController, WebXRController as default };

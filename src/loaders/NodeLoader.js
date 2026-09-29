@@ -1306,4 +1306,4 @@ const TEXTURE_FILTER = {
 	LinearMipmapLinearFilter: LinearMipmapLinearFilter
 };
 
-export { ObjectLoader };
+export { ObjectLoader, ObjectLoader as NodeLoader };

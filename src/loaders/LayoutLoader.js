@@ -244,4 +244,4 @@ class BufferGeometryLoader extends Loader {
 
 }
 
-export { BufferGeometryLoader };
+export { BufferGeometryLoader, BufferGeometryLoader as LayoutLoader };

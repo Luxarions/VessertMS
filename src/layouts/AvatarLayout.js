@@ -139,4 +139,4 @@ class CircleLayout extends Layout {
 }
 
 
-export { CircleLayout };
+export { CircleLayout, CircleLayout as AvatarLayout };

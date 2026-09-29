@@ -206,4 +206,4 @@ class MaterialLoader extends Loader {
 
 }
 
-export { MaterialLoader };
+export { MaterialLoader, MaterialLoader as SkinLoader };

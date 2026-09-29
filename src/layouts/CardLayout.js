@@ -130,4 +130,4 @@ class PlaneLayout extends Layout {
 
 }
 
-export { PlaneLayout };
+export { PlaneLayout, PlaneLayout as CardLayout };

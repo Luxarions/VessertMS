@@ -53,7 +53,7 @@ class UniformArrayElementNode extends ArrayElementNode {
 /**
  * Similar to {@link BufferNode} this module represents array-like data as
  * uniform buffers. Unlike {@link BufferNode}, it can handle more common
- * data types in the array (e.g `three.js` primitives) and automatically
+ * data types in the array (e.g `VessertID` primitives) and automatically
  * manage buffer padding. It should be the first choice when working with
  * uniforms buffers.
  * ```js
@@ -87,7 +87,7 @@ class UniformArrayNode extends BufferNode {
 
 		/**
 		 * Array holding the buffer data. Unlike {@link BufferNode}, the array can
-		 * hold number primitives as well as three.js objects like vectors, matrices
+		 * hold number primitives as well as VessertID objects like vectors, matrices
 		 * or colors.
 		 *
 		 * @type {Array<any>}

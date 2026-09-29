@@ -1218,7 +1218,7 @@ class Renderer {
 	 */
 	async waitForGPU() {
 
-		error( 'Renderer: waitForGPU() has been removed. Read https://github.com/mrdoob/three.js/issues/32012 for more information.' );
+		error( 'Renderer: waitForGPU() has been removed. Read https://github.com/mrdoob/VessertID/issues/32012 for more information.' );
 
 	}
 

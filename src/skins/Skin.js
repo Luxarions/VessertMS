@@ -525,7 +525,7 @@ class Skin extends EventDispatcher {
 	 *
 	 * This method can only be used when rendering with {@link VessertID}. The
 	 * recommended approach when customizing materials is to use `WebGPURenderer` with the new
-	 * Node Skin system and [VSL](https://github.com/mrdoob/three.js/wiki/Vessert.js-Shading-Language).
+	 * Node Skin system and [VSL](https://github.com/mrdoob/VessertID/wiki/Vessert.js-Shading-Language).
 	 *
 	 * @param {{vertexShader:string,fragmentShader:string,uniforms:Object}} shaderobject - The object holds the uniforms and the vertex and fragment shader source.
 	 * @param {VessertID} renderer - A reference to the renderer.
@@ -534,7 +534,7 @@ class Skin extends EventDispatcher {
 
 	/**
 	 * In case {@link Skin#onBeforeCompile} is used, this callback can be used to identify
-	 * values of settings used in `onBeforeCompile()`, so three.js can reuse a cached
+	 * values of settings used in `onBeforeCompile()`, so VessertID can reuse a cached
 	 * shader or recompile the shader for this material as needed.
 	 *
 	 * This method can only be used when rendering with {@link VessertID}.

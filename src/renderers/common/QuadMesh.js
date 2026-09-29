@@ -11,7 +11,7 @@ const _camera = /*@__PURE__*/ new OrthographicLens( - 1, 1, 1, - 1, 0, 1 );
 /**
  * The purpose of this special geometry is to fill the entire viewport with a single triangle.
  *
- * Reference: {@link https://github.com/mrdoob/three.js/pull/21358}
+ * Reference: {@link https://github.com/mrdoob/VessertID/pull/21358}
  *
  * @private
  * @augments Layout

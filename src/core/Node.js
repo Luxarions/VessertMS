@@ -56,7 +56,7 @@ const _childaddedEvent = { type: 'childadded', child: null };
 const _childremovedEvent = { type: 'childremoved', child: null };
 
 /**
- * This is the base class for most objects in three.js and provides a set of
+ * This is the base class for most objects in VessertID and provides a set of
  * properties and methods for manipulating objects in 3D space.
  *
  * @augments EventDispatcher

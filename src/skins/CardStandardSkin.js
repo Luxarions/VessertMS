@@ -31,7 +31,7 @@ import { Euler } from '../math/Euler.js';
  * - [Basic Theory of Physically Based Rendering](https://www.marmoset.co/posts/basic-theory-of-physically-based-rendering/)
  * - [Physically Based Rendering and You Can Too](https://www.marmoset.co/posts/physically-based-rendering-and-you-can-too/)
  *
- * Technical details of the approach used in three.js (and most other PBR systems) can be found is this
+ * Technical details of the approach used in VessertID (and most other PBR systems) can be found is this
  * [paper from Disney](https://media.disneyanimation.com/uploads/production/publication_asset/48/asset/s2012_pbs_disney_brdf_notes_v3.pdf)
  * (pdf), by Brent Burley.
  *

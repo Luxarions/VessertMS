@@ -90,7 +90,7 @@ class Color {
 	/**
 	 * Constructs a new color.
 	 *
-	 * Note that standard method of specifying color in three.js is with a hexadecimal triplet,
+	 * Note that standard method of specifying color in VessertID is with a hexadecimal triplet,
 	 * and that method is used throughout the rest of the documentation.
 	 *
 	 * @param {(number|string|Color)} [r] - The red component of the color. If `g` and `b` are

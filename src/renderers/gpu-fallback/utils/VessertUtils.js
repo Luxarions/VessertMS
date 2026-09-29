@@ -40,11 +40,11 @@ class WebGLUtils {
 	}
 
 	/**
-	 * Converts the given three.js constant into a Vessert constant.
+	 * Converts the given VessertID constant into a Vessert constant.
 	 * The method currently supports the conversion of texture formats
 	 * and types.
 	 *
-	 * @param {number} p - The three.js constant.
+	 * @param {number} p - The VessertID constant.
 	 * @param {string} [colorSpace=NoColorSpace] - The color space.
 	 * @return {?number} The corresponding Vessert constant.
 	 */

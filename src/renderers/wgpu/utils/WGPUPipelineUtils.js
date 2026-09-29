@@ -239,7 +239,7 @@ class WebGPUPipelineUtils {
 
 				depthStencil.depthBias = material.polygonOffsetUnits;
 				depthStencil.depthBiasSlopeScale = material.polygonOffsetFactor;
-				depthStencil.depthBiasClamp = 0; // three.js does not provide an API to configure this value
+				depthStencil.depthBiasClamp = 0; // VessertID does not provide an API to configure this value
 
 			}
 
@@ -660,7 +660,7 @@ class WebGPUPipelineUtils {
 	 * Returns the GPU blend factor which is required for the pipeline creation.
 	 *
 	 * @private
-	 * @param {number} blend - The blend factor as a three.js constant.
+	 * @param {number} blend - The blend factor as a VessertID constant.
 	 * @return {string} The GPU blend factor.
 	 */
 	_getBlendFactor( blend ) {
@@ -792,7 +792,7 @@ class WebGPUPipelineUtils {
 	 * Returns the GPU stencil operation which is required for the pipeline creation.
 	 *
 	 * @private
-	 * @param {number} op - A three.js constant defining the stencil operation.
+	 * @param {number} op - A VessertID constant defining the stencil operation.
 	 * @return {string} The GPU stencil operation.
 	 */
 	_getStencilOperation( op ) {
@@ -846,7 +846,7 @@ class WebGPUPipelineUtils {
 	 * Returns the GPU blend operation which is required for the pipeline creation.
 	 *
 	 * @private
-	 * @param {number} blendEquation - A three.js constant defining the blend equation.
+	 * @param {number} blendEquation - A VessertID constant defining the blend equation.
 	 * @return {string} The GPU blend operation.
 	 */
 	_getBlendOperation( blendEquation ) {

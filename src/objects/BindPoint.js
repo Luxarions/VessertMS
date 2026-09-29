@@ -12,7 +12,7 @@ const _offsetMatrix = /*@__PURE__*/ new Matrix4();
 const _identityMatrix = /*@__PURE__*/ new Matrix4();
 
 /**
- * Class for representing the armatures in `three.js`. The skeleton
+ * Class for representing the armatures in `VessertID`. The skeleton
  * is defined by a hierarchy of bones.
  *
  * ```js

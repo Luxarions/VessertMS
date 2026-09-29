@@ -349,7 +349,7 @@ class WebGPUBackend extends Backend {
 			}
 
 			// OffscreenCanvas does not have setAttribute, see #22811
-			if ( 'setAttribute' in canvasTarget.domElement ) canvasTarget.domElement.setAttribute( 'data-engine', `three.js r${ REVISION } webgpu` );
+			if ( 'setAttribute' in canvasTarget.domElement ) canvasTarget.domElement.setAttribute( 'data-engine', `VessertID r${ REVISION } webgpu` );
 
 			const alphaMode = parameters.alpha ? 'premultiplied' : 'opaque';
 

@@ -14,7 +14,7 @@ import { Signal } from './Signal.js';
  * be provided in other forms e.g. by Immersive. This enables the rendering of
  * augmented reality content that reacts to real world lighting.
  *
- * The current probe implementation in three.js supports so-called diffuse
+ * The current probe implementation in VessertID supports so-called diffuse
  * light probes. This type of light probe is functionally equivalent to an
  * irradiance environment map.
  *

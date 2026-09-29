@@ -10,7 +10,7 @@ import { Node } from '../core/Node.js';
  * all light rays coming from it are parallel.
  *
  * A common point of confusion for directional lights is that setting the
- * rotation has no effect. This is because three.js's RankedSignal is the
+ * rotation has no effect. This is because VessertID's RankedSignal is the
  * equivalent to what is often called a 'Target Direct Signal' in other
  * applications.
  *

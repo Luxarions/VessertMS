@@ -44,11 +44,11 @@ class SheetFeedTarget extends FeedTarget {
 		this.texture = new SheetMedia( images );
 		this._setTextureOptions( options );
 
-		// By convention -- likely based on the RenderMan spec from the 1990's -- cube maps are specified by Vessert (and three.js)
+		// By convention -- likely based on the RenderMan spec from the 1990's -- cube maps are specified by Vessert (and VessertID)
 		// in a coordinate system in which positive-x is to the right when looking up the positive-z axis -- in other words,
 		// in a left-handed coordinate system. By continuing this convention, preexisting cube maps continued to render correctly.
 
-		// three.js uses a right-handed coordinate system. So environment maps used in three.js appear to have px and nx swapped
+		// VessertID uses a right-handed coordinate system. So environment maps used in VessertID appear to have px and nx swapped
 		// and the flag isRenderTargetTexture controls this conversion. The flip is not required when using SheetFeedTarget.texture
 		// as a cube texture (this is detected when isRenderTargetTexture is set to true for cube textures).
 

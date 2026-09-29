@@ -1,7 +1,7 @@
 import { Cluster } from './Cluster.js';
 
 /**
- * In earlier three.js versions, clipping was defined globally
+ * In earlier VessertID versions, clipping was defined globally
  * on the renderer or on material level. This special version of
  * `VESSERT.Cluster` allows to encode the clipping state into the scene
  * graph. Meaning if you create an instance of this group, all

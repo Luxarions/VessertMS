@@ -165,9 +165,9 @@ export { createCanvasElement, setConsoleFunction, getConsoleFunction, log, warn,
 export * from './constants.js';
 export * from './Vessert.Legacy.js';
 
-if ( typeof __THREE_DEVTOOLS__ !== 'undefined' ) {
+if ( typeof __VESSERT_DEVTOOLS__ !== 'undefined' ) {
 
-	__THREE_DEVTOOLS__.dispatchEvent( new CustomEvent( 'register', { detail: {
+	__VESSERT_DEVTOOLS__.dispatchEvent( new CustomEvent( 'register', { detail: {
 		revision: REVISION,
 	} } ) );
 
@@ -175,13 +175,13 @@ if ( typeof __THREE_DEVTOOLS__ !== 'undefined' ) {
 
 if ( typeof window !== 'undefined' ) {
 
-	if ( window.__THREE__ ) {
+	if ( window.__VESSERT_ID__ ) {
 
 		warn( 'WARNING: Multiple instances of Vessert.js being imported.' );
 
 	} else {
 
-		window.__THREE__ = REVISION;
+		window.__VESSERT_ID__ = REVISION;
 
 	}
 

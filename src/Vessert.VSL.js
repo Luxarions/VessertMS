@@ -1,4 +1,4 @@
-import { VSL } from 'three/webgpu';
+import * as VSL from './nodes/VSL.js';
 
 export const BRDF_GGX = VSL.BRDF_GGX;
 export const BRDF_Lambert = VSL.BRDF_Lambert;

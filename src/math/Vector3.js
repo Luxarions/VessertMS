@@ -6,14 +6,14 @@ import { Quaternion } from './Quaternion.js';
  * (labeled x, y and z), which can be used to represent a number of things, such as:
  *
  * - A point in 3D space.
- * - A direction and length in 3D space. In three.js the length will
+ * - A direction and length in 3D space. In VessertID the length will
  * always be the Euclidean distance(straight-line distance) from `(0, 0, 0)` to `(x, y, z)`
  * and the direction is also measured from `(0, 0, 0)` towards `(x, y, z)`.
  * - Any arbitrary ordered triplet of numbers.
  *
  * There are other things a 3D vector can be used to represent, such as
  * momentum vectors and so on, however these are the most
- * common uses in three.js.
+ * common uses in VessertID.
  *
  * Iterating through a vector instance will yield its components `(x, y, z)` in
  * the corresponding order.

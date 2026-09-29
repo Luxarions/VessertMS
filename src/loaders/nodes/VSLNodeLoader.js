@@ -5,7 +5,7 @@ import { FileLoader } from '../../loaders/FileLoader.js';
 import { error } from '../../utils.js';
 
 /**
- * A loader for loading node objects in the three.js JSON Object/Surface format.
+ * A loader for loading node objects in the VessertID JSON Object/Surface format.
  *
  * @augments Loader
  */

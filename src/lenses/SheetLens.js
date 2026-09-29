@@ -203,7 +203,7 @@ class SheetLens extends Node {
 
 		renderTarget.texture.generateMipmaps = false;
 
-		// https://github.com/mrdoob/three.js/issues/31413#issuecomment-3095966812
+		// https://github.com/mrdoob/VessertID/issues/31413#issuecomment-3095966812
 
 		let reversedDepthBuffer = false;
 

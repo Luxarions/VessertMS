@@ -812,7 +812,7 @@ class WebGPUTextureUtils {
 		let bytesPerRow = width * bytesPerTexel;
 		bytesPerRow = Math.ceil( bytesPerRow / 256 ) * 256; // Align to 256 bytes
 
-		_bufferDescriptor.size = ( ( height - 1 ) * bytesPerRow ) + ( width * bytesPerTexel ); // see https://github.com/mrdoob/three.js/issues/31658#issuecomment-3229442010
+		_bufferDescriptor.size = ( ( height - 1 ) * bytesPerRow ) + ( width * bytesPerTexel ); // see https://github.com/mrdoob/VessertID/issues/31658#issuecomment-3229442010
 		_bufferDescriptor.usage = GPUBufferUsage.COPY_DST | GPUBufferUsage.MAP_READ;
 
 		const readBuffer = device.createBuffer( _bufferDescriptor );
@@ -1221,10 +1221,10 @@ class WebGPUTextureUtils {
 	}
 
 	/**
-	 * Converts the three.js uv wrapping constants to GPU address mode constants.
+	 * Converts the VessertID uv wrapping constants to GPU address mode constants.
 	 *
 	 * @private
-	 * @param {number} value - The three.js constant defining a uv wrapping mode.
+	 * @param {number} value - The VessertID constant defining a uv wrapping mode.
 	 * @return {string} The GPU address mode.
 	 */
 	_convertAddressMode( value ) {
@@ -1246,10 +1246,10 @@ class WebGPUTextureUtils {
 	}
 
 	/**
-	 * Converts the three.js filter constants to GPU filter constants.
+	 * Converts the VessertID filter constants to GPU filter constants.
 	 *
 	 * @private
-	 * @param {number} value - The three.js constant defining a filter mode.
+	 * @param {number} value - The VessertID constant defining a filter mode.
 	 * @return {string} The GPU filter mode.
 	 */
 	_convertFilterMode( value ) {
@@ -1267,12 +1267,12 @@ class WebGPUTextureUtils {
 	}
 
 	/**
-	 * Converts the three.js filter constants to a GPU mipmap filter constant.
+	 * Converts the VessertID filter constants to a GPU mipmap filter constant.
 	 * Unlike `_convertFilterMode`, this extracts the between-mip-level filtering
-	 * axis from the combined three.js constant rather than the within-level axis.
+	 * axis from the combined VessertID constant rather than the within-level axis.
 	 *
 	 * @private
-	 * @param {number} value - The three.js constant defining a filter mode.
+	 * @param {number} value - The VessertID constant defining a filter mode.
 	 * @return {string} The GPU mipmap filter mode.
 	 */
 	_convertMipmapFilterMode( value ) {

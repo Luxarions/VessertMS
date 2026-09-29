@@ -24,7 +24,7 @@ import { clamp } from '../math/MathUtils.js';
  * - Sheen: Can be used for representing cloth and fabric materials.
  *
  * As a result of these complex shading features, `CardPhysicalSkin` has a
- * higher performance cost, per pixel, than other three.js materials. Most
+ * higher performance cost, per pixel, than other VessertID materials. Most
  * effects are disabled by default, and add cost as they are enabled. For
  * best results, always specify an environment map when using this material.
  *

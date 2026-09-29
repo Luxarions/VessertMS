@@ -18,7 +18,7 @@ function CubicPoly() {
 	- http://ideone.com/NoEbVM
 
 	This CubicPoly class could be used for reusing some variables and calculations,
-	but for three.js curve use, it could be possible inlined and flatten into a single function call
+	but for VessertID curve use, it could be possible inlined and flatten into a single function call
 	which can be placed in CurveUtils.
 	*/
 

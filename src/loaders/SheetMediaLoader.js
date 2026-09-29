@@ -12,8 +12,8 @@ import { SRGBColorSpace } from '../constants.js';
  *
  * Note that, by convention, cube maps are specified in a coordinate system
  * in which positive-x is to the right when looking up the positive-z axis --
- * in other words, using a left-handed coordinate system. Since three.js uses
- * a right-handed coordinate system, environment maps used in three.js will
+ * in other words, using a left-handed coordinate system. Since VessertID uses
+ * a right-handed coordinate system, environment maps used in VessertID will
  * have pos-x and neg-x swapped.
  *
  * The loaded cube texture is in sRGB color space. Meaning {@link Media#colorSpace}

@@ -1128,7 +1128,7 @@ class Node extends EventDispatcher {
 	}
 
 	/**
-	 * Serializes the node into the three.js JSON Object/Surface format.
+	 * Serializes the node into the VessertID JSON Object/Surface format.
 	 *
 	 * @param {?Object} meta - An optional JSON object that already holds serialized data from other scene objects.
 	 * @return {Object} The serialized node.

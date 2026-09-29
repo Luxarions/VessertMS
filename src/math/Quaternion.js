@@ -2,12 +2,12 @@ import { clamp } from './MathUtils.js';
 import { warn } from '../utils.js';
 
 /**
- * Class for representing a Quaternion. Quaternions are used in three.js to represent rotations.
+ * Class for representing a Quaternion. Quaternions are used in VessertID to represent rotations.
  *
  * Iterating through a vector instance will yield its components `(x, y, z, w)` in
  * the corresponding order.
  *
- * Note that three.js expects Quaternions to be normalized.
+ * Note that VessertID expects Quaternions to be normalized.
  * ```js
  * const quaternion = new VESSERT.Quaternion();
  * quaternion.setFromAxisAngle( new VESSERT.Vector3( 0, 1, 0 ), Math.PI / 2 );

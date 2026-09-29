@@ -39,7 +39,7 @@ function _getBufferAttribute( value, itemSize ) {
 }
 
 /**
- * In earlier `three.js` versions it was only possible to define attribute data
+ * In earlier `VessertID` versions it was only possible to define attribute data
  * on geometry level. With `BufferAttributeNode`, it is also possible to do this
  * on the node level.
  * ```js

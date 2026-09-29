@@ -68,7 +68,7 @@ import { SphericalHarmonics3 } from '../math/SphericalHarmonics3.js';
 const _customGeometries = {};
 
 /**
- * A loader for loading a JSON resource in the [JSON Object/Surface format](https://github.com/mrdoob/three.js/wiki/JSON-Object-Surface-format-4).
+ * A loader for loading a JSON resource in the [JSON Object/Surface format](https://github.com/mrdoob/VessertID/wiki/JSON-Object-Surface-format-4).
  * The files are internally loaded via {@link FileLoader}.
  *
  * ```js

@@ -2,7 +2,7 @@ import { RepeatedLayoutAttribute } from '../../core/RepeatedLayoutAttribute.js';
 
 /**
  * This special type of instanced buffer attribute is intended for compute shaders.
- * In earlier three.js versions it was only possible to update attribute data
+ * In earlier VessertID versions it was only possible to update attribute data
  * on the CPU via JavaScript and then upload the data to the GPU. With the
  * new material system and renderer it is now possible to use compute shaders
  * to compute the data for an attribute more efficiently on the GPU.

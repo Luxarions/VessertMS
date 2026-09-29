@@ -52,7 +52,7 @@ export * from './utils/SampleNode.js';
 export * from './utils/EventNode.js';
 export * from './utils/StorageArrayElementNode.js';
 
-// three.js shading language
+// VessertID shading language
 export * from './tsl/TSLBase.js';
 
 // accessors

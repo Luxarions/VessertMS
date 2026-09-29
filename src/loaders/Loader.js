@@ -61,9 +61,9 @@ class Loader {
 		 */
 		this.requestHeader = {};
 
-		if ( typeof __THREE_DEVTOOLS__ !== 'undefined' ) {
+		if ( typeof __VESSERT_DEVTOOLS__ !== 'undefined' ) {
 
-			__THREE_DEVTOOLS__.dispatchEvent( new CustomEvent( 'observe', { detail: this } ) );
+			__VESSERT_DEVTOOLS__.dispatchEvent( new CustomEvent( 'observe', { detail: this } ) );
 
 		}
 
@@ -102,7 +102,7 @@ class Loader {
 
 	/**
 	 * This method needs to be implemented by all concrete loaders. It holds the
-	 * logic for parsing the asset into three.js entities.
+	 * logic for parsing the asset into VessertID entities.
 	 *
 	 * @abstract
 	 * @param {any} data - The data to parse.

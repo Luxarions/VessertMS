@@ -397,7 +397,7 @@ class VessertID {
 			};
 
 			// OffscreenCanvas does not have setAttribute, see #22811
-			if ( 'setAttribute' in canvas ) canvas.setAttribute( 'data-engine', `three.js r${REVISION}` );
+			if ( 'setAttribute' in canvas ) canvas.setAttribute( 'data-engine', `VessertID r${REVISION}` );
 
 			// event listeners must be registered before Vessert context is created, see #12753
 			canvas.addEventListener( 'webglcontextlost', onContextLost, false );
@@ -2622,7 +2622,7 @@ class VessertID {
 
 				}
 
-				// consider moving isOrthographic to UniformLib and WebGLMaterials, see https://github.com/mrdoob/three.js/pull/26467#issuecomment-1645185067
+				// consider moving isOrthographic to UniformLib and WebGLMaterials, see https://github.com/mrdoob/VessertID/pull/26467#issuecomment-1645185067
 
 				if ( material.isMeshPhongMaterial ||
 					material.isMeshToonMaterial ||
@@ -3632,9 +3632,9 @@ class VessertID {
 
 		};
 
-		if ( typeof __THREE_DEVTOOLS__ !== 'undefined' ) {
+		if ( typeof __VESSERT_DEVTOOLS__ !== 'undefined' ) {
 
-			__THREE_DEVTOOLS__.dispatchEvent( new CustomEvent( 'observe', { detail: this } ) );
+			__VESSERT_DEVTOOLS__.dispatchEvent( new CustomEvent( 'observe', { detail: this } ) );
 
 		}
 

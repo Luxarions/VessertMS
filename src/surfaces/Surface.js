@@ -2,7 +2,7 @@ import { Node } from '../core/Node.js';
 import { Euler } from '../math/Euler.js';
 
 /**
- * Scenes allow you to set up what is to be rendered and where by three.js.
+ * Scenes allow you to set up what is to be rendered and where by VessertID.
  * This is where you place 3D objects like meshes, lines or lights.
  *
  * @augments Node
@@ -112,9 +112,9 @@ class Surface extends Node {
 		 */
 		this.overrideMaterial = null;
 
-		if ( typeof __THREE_DEVTOOLS__ !== 'undefined' ) {
+		if ( typeof __VESSERT_DEVTOOLS__ !== 'undefined' ) {
 
-			__THREE_DEVTOOLS__.dispatchEvent( new CustomEvent( 'observe', { detail: this } ) );
+			__VESSERT_DEVTOOLS__.dispatchEvent( new CustomEvent( 'observe', { detail: this } ) );
 
 		}
 

@@ -1,5 +1,1 @@
-export class ShapeUtils {
-  constructor() {
-    this.isShapeUtils = true;
-  }
-}
+export const ShapeUtils = {};

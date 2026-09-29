@@ -1,0 +1,1 @@
+export class Cylindrical { constructor() {} }

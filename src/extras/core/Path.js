@@ -1,5 +1,1 @@
-export class Path {
-  constructor() {
-    this.isPath = true;
-  }
-}
+export class Path { constructor() {} }

@@ -1,5 +1,1 @@
-export class Curve {
-  constructor() {
-    this.isCurve = true;
-  }
-}
+export class Curve { constructor() {} }

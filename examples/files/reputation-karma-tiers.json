@@ -1,0 +1,29 @@
+{
+  "tiers": [
+    {
+      "name": "Newcomer",
+      "min_karma": 0,
+      "badge": null,
+      "can_create_community": false
+    },
+    {
+      "name": "Contributor",
+      "min_karma": 500,
+      "badge": "badge-contributor",
+      "can_create_community": false
+    },
+    {
+      "name": "Pillar",
+      "min_karma": 2500,
+      "badge": "badge-top-contributor",
+      "can_create_community": true
+    },
+    {
+      "name": "Luminary",
+      "min_karma": 10000,
+      "badge": "badge-founder",
+      "can_create_community": true,
+      "moderator_eligibility": true
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "profile": "decay-live-stream-dropoff",
+  "concurrent_viewer_decay_threshold_sec": 30,
+  "realtime_ping_interval_ms": 2000
+}

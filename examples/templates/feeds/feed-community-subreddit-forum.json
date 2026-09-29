@@ -1,0 +1,9 @@
+{
+  "layout": "threaded_ranking",
+  "sortModes": [
+    "Hot",
+    "New",
+    "Top",
+    "Rising"
+  ]
+}

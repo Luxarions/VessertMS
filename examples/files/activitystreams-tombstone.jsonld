@@ -1,0 +1,7 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "https://vessert.network/posts/deleted-post-404",
+  "type": "Tombstone",
+  "formerType": "Note",
+  "deleted": "2026-09-29T12:45:00Z"
+}

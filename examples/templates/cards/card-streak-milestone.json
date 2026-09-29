@@ -1,0 +1,6 @@
+{
+  "template": "CardStreakMilestone",
+  "streakDays": 100,
+  "fireAnimation": true,
+  "shareAchievementAction": true
+}

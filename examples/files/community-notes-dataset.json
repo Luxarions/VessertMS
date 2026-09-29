@@ -1,0 +1,16 @@
+{
+  "notes": [
+    {
+      "note_id": "cn_8801",
+      "target_post_id": "p_9001",
+      "status": "CURRENTLY_RATED_HELPFUL",
+      "summary": "Konteks tambahan: Pengujian menunjukkan efisiensi rendering GPU VessertID meningkat 4.8x dibandingkan manipulasi DOM murni.",
+      "ratings_helpful": 1420,
+      "ratings_not_helpful": 34,
+      "sources": [
+        "https://github.com/Luxarions/VessertMS",
+        "https://github.com/luxarionadm-design/VessertID"
+      ]
+    }
+  ]
+}

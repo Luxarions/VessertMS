@@ -1,0 +1,14 @@
+{
+  "template": "CardStoryEphemeral",
+  "aspectRatio": "9:16",
+  "progressBars": {
+    "totalSegments": 4,
+    "activeSegment": 2,
+    "durationPerSegmentSec": 5
+  },
+  "overlayStickers": [
+    "poll",
+    "location",
+    "mention"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "template": "CardCreatorTipJar",
+  "presetAmounts": [
+    1,
+    5,
+    10,
+    20,
+    50
+  ],
+  "customMessageAllowed": true,
+  "cryptoOptions": [
+    "USDC",
+    "ETH"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "https://vessert.network/activities/ann-9901",
+  "type": "Announce",
+  "actor": "https://vessert.network/u/bayu",
+  "published": "2026-09-29T12:30:00Z",
+  "object": "https://mastodon.social/users/developer/statuses/11234567890",
+  "to": [
+    "https://www.w3.org/ns/activitystreams#Public"
+  ],
+  "cc": [
+    "https://vessert.network/u/bayu/followers"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "template": "CardLiveStreamHero",
+  "livePill": {
+    "status": "LIVE",
+    "color": "#ef4444",
+    "pulse": true
+  },
+  "viewerCountLive": true,
+  "floatingChatPreview": {
+    "lines": 3,
+    "opacity": 0.85
+  },
+  "directJoinAction": true
+}

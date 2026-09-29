@@ -1,0 +1,24 @@
+{
+  "labels": {
+    "nsfw": {
+      "severity": "filter_strict",
+      "blur_sigma": 32,
+      "warning_title": "Konten Dewasa"
+    },
+    "spoiler": {
+      "severity": "tap_to_reveal",
+      "blur_sigma": 20,
+      "warning_title": "Mengandung Spoiler Cerita"
+    },
+    "sensitive": {
+      "severity": "warn_interstitial",
+      "blur_sigma": 24,
+      "warning_title": "Konten Sensitif / Peringatan Pemicu"
+    },
+    "fact_check_disputed": {
+      "severity": "badge_overlay",
+      "color": "#f59e0b",
+      "label": "Informasi Dipertanyakan"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "template": "CardPredictionTournament",
+  "question": "Apakah WebGPU akan menggantikan WebGL sepenuhnya di 2027?",
+  "options": [
+    {
+      "id": "a",
+      "label": "Ya (1.4x)",
+      "pool": 7400
+    },
+    {
+      "id": "b",
+      "label": "Tidak (2.8x)",
+      "pool": 2600
+    }
+  ],
+  "lockTimeRemainingSec": 3600
+}

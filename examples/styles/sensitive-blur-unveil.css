@@ -1,0 +1,1 @@
+.v-sensitive-blurred{filter:blur(24px);transition:filter 400ms ease;pointer-events:none} .v-sensitive-revealed{filter:blur(0);pointer-events:auto}

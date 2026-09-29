@@ -1,0 +1,6 @@
+{
+  "template": "CardSensitiveContentWarning",
+  "blurUnderlay": true,
+  "warningReason": "Grafis sensitif / batasan usia",
+  "revealButtonLabel": "Tampilkan Konten"
+}

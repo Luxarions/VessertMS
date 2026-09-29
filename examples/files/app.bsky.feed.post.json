@@ -1,0 +1,45 @@
+{
+  "$type": "app.bsky.feed.post",
+  "text": "Selamat datang di ekosistem VessertID: rendering graf konten sosial masa depan dengan akselerasi GPU murni! 🚀 #VessertID #SocialGraph",
+  "createdAt": "2026-09-29T12:00:00.000Z",
+  "facets": [
+    {
+      "index": {
+        "byteStart": 89,
+        "byteEnd": 99
+      },
+      "features": [
+        {
+          "$type": "app.bsky.richtext.facet#tag",
+          "tag": "VessertID"
+        }
+      ]
+    },
+    {
+      "index": {
+        "byteStart": 100,
+        "byteEnd": 113
+      },
+      "features": [
+        {
+          "$type": "app.bsky.richtext.facet#tag",
+          "tag": "SocialGraph"
+        }
+      ]
+    }
+  ],
+  "langs": [
+    "id",
+    "en"
+  ],
+  "reply": {
+    "root": {
+      "uri": "at://did:plc:vessertarch101/app.bsky.feed.post/3kabcde",
+      "cid": "bafyreib2345"
+    },
+    "parent": {
+      "uri": "at://did:plc:vessertarch101/app.bsky.feed.post/3kabcde",
+      "cid": "bafyreib2345"
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "layout": "bottom_pinned_stream",
+  "maxBufferedNodes": 500,
+  "virtualList": true
+}

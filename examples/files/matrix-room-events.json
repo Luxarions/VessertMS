@@ -1,0 +1,33 @@
+{
+  "chunk": [
+    {
+      "type": "m.room.member",
+      "state_key": "@gisella:vessert.im",
+      "content": {
+        "membership": "join",
+        "displayname": "Gisella Ambar",
+        "avatar_url": "mxc://vessert.im/avatar2"
+      }
+    },
+    {
+      "type": "m.room.message",
+      "sender": "@bayu:vessert.im",
+      "content": {
+        "msgtype": "m.text",
+        "body": "Shader chunk .css.js telah bersih 100% dan terhubung ke pipeline GPU."
+      },
+      "origin_server_ts": 1790684000000
+    },
+    {
+      "type": "m.reaction",
+      "sender": "@gisella:vessert.im",
+      "content": {
+        "m.relates_to": {
+          "rel_type": "m.annotation",
+          "event_id": "$evt101",
+          "key": "🔥"
+        }
+      }
+    }
+  ]
+}

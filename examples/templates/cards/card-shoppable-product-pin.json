@@ -1,0 +1,13 @@
+{
+  "template": "CardShoppableProductPin",
+  "productTags": [
+    {
+      "x_ratio": 0.42,
+      "y_ratio": 0.65,
+      "name": "Vessert Cyber Sneaker",
+      "price": "$120.00",
+      "currency": "USD"
+    }
+  ],
+  "oneTapBuyAction": true
+}

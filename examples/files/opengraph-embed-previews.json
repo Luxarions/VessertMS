@@ -1,0 +1,9 @@
+{
+  "https://vessert.network": {
+    "og:title": "VessertID — Universal Social Content Graph Rendering Engine",
+    "og:description": "High-performance GPU-accelerated rendering library designed specifically for social platforms.",
+    "og:image": "https://vessert.network/og-card.png",
+    "og:type": "website",
+    "twitter:card": "summary_large_image"
+  }
+}

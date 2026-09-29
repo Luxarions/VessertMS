@@ -1,0 +1,8 @@
+{
+  "type": "poll",
+  "options": [
+    "Opsi 1",
+    "Opsi 2"
+  ],
+  "borderRadius": 24
+}

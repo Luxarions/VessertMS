@@ -1,0 +1,15 @@
+{
+  "feed": "Feed",
+  "explore": "Explore",
+  "notifications": "Notifications",
+  "like": "Like",
+  "reply": "Reply",
+  "repost": "Repost",
+  "bookmark": "Bookmark",
+  "verified_account": "Verified Account",
+  "sensitive_content": "Sensitive Content",
+  "live_now": "LIVE",
+  "creator_membership": "Creator Membership",
+  "streak_days": "{count} Day Streak",
+  "community_notes": "Community Notes"
+}

@@ -1,0 +1,9 @@
+{
+  "$type": "app.bsky.actor.profile",
+  "displayName": "Bayu & Gisella (VessertID Core)",
+  "description": "Architects of the VessertID Open Social Rendering Engine.",
+  "avatar": "at://did:plc:vessert123/app.bsky.actor.profile/self/avatar.png",
+  "banner": "at://did:plc:vessert123/app.bsky.actor.profile/self/banner.png",
+  "joinedViaInvite": "at://did:plc:luxarions",
+  "pinnedPost": "at://did:plc:vessert123/app.bsky.feed.post/3kz456"
+}

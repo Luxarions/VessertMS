@@ -1,0 +1,15 @@
+{
+  "feed": "Beranda",
+  "explore": "Jelajahi",
+  "notifications": "Notifikasi",
+  "like": "Suka",
+  "reply": "Balas",
+  "repost": "Bagikan Ulang",
+  "bookmark": "Simpan",
+  "verified_account": "Akun Terverifikasi",
+  "sensitive_content": "Konten Sensitif",
+  "live_now": "Sedang Siaran Langsung",
+  "creator_membership": "Langganan Kreator",
+  "streak_days": "{count} Hari Beruntun",
+  "community_notes": "Catatan Komunitas"
+}

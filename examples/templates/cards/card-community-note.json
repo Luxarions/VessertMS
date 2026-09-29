@@ -1,0 +1,11 @@
+{
+  "template": "CardCommunityNote",
+  "bannerIcon": "info_shield",
+  "statusIndicator": "HELPFUL",
+  "ratingPrompt": [
+    "Is this helpful?",
+    "Yes",
+    "No"
+  ],
+  "citationLinks": true
+}

@@ -1,0 +1,13 @@
+{
+  "template": "CardAudioSpacesRoom",
+  "speakersStage": {
+    "maxVisible": 8,
+    "talkingGlow": "#22c55e",
+    "muteIndicators": true
+  },
+  "listenerBubbleGrid": {
+    "maxVisible": 16
+  },
+  "stageTitle": "Arsitektur VessertID v4.0 & WebGPU Social Graph",
+  "raiseHandButton": true
+}

@@ -1,0 +1,17 @@
+{
+  "model": "vessert-text-social-v1",
+  "dimensions": 768,
+  "sample_vector_preview": [
+    0.042,
+    -0.128,
+    0.089,
+    0.312,
+    -0.054,
+    0.177
+  ],
+  "cluster_labels": [
+    "software_architecture",
+    "social_media_engineering",
+    "gpu_graphics_systems"
+  ]
+}

@@ -1,0 +1,1 @@
+@keyframes v-rainbow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}} .v-superchat-banner{background:linear-gradient(90deg,#f43f5e,#ec4899,#8b5cf6,#3b82f6);background-size:300% 300%;animation:v-rainbow 4s ease infinite;color:#fff}

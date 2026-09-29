@@ -1,0 +1,56 @@
+{
+  "vendor": "Vessert Creator Payout Engine",
+  "version": "2026.3",
+  "currency_default": "USD",
+  "payout_threshold_minimum": 50,
+  "payout_schedule": "net_30",
+  "revenue_share_splits": {
+    "standard_creator": {
+      "creator_share": 0.55,
+      "platform_share": 0.45
+    },
+    "partner_tier_1": {
+      "creator_share": 0.7,
+      "platform_share": 0.3
+    },
+    "luminary_partner": {
+      "creator_share": 0.85,
+      "platform_share": 0.15
+    },
+    "direct_tip_jar": {
+      "creator_share": 0.95,
+      "platform_share": 0.05
+    }
+  },
+  "subscription_tier_prices": {
+    "tier_1_supporter": 4.99,
+    "tier_2_superfan": 9.99,
+    "tier_3_patron": 24.99,
+    "tier_custom_enterprise": 99.99
+  },
+  "microtransaction_gems_conversion": {
+    "gem_unit_value_usd": 0.01,
+    "packs": [
+      {
+        "gems": 100,
+        "price_usd": 0.99,
+        "bonus_gems": 0
+      },
+      {
+        "gems": 550,
+        "price_usd": 4.99,
+        "bonus_gems": 50
+      },
+      {
+        "gems": 1200,
+        "price_usd": 9.99,
+        "bonus_gems": 200
+      },
+      {
+        "gems": 6500,
+        "price_usd": 49.99,
+        "bonus_gems": 1500
+      }
+    ]
+  }
+}

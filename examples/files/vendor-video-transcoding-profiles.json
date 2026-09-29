@@ -1,0 +1,57 @@
+{
+  "transcoder": "VessertMediaStreamEngine",
+  "chunk_duration_seconds": 2,
+  "hls_target_duration": 3,
+  "gop_size_frames": 60,
+  "ladders": [
+    {
+      "name": "1080p60_hdr",
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "bitrate_kbps": 6500,
+      "audio_kbps": 192,
+      "codec": "av01"
+    },
+    {
+      "name": "1080p30",
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "bitrate_kbps": 4200,
+      "audio_kbps": 128,
+      "codec": "h264"
+    },
+    {
+      "name": "720p30",
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "bitrate_kbps": 2200,
+      "audio_kbps": 128,
+      "codec": "h264"
+    },
+    {
+      "name": "480p30",
+      "width": 480,
+      "height": 854,
+      "fps": 30,
+      "bitrate_kbps": 1100,
+      "audio_kbps": 96,
+      "codec": "h264"
+    },
+    {
+      "name": "360p24",
+      "width": 360,
+      "height": 640,
+      "fps": 24,
+      "bitrate_kbps": 500,
+      "audio_kbps": 64,
+      "codec": "h264"
+    }
+  ],
+  "abr_switching_buffer_thresholds_sec": {
+    "emergency_drop_buffer": 1.5,
+    "stable_upshift_buffer": 6
+  }
+}

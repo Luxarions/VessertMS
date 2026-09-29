@@ -1,0 +1,21 @@
+{
+  "ad_engine": "VessertAdBidAuction",
+  "auction_type": "second_price_vickrey_clarke_groves",
+  "target_ctr_benchmark": 0.0185,
+  "slot_frequency_rules": {
+    "first_ad_index_in_feed": 4,
+    "ad_spacing_interval": 6,
+    "max_consecutive_sponsored": 1
+  },
+  "cpm_floor_rates_usd": {
+    "tier_1_countries_us_ca_uk": 12.5,
+    "tier_2_countries_eu_jp_au": 8.2,
+    "tier_3_countries_id_br_in": 3.4,
+    "global_rest": 1.8
+  },
+  "quality_score_weights": {
+    "historical_ad_ctr": 0.45,
+    "landing_page_dwell_time": 0.3,
+    "relevance_embedding_similarity": 0.25
+  }
+}

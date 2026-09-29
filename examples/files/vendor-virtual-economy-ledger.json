@@ -1,0 +1,40 @@
+{
+  "economy_name": "Vessert Karma & Spark Points",
+  "xp_actions": {
+    "publish_post": 15,
+    "receive_like": 5,
+    "receive_thoughtful_reply": 25,
+    "receive_boost_repost": 30,
+    "daily_streak_continuation": 50,
+    "seven_day_streak_bonus": 350,
+    "thirty_day_streak_trophy": 2500,
+    "approved_community_note": 100
+  },
+  "level_thresholds": [
+    {
+      "level": 1,
+      "title": "Initiate",
+      "xp_required": 0
+    },
+    {
+      "level": 5,
+      "title": "Scribe",
+      "xp_required": 1000
+    },
+    {
+      "level": 10,
+      "title": "Artisan",
+      "xp_required": 5000
+    },
+    {
+      "level": 25,
+      "title": "Pillar",
+      "xp_required": 25000
+    },
+    {
+      "level": 50,
+      "title": "Luminary",
+      "xp_required": 100000
+    }
+  ]
+}

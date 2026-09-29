@@ -1,0 +1,35 @@
+{
+  "model_name": "VessertHeavyRanker_v4",
+  "scoring_weights": {
+    "engagement_positive": {
+      "tap_like": 0.5,
+      "repost_pure": 1,
+      "repost_with_quote": 2.5,
+      "reply_author_responds": 13.5,
+      "reply_standard": 2.2,
+      "bookmark_save": 3,
+      "dwell_time_gt_10s": 4,
+      "dwell_time_gt_30s": 8.5,
+      "profile_visit_from_post": 6,
+      "share_to_external_app": 5
+    },
+    "engagement_negative": {
+      "not_interested_click": -25,
+      "mute_author": -74,
+      "block_author": -150,
+      "report_spam": -369,
+      "rapid_scroll_past": -2
+    },
+    "graph_multipliers": {
+      "in_network_author": 1,
+      "out_of_network_author": 0.35,
+      "mutual_follow_bonus": 1.8,
+      "recent_interaction_decay_half_life_days": 14
+    }
+  },
+  "candidate_generation_limits": {
+    "in_network_pool_size": 800,
+    "out_of_network_pool_size": 700,
+    "final_reranked_feed_size": 150
+  }
+}

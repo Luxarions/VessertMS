@@ -1,0 +1,7 @@
+event_id,session_id,user_id,card_id,event_type,dwell_time_ms,scroll_velocity_pps,viewport_ratio,click_x,click_y,device_pixel_ratio,timestamp
+evt_901,sess_a1,u_101,card_post_standard,impression,5400,120.5,1.0,,,3.0,1790684100120
+evt_902,sess_a1,u_101,card_post_standard,double_tap_like,1200,0.0,1.0,184,320,3.0,1790684101320
+evt_903,sess_a2,u_205,card_media_carousel,sheet_swipe_next,8200,45.2,1.0,310,215,2.6,1790684102450
+evt_904,sess_a3,u_309,card_poll_interactive,poll_vote_option_a,3100,0.0,0.92,140,480,2.0,1790684103100
+evt_905,sess_a4,u_412,card_quote_repost,quote_expand,4100,18.0,0.85,220,190,3.0,1790684104050
+evt_906,sess_a5,u_520,card_audio_spaces_room,join_stage_listener,184000,0.0,1.0,200,600,3.0,1790684288050

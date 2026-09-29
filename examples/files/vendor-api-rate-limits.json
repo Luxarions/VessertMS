@@ -1,0 +1,28 @@
+{
+  "gateway": "VessertSocialGateway_v1",
+  "websocket_heartbeat_interval_ms": 41250,
+  "gateway_max_payload_bytes": 4096,
+  "sliding_window_seconds": 900,
+  "tiers": {
+    "guest_unauthenticated": {
+      "requests_per_window": 150,
+      "writes_per_hour": 0
+    },
+    "authenticated_user_free": {
+      "requests_per_window": 1500,
+      "writes_per_hour": 60
+    },
+    "developer_api_pro": {
+      "requests_per_window": 30000,
+      "writes_per_hour": 3600
+    },
+    "enterprise_partner": {
+      "requests_per_window": 1000000,
+      "writes_per_hour": 100000
+    }
+  },
+  "burst_allowance_token_bucket": {
+    "capacity": 50,
+    "refill_rate_per_sec": 5
+  }
+}

@@ -39,7 +39,7 @@ import {
 	UnsignedInt101111Type, RGBA_BPTC_Format, RGB_BPTC_SIGNED_Format, RGB_BPTC_UNSIGNED_Format, RGB_ETC1_Format, RGB_S3TC_DXT1_Format, RED_RGTC1_Format, SIGNED_RED_RGTC1_Format, RED_GREEN_RGTC2_Format,
 	SIGNED_RED_GREEN_RGTC2_Format, R11_EAC_Format, SIGNED_R11_EAC_Format, RG11_EAC_Format, SIGNED_RG11_EAC_Format,
 	Compatibility
-} from '../../../constants.js';
+} from '../../../Constants.js';
 import { SheetMedia } from '../../../media/SheetMedia.js';
 import { Media } from '../../../media/Media.js';
 import { warn, error } from '../../../utils.js';

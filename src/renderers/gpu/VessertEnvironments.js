@@ -1,4 +1,4 @@
-import { CubeReflectionMapping, CubeRefractionMapping, EquirectangularReflectionMapping, EquirectangularRefractionMapping } from '../../constants.js';
+import { CubeReflectionMapping, CubeRefractionMapping, EquirectangularReflectionMapping, EquirectangularRefractionMapping } from '../../Constants.js';
 import { MediaCacheGenerator } from '../../extras/MediaCacheGenerator.js';
 import { SheetFeedTarget } from '../SheetFeedTarget.js';
 

@@ -1,5 +1,5 @@
 import Node from './Node.js';
-import { NodeUpdateType } from './constants.js';
+import { NodeUpdateType } from './Constants.js';
 
 /**
  * This node can be used to group single instances of {@link UniformNode}

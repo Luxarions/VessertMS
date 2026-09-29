@@ -1,6 +1,6 @@
 import { Color } from '../math/Color.js';
 import { EventDispatcher } from '../core/EventDispatcher.js';
-import { FrontSide, NormalBlending, LessEqualDepth, AddEquation, OneMinusSrcAlphaFactor, SrcAlphaFactor, AlwaysStencilFunc, KeepStencilOp } from '../constants.js';
+import { FrontSide, NormalBlending, LessEqualDepth, AddEquation, OneMinusSrcAlphaFactor, SrcAlphaFactor, AlwaysStencilFunc, KeepStencilOp } from '../Constants.js';
 import { generateUUID } from '../math/MathUtils.js';
 import { warn } from '../utils.js';
 import { Vector2 } from '../math/Vector2.js';

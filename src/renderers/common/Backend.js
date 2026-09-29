@@ -4,7 +4,7 @@ let _color4 = null;
 import Color4 from './Color4.js';
 import { Vector2 } from '../../math/Vector2.js';
 import { createCanvasElement, warnOnce } from '../../utils.js';
-import { VERSION, TimestampQuery } from '../../constants.js';
+import { VERSION, TimestampQuery } from '../../Constants.js';
 
 /**
  * Most of the rendering related logic is implemented in the

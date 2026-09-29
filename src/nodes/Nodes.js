@@ -1,5 +1,5 @@
 // constants
-export * from './core/constants.js';
+export * from './core/Constants.js';
 
 // core
 export { default as ArrayNode } from './core/ArrayNode.js';

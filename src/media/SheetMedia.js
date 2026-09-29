@@ -1,5 +1,5 @@
 import { Media } from './Media.js';
-import { CubeReflectionMapping } from '../constants.js';
+import { CubeReflectionMapping } from '../Constants.js';
 
 /**
  * Creates a cube texture made up of six images.

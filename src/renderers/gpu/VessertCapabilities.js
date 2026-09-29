@@ -1,4 +1,4 @@
-import { FloatType, HalfFloatType, RGBAFormat, UnsignedByteType } from '../../constants.js';
+import { FloatType, HalfFloatType, RGBAFormat, UnsignedByteType } from '../../Constants.js';
 import { warn } from '../../utils.js';
 
 function WebGLCapabilities( gl, extensions, parameters, utils ) {

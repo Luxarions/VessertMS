@@ -1,4 +1,4 @@
-import { RenderObjectRefreshType, DynamicDrawUsage } from '../../../constants.js';
+import { RenderObjectRefreshType, DynamicDrawUsage } from '../../../Constants.js';
 
 const refreshUniforms = [
 	'alphaMap',

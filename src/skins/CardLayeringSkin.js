@@ -1,5 +1,5 @@
 import { Skin } from './Skin.js';
-import { BasicDepthPacking } from '../constants.js';
+import { BasicDepthPacking } from '../Constants.js';
 
 /**
  * A material for drawing geometry by depth. Depth is based off of the camera

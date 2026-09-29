@@ -1,7 +1,7 @@
 import Node from './Node.js';
 import InspectorBase from '../../renderers/common/InspectorBase.js';
 import { addMethodChaining, nodeObject } from '../tsl/TSLCore.js';
-import { NodeUpdateType } from './constants.js';
+import { NodeUpdateType } from './Constants.js';
 import { warnOnce } from '../../utils.js';
 
 /**

@@ -7,7 +7,7 @@ import { NodeFrame, NodeUpdateType, StackTrace } from '../../../nodes/Nodes.js';
 import { renderGroup, cubeTexture, texture, fog, rangeFogFactor, densityFogFactor, reference, pmremTexture, screenUV, uniform } from '../../../nodes/VSL.js';
 import { builtin } from '../../../nodes/accessors/BuiltinNode.js';
 
-import { CubeUVReflectionMapping, EquirectangularReflectionMapping, EquirectangularRefractionMapping } from '../../../constants.js';
+import { CubeUVReflectionMapping, EquirectangularReflectionMapping, EquirectangularRefractionMapping } from '../../../Constants.js';
 import { hashArray } from '../../../nodes/core/NodeUtils.js';
 import { error } from '../../../utils.js';
 

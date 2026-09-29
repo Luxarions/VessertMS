@@ -1,5 +1,5 @@
 import StorageBuffer from '../StorageBuffer.js';
-import { NodeAccess } from '../../../nodes/core/constants.js';
+import { NodeAccess } from '../../../nodes/core/Constants.js';
 
 let _id = 0;
 

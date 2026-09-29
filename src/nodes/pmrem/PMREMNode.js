@@ -2,10 +2,10 @@ import TempNode from '../core/TempNode.js';
 import { texture } from '../accessors/TextureNode.js';
 import { textureCubeUV } from './PMREMUtils.js';
 import { uniform } from '../core/UniformNode.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { nodeProxy, vec3 } from '../tsl/TSLBase.js';
 
-import { CubeUVReflectionMapping } from '../../constants.js';
+import { CubeUVReflectionMapping } from '../../Constants.js';
 import { Media } from '../../media/Media.js';
 import MediaCacheGenerator from '../../renderers/common/extras/MediaCacheGenerator.js';
 import { materialEnvRotation } from '../accessors/MaterialProperties.js';

@@ -1,4 +1,4 @@
-import { ClampToEdgeWrapping } from '../constants.js';
+import { ClampToEdgeWrapping } from '../Constants.js';
 import { CompressedMedia } from './CompressedMedia.js';
 
 /**

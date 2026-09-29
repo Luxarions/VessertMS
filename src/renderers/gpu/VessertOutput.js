@@ -9,7 +9,7 @@ import {
 	CustomToneMapping,
 	SRGBTransfer,
 	HalfFloatType
-} from '../../constants.js';
+} from '../../Constants.js';
 import { Layout } from '../../core/Layout.js';
 import { Float32BufferAttribute } from '../../core/LayoutAttribute.js';
 import { RawTemplateSkin } from '../../skins/RawTemplateSkin.js';

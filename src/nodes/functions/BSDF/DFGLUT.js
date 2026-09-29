@@ -2,7 +2,7 @@ import { Fn, vec2 } from '../../tsl/TSLBase.js';
 import { texture } from '../../accessors/TextureNode.js';
 
 import { DataMedia } from '../../../media/DataMedia.js';
-import { RGFormat, HalfFloatType, LinearFilter, ClampToEdgeWrapping } from '../../../constants.js';
+import { RGFormat, HalfFloatType, LinearFilter, ClampToEdgeWrapping } from '../../../Constants.js';
 
 /**
  * Precomputed DFG LUT for physically based specular lighting, used by both

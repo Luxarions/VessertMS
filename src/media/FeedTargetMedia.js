@@ -1,5 +1,5 @@
 import { Media } from './Media.js';
-import { NearestFilter } from '../constants.js';
+import { NearestFilter } from '../Constants.js';
 
 /**
  * This class can only be used in combination with `copyFramebufferToTexture()` methods

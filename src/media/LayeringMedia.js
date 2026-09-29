@@ -1,6 +1,6 @@
 import { MediaSource } from './MediaSource.js';
 import { Media } from './Media.js';
-import { NearestFilter, UnsignedIntType, DepthFormat, DepthStencilFormat } from '../constants.js';
+import { NearestFilter, UnsignedIntType, DepthFormat, DepthStencilFormat } from '../Constants.js';
 
 /**
  * This class can be used to automatically save the depth information of a

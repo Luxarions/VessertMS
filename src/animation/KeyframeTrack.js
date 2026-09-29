@@ -3,7 +3,7 @@ import {
 	InterpolateSmooth,
 	InterpolateDiscrete,
 	InterpolateBezier
-} from '../constants.js';
+} from '../Constants.js';
 import { CubicInterpolant } from '../math/interpolants/CubicInterpolant.js';
 import { LinearInterpolant } from '../math/interpolants/LinearInterpolant.js';
 import { DiscreteInterpolant } from '../math/interpolants/DiscreteInterpolant.js';

@@ -1,5 +1,5 @@
 import { Media } from './Media.js';
-import { ClampToEdgeWrapping, NearestFilter } from '../constants.js';
+import { ClampToEdgeWrapping, NearestFilter } from '../Constants.js';
 
 /**
  * Creates a three-dimensional texture from raw data, with parameters to

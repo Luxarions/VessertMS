@@ -1,4 +1,4 @@
-import { TangentSpaceNormalMap } from '../constants.js';
+import { TangentSpaceNormalMap } from '../Constants.js';
 import { Skin } from './Skin.js';
 import { Vector2 } from '../math/Vector2.js';
 

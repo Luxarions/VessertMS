@@ -7,7 +7,7 @@ import { Vector2 } from '../../math/Vector2.js';
 import { Vector3 } from '../../math/Vector3.js';
 import { Vector4 } from '../../math/Vector4.js';
 import { WebXRController } from '../webxr/WebXRController.js';
-import { AddEquation, BackSide, CustomBlending, DepthFormat, DepthStencilFormat, FrontSide, RGBAFormat, UnsignedByteType, UnsignedInt248Type, UnsignedIntType, ZeroFactor, LinearFilter } from '../../constants.js';
+import { AddEquation, BackSide, CustomBlending, DepthFormat, DepthStencilFormat, FrontSide, RGBAFormat, UnsignedByteType, UnsignedInt248Type, UnsignedIntType, ZeroFactor, LinearFilter } from '../../Constants.js';
 import { LayeringMedia } from '../../media/LayeringMedia.js';
 import { XRRenderTarget } from './XRRenderTarget.js';
 import { CylinderLayout } from '../../layouts/CylinderLayout.js';

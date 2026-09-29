@@ -7,7 +7,7 @@ import {
 	ConstantColorFactor, OneMinusConstantColorFactor, ConstantAlphaFactor, OneMinusConstantAlphaFactor,
 	NeverDepth, AlwaysDepth, LessDepth, LessEqualDepth, EqualDepth, GreaterEqualDepth, GreaterDepth, NotEqualDepth,
 	MaterialBlending
-} from '../../../constants.js';
+} from '../../../Constants.js';
 import { Color } from '../../../math/Color.js';
 import { Vector4 } from '../../../math/Vector4.js';
 import { error, ReversedDepthFuncs, warnOnce } from '../../../utils.js';

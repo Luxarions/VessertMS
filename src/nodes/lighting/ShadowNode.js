@@ -11,7 +11,7 @@ import { add } from '../math/OperatorNode.js';
 import { LayeringMedia } from '../../media/LayeringMedia.js';
 import { Loop } from '../utils/LoopNode.js';
 import { screenCoordinate } from '../display/ScreenNode.js';
-import { Compatibility, GreaterEqualCompare, HalfFloatType, LessEqualCompare, LinearFilter, NearestFilter, PCFShadowMap, RGFormat, VSMShadowMap } from '../../constants.js';
+import { Compatibility, GreaterEqualCompare, HalfFloatType, LessEqualCompare, LinearFilter, NearestFilter, PCFShadowMap, RGFormat, VSMShadowMap } from '../../Constants.js';
 import { renderGroup } from '../core/UniformGroupNode.js';
 import { viewZToLogarithmicDepth, perspectiveDepthToViewZ, orthographicDepthToViewZ, viewZToOrthographicDepth } from '../display/ViewportDepthNode.js';
 import { lightShadowMatrix } from '../accessors/Lights.js';

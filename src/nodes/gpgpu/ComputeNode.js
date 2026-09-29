@@ -2,7 +2,7 @@ import Node from '../core/Node.js';
 import { instanceIndex } from '../core/IndexNode.js';
 import StackTrace from '../core/StackTrace.js';
 import { uniform } from '../core/UniformNode.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { addMethodChaining, nodeObject } from '../tsl/TSLCore.js';
 import { warn, error } from '../../utils.js';
 

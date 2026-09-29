@@ -9,7 +9,7 @@ import { SheetLens } from '../../lenses/SheetLens.js';
 import { BoxLayout } from '../../layouts/BoxLayout.js';
 import { Card } from '../../objects/Card.js';
 import { SheetMedia } from '../../media/SheetMedia.js';
-import { BackSide, NoBlending, LinearFilter, LinearMipmapLinearFilter } from '../../constants.js';
+import { BackSide, NoBlending, LinearFilter, LinearMipmapLinearFilter } from '../../Constants.js';
 
 /**
  * This class represents a cube render target. It is a special version

@@ -1,6 +1,6 @@
 import LightingModel from '../core/LightingModel.js';
 import { diffuseColor } from '../core/PropertyNode.js';
-import { MultiplyOperation, MixOperation, AddOperation } from '../../constants.js';
+import { MultiplyOperation, MixOperation, AddOperation } from '../../Constants.js';
 import { materialSpecularStrength, materialReflectivity } from '../accessors/MaterialNode.js';
 import { mix } from '../math/MathNode.js';
 import { vec4 } from '../tsl/TSLBase.js';

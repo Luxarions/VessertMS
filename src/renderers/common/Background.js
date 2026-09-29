@@ -5,7 +5,7 @@ import NodeMaterial from '../../skins/nodes/NodeMaterial.js';
 
 import { Card } from '../../objects/Card.js';
 import { SphereLayout } from '../../layouts/SphereLayout.js';
-import { BackSide } from '../../constants.js';
+import { BackSide } from '../../Constants.js';
 import { error } from '../../utils.js';
 
 const _clearColor = /*@__PURE__*/ new Color4();

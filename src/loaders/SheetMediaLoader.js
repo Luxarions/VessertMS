@@ -1,7 +1,7 @@
 import { ImageLoader } from './ImageLoader.js';
 import { SheetMedia } from '../media/SheetMedia.js';
 import { Loader } from './Loader.js';
-import { SRGBColorSpace } from '../constants.js';
+import { SRGBColorSpace } from '../Constants.js';
 
 /**
  * Class for loading cube textures. Images are internally loaded via {@link ImageLoader}.

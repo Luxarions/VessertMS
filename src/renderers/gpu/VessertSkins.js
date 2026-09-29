@@ -1,4 +1,4 @@
-import { BackSide } from '../../constants.js';
+import { BackSide } from '../../Constants.js';
 import { getUnlitUniformColorSpace } from '../shaders/BindingsUtils.js';
 import { Matrix3 } from '../../math/Matrix3.js';
 import { Matrix4 } from '../../math/Matrix4.js';

@@ -13,7 +13,7 @@ import WebGPUCapabilities from './utils/WebGPUCapabilities.js';
 import WebGPUPipelineUtils from './utils/WebGPUPipelineUtils.js';
 import WebGPUTextureUtils from './utils/WebGPUTextureUtils.js';
 
-import { WebGPUCoordinateSystem, TimestampQuery, VERSION, HalfFloatType, Compatibility, CustomBlending } from '../../constants.js';
+import { WebGPUCoordinateSystem, TimestampQuery, VERSION, HalfFloatType, Compatibility, CustomBlending } from '../../Constants.js';
 import { Color } from '../../math/Color.js';
 import WebGPUTimestampQueryPool from './utils/WebGPUTimestampQueryPool.js';
 import { error, warnOnce } from '../../utils.js';

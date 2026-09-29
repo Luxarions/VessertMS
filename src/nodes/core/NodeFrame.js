@@ -1,4 +1,4 @@
-import { NodeUpdateType } from './constants.js';
+import { NodeUpdateType } from './Constants.js';
 
 /**
  * Management class for updating nodes. The module tracks metrics like

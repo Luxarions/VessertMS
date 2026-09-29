@@ -1,7 +1,7 @@
 import {
 	RGBAFormat,
 	FloatType
-} from '../constants.js';
+} from '../Constants.js';
 import { Binding } from './Binding.js';
 import { Matrix4 } from '../math/Matrix4.js';
 import { DataMedia } from '../media/DataMedia.js';

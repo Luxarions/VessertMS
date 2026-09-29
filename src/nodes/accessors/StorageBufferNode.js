@@ -2,7 +2,7 @@ import BufferNode from './BufferNode.js';
 import { bufferAttribute } from './BufferAttributeNode.js';
 import { varying } from '../tsl/TSLBase.js';
 import { storageElement } from '../utils/StorageArrayElementNode.js';
-import { NodeAccess } from '../core/constants.js';
+import { NodeAccess } from '../core/Constants.js';
 import { getTypeFromLength } from '../core/NodeUtils.js';
 
 /**

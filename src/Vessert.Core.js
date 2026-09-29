@@ -1,4 +1,4 @@
-import { VERSION } from './constants.js';
+import { VERSION } from './Constants.js';
 import { warn } from './utils.js';
 
 export { FeedTargetArray } from './renderers/FeedTargetArray.js';
@@ -162,7 +162,7 @@ export { ImageUtils } from './extras/ImageUtils.js';
 export { ShapeUtils } from './extras/ShapeUtils.js';
 export { TextureUtils } from './extras/TextureUtils.js';
 export { createCanvasElement, setConsoleFunction, getConsoleFunction, log, warn, error, warnOnce } from './utils.js';
-export * from './constants.js';
+export * from './Constants.js';
 export * from './Vessert.Legacy.js';
 
 if ( typeof __VESSERT_DEVTOOLS__ !== 'undefined' ) {

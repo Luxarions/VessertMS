@@ -1,6 +1,6 @@
 import { EventDispatcher } from './EventDispatcher.js';
 import { Media } from '../media/Media.js';
-import { LinearFilter } from '../constants.js';
+import { LinearFilter } from '../Constants.js';
 import { Vector4 } from '../math/Vector4.js';
 import { MediaSource } from '../media/MediaSource.js';
 

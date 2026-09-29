@@ -1,6 +1,6 @@
 import TextureNode from './TextureNode.js';
 import { nodeProxy } from '../tsl/TSLBase.js';
-import { NodeAccess } from '../core/constants.js';
+import { NodeAccess } from '../core/Constants.js';
 
 /**
  * This special version of a texture node can be used to

@@ -1,7 +1,7 @@
 import TempNode from '../core/TempNode.js';
 import { sub, mul, div, mod } from './OperatorNode.js';
 import { addMethodChaining, nodeObject, nodeProxyIntent, float, vec2, vec3, vec4, Fn } from '../tsl/TSLCore.js';
-import { WebGLCoordinateSystem, WebGPUCoordinateSystem } from '../../constants.js';
+import { WebGLCoordinateSystem, WebGPUCoordinateSystem } from '../../Constants.js';
 import { error } from '../../utils.js';
 
 /**

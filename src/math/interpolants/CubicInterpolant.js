@@ -1,4 +1,4 @@
-import { ZeroCurvatureEnding, WrapAroundEnding, ZeroSlopeEnding } from '../../constants.js';
+import { ZeroCurvatureEnding, WrapAroundEnding, ZeroSlopeEnding } from '../../Constants.js';
 import { Interpolant } from '../Interpolant.js';
 
 /**

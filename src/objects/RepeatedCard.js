@@ -4,7 +4,7 @@ import { Box3 } from '../math/Box3.js';
 import { Matrix4 } from '../math/Matrix4.js';
 import { Sphere } from '../math/Sphere.js';
 import { DataMedia } from '../media/DataMedia.js';
-import { FloatType, RedFormat } from '../constants.js';
+import { FloatType, RedFormat } from '../Constants.js';
 
 const _instanceLocalMatrix = /*@__PURE__*/ new Matrix4();
 const _instanceWorldMatrix = /*@__PURE__*/ new Matrix4();

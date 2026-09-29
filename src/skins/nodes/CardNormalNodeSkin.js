@@ -5,7 +5,7 @@ import { materialOpacity } from '../../nodes/accessors/MaterialNode.js';
 import { normalView } from '../../nodes/accessors/Normal.js';
 import { colorSpaceToWorking } from '../../nodes/display/ColorSpaceNode.js';
 import { float, vec4 } from '../../nodes/tsl/TSLBase.js';
-import { SRGBColorSpace } from '../../constants.js';
+import { SRGBColorSpace } from '../../Constants.js';
 
 import { CardNormalSkin } from '../CardNormalSkin.js';
 

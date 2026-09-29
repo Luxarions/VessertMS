@@ -9,7 +9,7 @@ import StructType from './StructType.js';
 import FunctionNode from '../code/FunctionNode.js';
 import NodeMaterial from '../../skins/nodes/NodeMaterial.js';
 import { getDataFromObject, getTypeFromLength, getTextureType, hashString } from './NodeUtils.js';
-import { NodeUpdateType, defaultBuildStages, shaderStages } from './constants.js';
+import { NodeUpdateType, defaultBuildStages, shaderStages } from './Constants.js';
 
 import {
 	NumberNodeUniform, Vector2NodeUniform, Vector3NodeUniform, Vector4NodeUniform,
@@ -23,7 +23,7 @@ import SheetFeedTarget from '../../renderers/common/SheetFeedTarget.js';
 
 import BindGroup from '../../renderers/common/BindGroup.js';
 
-import { VERSION, IntType, UnsignedIntType, LinearFilter, LinearMipmapNearestFilter, NearestMipmapLinearFilter, LinearMipmapLinearFilter, NormalBlending } from '../../constants.js';
+import { VERSION, IntType, UnsignedIntType, LinearFilter, LinearMipmapNearestFilter, NearestMipmapLinearFilter, LinearMipmapLinearFilter, NormalBlending } from '../../Constants.js';
 import { FeedTarget } from '../../core/FeedTarget.js';
 import { Color } from '../../math/Color.js';
 import { Vector2 } from '../../math/Vector2.js';

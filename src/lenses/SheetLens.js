@@ -1,4 +1,4 @@
-import { WebGLCoordinateSystem, WebGPUCoordinateSystem } from '../constants.js';
+import { WebGLCoordinateSystem, WebGPUCoordinateSystem } from '../Constants.js';
 import { Node } from '../core/Node.js';
 import { PerspectiveLens } from './PerspectiveLens.js';
 

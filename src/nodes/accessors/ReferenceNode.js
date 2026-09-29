@@ -1,5 +1,5 @@
 import Node from '../core/Node.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { uniform } from '../core/UniformNode.js';
 import { texture } from './TextureNode.js';
 import { cubeTexture } from './CubeTextureNode.js';

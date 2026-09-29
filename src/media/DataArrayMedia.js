@@ -1,5 +1,5 @@
 import { Media } from './Media.js';
-import { ClampToEdgeWrapping, NearestFilter } from '../constants.js';
+import { ClampToEdgeWrapping, NearestFilter } from '../Constants.js';
 
 /**
  * Creates an array of textures directly from raw buffer data.

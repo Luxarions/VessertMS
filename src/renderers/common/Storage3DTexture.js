@@ -1,5 +1,5 @@
 import { Media } from '../../media/Media.js';
-import { LinearFilter, ClampToEdgeWrapping } from '../../constants.js';
+import { LinearFilter, ClampToEdgeWrapping } from '../../Constants.js';
 
 /**
  * This special type of texture is intended for compute shaders.

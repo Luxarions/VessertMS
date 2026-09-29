@@ -11,12 +11,12 @@ import { NodeBuilder, CodeNode } from '../../../nodes/Nodes.js';
 import { getFormat } from '../utils/WebGPUTextureUtils.js';
 
 import WGSLNodeParser from './WGSLNodeParser.js';
-import { NodeAccess } from '../../../nodes/core/constants.js';
+import { NodeAccess } from '../../../nodes/core/Constants.js';
 
 import VarNode from '../../../nodes/core/VarNode.js';
 import ExpressionNode from '../../../nodes/code/ExpressionNode.js';
 
-import { FloatType, RepeatWrapping, ClampToEdgeWrapping, MirroredRepeatWrapping, NearestFilter, Compatibility, ShortType, UnsignedShortType } from '../../../constants.js';
+import { FloatType, RepeatWrapping, ClampToEdgeWrapping, MirroredRepeatWrapping, NearestFilter, Compatibility, ShortType, UnsignedShortType } from '../../../Constants.js';
 import { warn, error } from '../../../utils.js';
 
 import { GPUShaderStage } from '../utils/WebGPUConstants.js';

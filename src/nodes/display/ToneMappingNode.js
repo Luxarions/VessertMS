@@ -2,7 +2,7 @@ import TempNode from '../core/TempNode.js';
 import { addMethodChaining, nodeObject, vec4 } from '../tsl/TSLCore.js';
 import { rendererReference } from '../accessors/RendererReferenceNode.js';
 
-import { NoToneMapping } from '../../constants.js';
+import { NoToneMapping } from '../../Constants.js';
 import { hash } from '../core/NodeUtils.js';
 import { error } from '../../utils.js';
 

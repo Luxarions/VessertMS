@@ -1,7 +1,7 @@
 import DataMap from './DataMap.js';
 import { AttributeType } from './Constants.js';
 
-import { DynamicDrawUsage } from '../../constants.js';
+import { DynamicDrawUsage } from '../../Constants.js';
 
 /**
  * This renderer module manages geometry attributes.

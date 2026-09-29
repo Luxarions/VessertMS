@@ -11,7 +11,7 @@ import { instanceIndex } from '../core/IndexNode.js';
 
 import { RepeatedInterleavedMedia } from '../../core/RepeatedInterleavedMedia.js';
 import { RepeatedLayoutAttribute } from '../../core/RepeatedLayoutAttribute.js';
-import { DynamicDrawUsage } from '../../constants.js';
+import { DynamicDrawUsage } from '../../Constants.js';
 
 const _matrixBuffers = /*@__PURE__*/ new WeakMap();
 const _colorBuffers = /*@__PURE__*/ new WeakMap();

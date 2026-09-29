@@ -1,5 +1,5 @@
 import { nodeObject } from '../tsl/TSLBase.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { getValueType } from '../core/NodeUtils.js';
 import ArrayElementNode from '../utils/ArrayElementNode.js';
 import BufferNode from './BufferNode.js';

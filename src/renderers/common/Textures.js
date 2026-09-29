@@ -2,7 +2,7 @@ import DataMap from './DataMap.js';
 
 import { Vector3 } from '../../math/Vector3.js';
 import { LayeringMedia } from '../../media/LayeringMedia.js';
-import { DepthStencilFormat, DepthFormat, UnsignedIntType, UnsignedInt248Type, UnsignedByteType, SRGBTransfer } from '../../constants.js';
+import { DepthStencilFormat, DepthFormat, UnsignedIntType, UnsignedInt248Type, UnsignedByteType, SRGBTransfer } from '../../Constants.js';
 import { ColorManagement } from '../../math/ColorManagement.js';
 import { warn } from '../../utils.js';
 

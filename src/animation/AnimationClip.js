@@ -7,7 +7,7 @@ import { QuaternionKeyframeTrack } from './tracks/QuaternionKeyframeTrack.js';
 import { StringKeyframeTrack } from './tracks/StringKeyframeTrack.js';
 import { VectorKeyframeTrack } from './tracks/VectorKeyframeTrack.js';
 import { generateUUID } from '../math/MathUtils.js';
-import { NormalAnimationBlendMode } from '../constants.js';
+import { NormalAnimationBlendMode } from '../Constants.js';
 
 /**
  * A reusable set of keyframe tracks which represent an animation.

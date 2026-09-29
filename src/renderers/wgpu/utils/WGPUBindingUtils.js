@@ -3,8 +3,8 @@ import {
 	GPUSamplerBindingType, GPUShaderStage
 } from './WebGPUConstants.js';
 
-import { FloatType, IntType, UnsignedIntType, Compatibility, UnsignedShortType, ShortType } from '../../../constants.js';
-import { NodeAccess } from '../../../nodes/core/constants.js';
+import { FloatType, IntType, UnsignedIntType, Compatibility, UnsignedShortType, ShortType } from '../../../Constants.js';
+import { NodeAccess } from '../../../nodes/core/Constants.js';
 import { isTypedArray, error } from '../../../utils.js';
 import { hashString } from '../../../nodes/core/NodeUtils.js';
 

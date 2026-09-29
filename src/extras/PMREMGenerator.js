@@ -9,7 +9,7 @@ import {
 	HalfFloatType,
 	BackSide,
 	LinearSRGBColorSpace
-} from '../constants.js';
+} from '../Constants.js';
 
 import { LayoutAttribute } from '../core/LayoutAttribute.js';
 import { Layout } from '../core/Layout.js';

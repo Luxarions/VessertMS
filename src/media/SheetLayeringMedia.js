@@ -1,5 +1,5 @@
 import { LayeringMedia } from './LayeringMedia.js';
-import { CubeReflectionMapping, NearestFilter, UnsignedIntType, DepthFormat } from '../constants.js';
+import { CubeReflectionMapping, NearestFilter, UnsignedIntType, DepthFormat } from '../Constants.js';
 
 /**
  * This class can be used to automatically save the depth information of a

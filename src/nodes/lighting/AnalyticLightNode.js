@@ -1,5 +1,5 @@
 import LightingNode from './LightingNode.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { uniform } from '../core/UniformNode.js';
 import { Color } from '../../math/Color.js';
 import { renderGroup } from '../core/UniformGroupNode.js';

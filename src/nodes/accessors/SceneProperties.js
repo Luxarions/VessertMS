@@ -1,4 +1,4 @@
-import { UVMapping } from '../../constants.js';
+import { UVMapping } from '../../Constants.js';
 import { Matrix4 } from '../../math/Matrix4.js';
 import { renderGroup } from '../core/UniformGroupNode.js';
 import { uniform } from '../tsl/TSLBase.js';

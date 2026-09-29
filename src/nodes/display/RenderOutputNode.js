@@ -2,7 +2,7 @@ import TempNode from '../core/TempNode.js';
 import { addMethodChaining, nodeObject, vec4 } from '../tsl/TSLCore.js';
 import { premultiplyAlpha, unpremultiplyAlpha } from './PremultiplyAlphaFunctions.js';
 
-import { NoColorSpace, NoToneMapping } from '../../constants.js';
+import { NoColorSpace, NoToneMapping } from '../../Constants.js';
 import { ColorManagement } from '../../math/ColorManagement.js';
 
 /**

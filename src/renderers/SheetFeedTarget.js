@@ -1,4 +1,4 @@
-import { BackSide, LinearFilter, LinearMipmapLinearFilter, NoBlending } from '../constants.js';
+import { BackSide, LinearFilter, LinearMipmapLinearFilter, NoBlending } from '../Constants.js';
 import { Card } from '../objects/Card.js';
 import { BoxLayout } from '../layouts/BoxLayout.js';
 import { TemplateSkin } from '../skins/TemplateSkin.js';

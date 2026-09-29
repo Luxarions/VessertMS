@@ -9,7 +9,7 @@ import {
 	LinearFilter,
 	UVMapping,
 	NoColorSpace,
-} from '../constants.js';
+} from '../Constants.js';
 import { generateUUID } from '../math/MathUtils.js';
 import { Vector2 } from '../math/Vector2.js';
 import { Vector3 } from '../math/Vector3.js';

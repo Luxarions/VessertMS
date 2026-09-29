@@ -1,6 +1,6 @@
 import NodeMaterial from './NodeMaterial.js';
 import VolumetricLightingModel from '../../nodes/functions/VolumetricLightingModel.js';
-import { BackSide } from '../../constants.js';
+import { BackSide } from '../../Constants.js';
 
 /**
  * Volume node material.

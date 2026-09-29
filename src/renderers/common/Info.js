@@ -6,7 +6,7 @@ import {
 	RGFormat, RGIntegerFormat, RGBFormat, RGBIntegerFormat,
 	UnsignedShort4444Type, UnsignedShort5551Type,
 	UnsignedInt248Type, UnsignedInt5999Type, UnsignedInt101111Type
-} from '../../constants.js';
+} from '../../Constants.js';
 
 /**
  * This renderer module provides a series of statistical information

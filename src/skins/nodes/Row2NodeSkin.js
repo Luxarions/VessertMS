@@ -12,7 +12,7 @@ import { screenDPR, viewport } from '../../nodes/display/ScreenNode.js';
 import { viewportOpaqueMipTexture } from '../../nodes/display/ViewportTextureNode.js';
 
 import { RowDashedSkin } from '../RowDashedSkin.js';
-import { NoBlending } from '../../constants.js';
+import { NoBlending } from '../../Constants.js';
 import { warnOnce } from '../../utils.js';
 
 const _defaultValues = /*@__PURE__*/ new RowDashedSkin();

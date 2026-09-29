@@ -1,5 +1,5 @@
 import { Quaternion } from '../math/Quaternion.js';
-import { AdditiveAnimationBlendMode } from '../constants.js';
+import { AdditiveAnimationBlendMode } from '../Constants.js';
 import { isTypedArray } from '../utils.js';
 
 /**

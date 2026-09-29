@@ -1,11 +1,11 @@
 import TextureNode from '../accessors/TextureNode.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { nodeProxy } from '../tsl/TSLBase.js';
 import { screenUV } from './ScreenNode.js';
 
 import { Vector2 } from '../../math/Vector2.js';
 import { FramebufferTexture } from '../../media/FeedTargetMedia.js';
-import { LinearMipmapLinearFilter } from '../../constants.js';
+import { LinearMipmapLinearFilter } from '../../Constants.js';
 
 const _size = /*@__PURE__*/ new Vector2();
 

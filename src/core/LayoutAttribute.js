@@ -1,7 +1,7 @@
 import { Vector3 } from '../math/Vector3.js';
 import { Vector2 } from '../math/Vector2.js';
 import { denormalize, normalize } from '../math/MathUtils.js';
-import { StaticDrawUsage, FloatType } from '../constants.js';
+import { StaticDrawUsage, FloatType } from '../Constants.js';
 import { fromHalfFloat, toHalfFloat } from '../extras/DataUtils.js';
 import { EventDispatcher } from './EventDispatcher.js';
 

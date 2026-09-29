@@ -1,4 +1,4 @@
-import { WebGLCoordinateSystem, WebGPUCoordinateSystem } from '../constants.js';
+import { WebGLCoordinateSystem, WebGPUCoordinateSystem } from '../Constants.js';
 import { Vector2 } from './Vector2.js';
 import { Vector3 } from './Vector3.js';
 import { Sphere } from './Sphere.js';

@@ -1,5 +1,5 @@
 import TempNode from '../core/TempNode.js';
-import { vectorComponents } from '../core/constants.js';
+import { vectorComponents } from '../core/Constants.js';
 
 /**
  * This module is part of the VSL core and usually not used in app level code.

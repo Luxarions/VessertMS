@@ -27,7 +27,7 @@ import {
 	HalfFloatType,
 	BackSide,
 	LinearSRGBColorSpace
-} from '../../../constants.js';
+} from '../../../Constants.js';
 import { warnOnce } from '../../../utils.js';
 
 const LOD_MIN = 4;

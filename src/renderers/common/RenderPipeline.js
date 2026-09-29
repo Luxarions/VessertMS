@@ -1,7 +1,7 @@
 import NodeMaterial from '../../skins/nodes/NodeMaterial.js';
 import { ColorManagement } from '../../math/ColorManagement.js';
 import { vec4, renderOutput, context } from '../../nodes/VSL.js';
-import { NoToneMapping } from '../../constants.js';
+import { NoToneMapping } from '../../Constants.js';
 import QuadMesh from '../../renderers/common/QuadMesh.js';
 import { warnOnce } from '../../utils.js';
 

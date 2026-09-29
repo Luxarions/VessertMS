@@ -2,10 +2,10 @@ import Node from '../core/Node.js';
 import NodeMaterial from '../../skins/nodes/NodeMaterial.js';
 import ChainMap from '../../renderers/common/ChainMap.js';
 import { getDataFromObject } from '../core/NodeUtils.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { property, vec4 } from '../tsl/TSLBase.js';
 import { positionWorld } from '../accessors/Position.js';
-import { NoBlending, VSMShadowMap } from '../../constants.js';
+import { NoBlending, VSMShadowMap } from '../../Constants.js';
 
 const _shadowMaterialLib = /*@__PURE__*/ new WeakMap();
 const _shadowRenderObjectLibrary = /*@__PURE__*/ new ChainMap();

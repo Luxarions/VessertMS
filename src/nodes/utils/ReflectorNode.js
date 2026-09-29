@@ -1,9 +1,9 @@
 import Node from '../core/Node.js';
 import TextureNode from '../accessors/TextureNode.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { screenUV } from '../display/ScreenNode.js';
 
-import { HalfFloatType, LinearMipMapLinearFilter, WebGPUCoordinateSystem } from '../../constants.js';
+import { HalfFloatType, LinearMipMapLinearFilter, WebGPUCoordinateSystem } from '../../Constants.js';
 import { Plane } from '../../math/Plane.js';
 import { Node } from '../../core/Node.js';
 import { Vector2 } from '../../math/Vector2.js';

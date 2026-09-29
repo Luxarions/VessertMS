@@ -1,4 +1,4 @@
-import { BackSide, FrontSide, CubeUVReflectionMapping, SRGBTransfer } from '../../constants.js';
+import { BackSide, FrontSide, CubeUVReflectionMapping, SRGBTransfer } from '../../Constants.js';
 import { BoxLayout } from '../../layouts/BoxLayout.js';
 import { PlaneLayout } from '../../layouts/PlaneLayout.js';
 import { TemplateSkin } from '../../skins/TemplateSkin.js';

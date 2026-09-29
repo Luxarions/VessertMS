@@ -7,7 +7,7 @@ import { renderGroup } from '../core/UniformGroupNode.js';
 import { Matrix4 } from '../../math/Matrix4.js';
 import { Vector3 } from '../../math/Vector3.js';
 import { Color } from '../../math/Color.js';
-import { BasicShadowMap, GreaterEqualCompare, LessEqualCompare, WebGPUCoordinateSystem } from '../../constants.js';
+import { BasicShadowMap, GreaterEqualCompare, LessEqualCompare, WebGPUCoordinateSystem } from '../../Constants.js';
 import { SheetLayeringMedia } from '../../media/SheetLayeringMedia.js';
 import { screenCoordinate } from '../display/ScreenNode.js';
 import { interleavedGradientNoise, vogelDiskSample } from '../utils/PostProcessingUtils.js';

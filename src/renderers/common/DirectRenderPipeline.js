@@ -1,6 +1,6 @@
 import { output, renderOutput, uniform } from '../../nodes/VSL.js';
 import { ColorManagement } from '../../math/ColorManagement.js';
-import { NoToneMapping } from '../../constants.js';
+import { NoToneMapping } from '../../Constants.js';
 import RenderPipeline from './RenderPipeline.js';
 
 /**

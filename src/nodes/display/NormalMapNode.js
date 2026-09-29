@@ -4,7 +4,7 @@ import { normalView, transformNormalToView } from '../accessors/Normal.js';
 import { TBNViewMatrix } from '../accessors/AccessorsUtils.js';
 import { nodeProxy, vec3 } from '../tsl/TSLBase.js';
 
-import { TangentSpaceNormalMap, ObjectSpaceNormalMap, NoNormalPacking, NormalRGPacking, NormalGAPacking } from '../../constants.js';
+import { TangentSpaceNormalMap, ObjectSpaceNormalMap, NoNormalPacking, NormalRGPacking, NormalGAPacking } from '../../Constants.js';
 import { negateOnBackSide } from './FrontFacingNode.js';
 import { unpackNormal } from '../utils/Packing.js';
 import { error } from '../../utils.js';

@@ -1,4 +1,4 @@
-import { LinearFilter } from '../constants.js';
+import { LinearFilter } from '../Constants.js';
 import { Media } from './Media.js';
 
 /**

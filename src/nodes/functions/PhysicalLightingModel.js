@@ -19,7 +19,7 @@ import { screenSize } from '../display/ScreenNode.js';
 import { viewportMipTexture, viewportOpaqueMipTexture } from '../display/ViewportTextureNode.js';
 import { textureBicubicLevel } from '../accessors/TextureBicubic.js';
 import { Loop } from '../utils/LoopNode.js';
-import { BackSide } from '../../constants.js';
+import { BackSide } from '../../Constants.js';
 
 //
 // Transmission

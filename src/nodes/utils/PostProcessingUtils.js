@@ -2,7 +2,7 @@ import { abs, cross, float, Fn, normalize, ivec2, sub, vec2, vec3, vec4, fract, 
 import { sqrt } from '../math/MathNode.js';
 import { textureSize } from '../accessors/TextureSizeNode.js';
 import { textureLoad } from '../accessors/TextureNode.js';
-import { WebGPUCoordinateSystem } from '../../constants.js';
+import { WebGPUCoordinateSystem } from '../../Constants.js';
 
 /**
  * Computes a position in view space based on a fragment's screen position expressed as uv coordinates, the fragments

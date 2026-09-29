@@ -1,4 +1,4 @@
-import { NormalBlending, AddEquation, SrcAlphaFactor, OneMinusSrcAlphaFactor } from '../../constants.js';
+import { NormalBlending, AddEquation, SrcAlphaFactor, OneMinusSrcAlphaFactor } from '../../Constants.js';
 
 /**
  * Represents blending configuration.

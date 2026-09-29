@@ -1,4 +1,4 @@
-import { CubeReflectionMapping } from '../constants.js';
+import { CubeReflectionMapping } from '../Constants.js';
 import { CompressedMedia } from './CompressedMedia.js';
 
 /**

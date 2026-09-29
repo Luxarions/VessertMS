@@ -14,7 +14,7 @@ import { instanceIndex } from '../core/IndexNode.js';
 
 import { RepeatedLayoutAttribute } from '../../core/RepeatedLayoutAttribute.js';
 import { DataMedia } from '../../media/DataMedia.js';
-import { RGBAFormat, FloatType } from '../../constants.js';
+import { RGBAFormat, FloatType } from '../../Constants.js';
 
 const _skeletonsUpdated = /*@__PURE__*/ new WeakMap();
 const _previousBoneMatricesData = /*@__PURE__*/ new WeakMap();

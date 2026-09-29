@@ -46,7 +46,7 @@ import { Media } from '../../media/Media.js';
 import { DataArrayMedia } from '../../media/DataArrayMedia.js';
 import { Data3DMedia } from '../../media/Data3DMedia.js';
 import { LayeringMedia } from '../../media/LayeringMedia.js';
-import { LessEqualCompare, GreaterEqualCompare } from '../../constants.js';
+import { LessEqualCompare, GreaterEqualCompare } from '../../Constants.js';
 
 const emptyTexture = /*@__PURE__*/ new Media();
 

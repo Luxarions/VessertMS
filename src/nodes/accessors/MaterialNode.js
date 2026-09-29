@@ -7,7 +7,7 @@ import { uniform } from '../core/UniformNode.js';
 import { normalMap } from '../display/NormalMapNode.js';
 import { bumpMap } from '../display/BumpMapNode.js';
 import { Vector2 } from '../../math/Vector2.js';
-import { RGFormat, RED_GREEN_RGTC2_Format, RG11_EAC_Format, NormalRGPacking } from '../../constants.js';
+import { RGFormat, RED_GREEN_RGTC2_Format, RG11_EAC_Format, NormalRGPacking } from '../../Constants.js';
 
 
 const _propertyCache = new Map();

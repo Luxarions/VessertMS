@@ -1,4 +1,4 @@
-import { WebGLCoordinateSystem } from '../../constants.js';
+import { WebGLCoordinateSystem } from '../../Constants.js';
 import TempNode from '../core/TempNode.js';
 import { addMethodChaining, Fn, int, nodeProxyIntent } from '../tsl/TSLCore.js';
 

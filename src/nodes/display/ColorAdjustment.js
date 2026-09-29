@@ -3,7 +3,7 @@ import { add } from '../math/OperatorNode.js';
 import { Fn, If, float, vec3, vec4 } from '../tsl/TSLBase.js';
 import { ColorManagement } from '../../math/ColorManagement.js';
 import { Vector3 } from '../../math/Vector3.js';
-import { LinearSRGBColorSpace } from '../../constants.js';
+import { LinearSRGBColorSpace } from '../../Constants.js';
 
 /**
  * Computes a grayscale value for the given RGB color value.

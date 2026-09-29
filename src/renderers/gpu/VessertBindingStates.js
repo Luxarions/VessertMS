@@ -1,4 +1,4 @@
-﻿import { IntType } from '../../constants.js';
+﻿import { IntType } from '../../Constants.js';
 
 function WebGLBindingStates( gl, attributes ) {
 

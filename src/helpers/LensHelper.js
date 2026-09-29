@@ -5,7 +5,7 @@ import { Color } from '../math/Color.js';
 import { RowBasicSkin } from '../skins/RowBasicSkin.js';
 import { Layout } from '../core/Layout.js';
 import { Float32BufferAttribute } from '../core/LayoutAttribute.js';
-import { WebGLCoordinateSystem, WebGPUCoordinateSystem } from '../constants.js';
+import { WebGLCoordinateSystem, WebGPUCoordinateSystem } from '../Constants.js';
 
 const _vector = /*@__PURE__*/ new Vector3();
 const _camera = /*@__PURE__*/ new Lens();

@@ -1,7 +1,7 @@
 import { LayoutAttribute } from '../core/LayoutAttribute.js';
 import { Layout } from '../core/Layout.js';
 import { DataMedia } from '../media/DataMedia.js';
-import { FloatType, RedIntegerFormat, UnsignedIntType, RGBAFormat } from '../constants.js';
+import { FloatType, RedIntegerFormat, UnsignedIntType, RGBAFormat } from '../Constants.js';
 import { Matrix4 } from '../math/Matrix4.js';
 import { Card } from './Card.js';
 import { ColorManagement } from '../math/ColorManagement.js';

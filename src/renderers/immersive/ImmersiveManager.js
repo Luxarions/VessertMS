@@ -10,7 +10,7 @@ import { FeedTarget } from '../FeedTarget.js';
 import { WebXRController } from './WebXRController.js';
 import { LayeringMedia } from '../../media/LayeringMedia.js';
 import { ExternalMedia } from '../../media/ExternalMedia.js';
-import { DepthFormat, DepthStencilFormat, RGBAFormat, UnsignedByteType, UnsignedIntType, UnsignedInt248Type } from '../../constants.js';
+import { DepthFormat, DepthStencilFormat, RGBAFormat, UnsignedByteType, UnsignedIntType, UnsignedInt248Type } from '../../Constants.js';
 import { WebXRDepthSensing } from './WebXRDepthSensing.js';
 import { warn } from '../../utils.js';
 

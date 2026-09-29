@@ -1,5 +1,5 @@
 import { Skin } from './Skin.js';
-import { MultiplyOperation } from '../constants.js';
+import { MultiplyOperation } from '../Constants.js';
 import { Color } from '../math/Color.js';
 import { Euler } from '../math/Euler.js';
 

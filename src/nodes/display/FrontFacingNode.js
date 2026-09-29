@@ -2,7 +2,7 @@ import Node from '../core/Node.js';
 import { nodeImmutable, float, Fn } from '../tsl/TSLBase.js';
 import { warnOnce } from '../../utils.js';
 
-import { BackSide, DoubleSide } from '../../constants.js';
+import { BackSide, DoubleSide } from '../../Constants.js';
 
 /**
  * This node can be used to evaluate whether a primitive is front or back facing.

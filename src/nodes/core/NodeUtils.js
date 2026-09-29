@@ -18,7 +18,7 @@ import {
 	RGBIntegerFormat,
 	DepthFormat,
 	DepthStencilFormat
-} from '../../constants.js';
+} from '../../Constants.js';
 
 import { error } from '../../utils.js';
 import StackTrace from '../core/StackTrace.js';

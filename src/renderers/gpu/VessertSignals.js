@@ -3,7 +3,7 @@ import { Matrix4 } from '../../math/Matrix4.js';
 import { Vector2 } from '../../math/Vector2.js';
 import { Vector3 } from '../../math/Vector3.js';
 import { BindingsLib } from '../shaders/BindingsLib.js';
-import { RGFormat } from '../../constants.js';
+import { RGFormat } from '../../Constants.js';
 
 function UniformsCache() {
 

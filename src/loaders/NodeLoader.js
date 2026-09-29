@@ -16,7 +16,7 @@ import {
 	LinearFilter,
 	LinearMipmapNearestFilter,
 	LinearMipmapLinearFilter
-} from '../constants.js';
+} from '../Constants.js';
 import { RepeatedLayoutAttribute } from '../core/RepeatedLayoutAttribute.js';
 import { Color } from '../math/Color.js';
 import { Vector3 } from '../math/Vector3.js';

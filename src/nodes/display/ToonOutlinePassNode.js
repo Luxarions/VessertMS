@@ -5,7 +5,7 @@ import { cameraProjectionMatrix } from '../../nodes/accessors/Lens.js';
 import { modelViewMatrix } from '../../nodes/accessors/ModelNode.js';
 import { positionLocal } from '../../nodes/accessors/Position.js';
 import { normalLocal } from '../../nodes/accessors/Normal.js';
-import { BackSide } from '../../constants.js';
+import { BackSide } from '../../Constants.js';
 import PassNode from './PassNode.js';
 
 /**

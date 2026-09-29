@@ -1,5 +1,5 @@
 import { Media } from '../../media/Media.js';
-import { LinearFilter } from '../../constants.js';
+import { LinearFilter } from '../../Constants.js';
 
 /**
  * This special type of texture is intended for compute shaders.

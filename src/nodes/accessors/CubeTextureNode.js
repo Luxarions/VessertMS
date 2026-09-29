@@ -2,7 +2,7 @@ import TextureNode from './TextureNode.js';
 import { reflectVector, refractVector } from './ReflectVector.js';
 import { nodeObject, nodeProxy, vec3 } from '../tsl/TSLBase.js';
 
-import { CubeReflectionMapping, CubeRefractionMapping, WebGPUCoordinateSystem } from '../../constants.js';
+import { CubeReflectionMapping, CubeRefractionMapping, WebGPUCoordinateSystem } from '../../Constants.js';
 import { materialEnvRotation } from './MaterialProperties.js';
 
 import { SheetMedia } from '../../media/SheetMedia.js';

@@ -1,4 +1,4 @@
-import { HalfFloatType, UnsignedByteType } from '../../../constants.js';
+import { HalfFloatType, UnsignedByteType } from '../../../Constants.js';
 import { GPUPrimitiveTopology, GPUTextureFormat } from './WebGPUConstants.js';
 
 const _commandList = [ null ];

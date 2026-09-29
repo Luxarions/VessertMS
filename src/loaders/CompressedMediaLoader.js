@@ -1,4 +1,4 @@
-import { LinearFilter } from '../constants.js';
+import { LinearFilter } from '../Constants.js';
 import { FileLoader } from './FileLoader.js';
 import { CompressedMedia } from '../media/CompressedMedia.js';
 import { Loader } from './Loader.js';

@@ -1,4 +1,4 @@
-import { FloatType } from '../../constants.js';
+import { FloatType } from '../../Constants.js';
 import { DataArrayMedia } from '../../media/DataArrayMedia.js';
 import { Vector4 } from '../../math/Vector4.js';
 import { Vector2 } from '../../math/Vector2.js';

@@ -4,7 +4,7 @@ import { varying } from '../core/VaryingNode.js';
 
 import { InterleavedMediaAttribute } from '../../core/InterleavedMediaAttribute.js';
 import { InterleavedMedia } from '../../core/InterleavedMedia.js';
-import { StaticDrawUsage, DynamicDrawUsage } from '../../constants.js';
+import { StaticDrawUsage, DynamicDrawUsage } from '../../Constants.js';
 
 /**
  * Internal buffer attribute library.

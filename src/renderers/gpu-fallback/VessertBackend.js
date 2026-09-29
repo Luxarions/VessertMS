@@ -12,7 +12,7 @@ import { GLFeatureName } from './utils/WebGLConstants.js';
 import { WebGLBufferRenderer } from './WebGLBufferRenderer.js';
 
 import { isTypedArray, warnOnce, warn, error } from '../../utils.js';
-import { WebGLCoordinateSystem, TimestampQuery, Compatibility } from '../../constants.js';
+import { WebGLCoordinateSystem, TimestampQuery, Compatibility } from '../../Constants.js';
 import WebGLTimestampQueryPool from './utils/WebGLTimestampQueryPool.js';
 
 const _invalidationArray = [];

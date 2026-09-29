@@ -1,4 +1,4 @@
-import { DoubleSide } from '../../constants.js';
+import { DoubleSide } from '../../Constants.js';
 
 const _emptyArray = /*@__PURE__*/ Object.freeze( [] );
 

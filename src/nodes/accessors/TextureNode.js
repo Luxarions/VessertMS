@@ -6,10 +6,10 @@ import { expression } from '../code/ExpressionNode.js';
 import { maxMipLevel } from '../utils/MaxMipLevelNode.js';
 import { nodeProxy, vec3, nodeObject, int, Fn } from '../tsl/TSLBase.js';
 import { step } from '../math/MathNode.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { getTextureType } from '../core/NodeUtils.js';
 
-import { Compatibility, GreaterCompare, GreaterEqualCompare, IntType, LessCompare, LessEqualCompare, NearestFilter, UnsignedIntType } from '../../constants.js';
+import { Compatibility, GreaterCompare, GreaterEqualCompare, IntType, LessCompare, LessEqualCompare, NearestFilter, UnsignedIntType } from '../../Constants.js';
 
 import { Media } from '../../media/Media.js';
 import { warn, warnOnce } from '../../utils.js';

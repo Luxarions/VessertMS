@@ -17,7 +17,7 @@ import {
 	UnsignedShort4444Type,
 	UnsignedShort5551Type,
 	WebGLCoordinateSystem
-} from '../constants.js';
+} from '../Constants.js';
 import { Color } from '../math/Color.js';
 import { Frustum } from '../math/Frustum.js';
 import { Matrix4 } from '../math/Matrix4.js';

@@ -10,7 +10,7 @@ import { instanceIndex, vertexIndex } from '../core/IndexNode.js';
 import { DataArrayMedia } from '../../media/DataArrayMedia.js';
 import { Vector2 } from '../../math/Vector2.js';
 import { Vector4 } from '../../math/Vector4.js';
-import { FloatType } from '../../constants.js';
+import { FloatType } from '../../Constants.js';
 import { uniformArray } from './UniformArrayNode.js';
 
 const _morphTextures = /*@__PURE__*/ new WeakMap();

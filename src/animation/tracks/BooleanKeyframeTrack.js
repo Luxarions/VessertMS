@@ -1,4 +1,4 @@
-import { InterpolateDiscrete } from '../../constants.js';
+import { InterpolateDiscrete } from '../../Constants.js';
 import { KeyframeTrack } from '../KeyframeTrack.js';
 
 /**

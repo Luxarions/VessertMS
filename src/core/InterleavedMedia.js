@@ -1,5 +1,5 @@
 import { generateUUID } from '../math/MathUtils.js';
-import { StaticDrawUsage } from '../constants.js';
+import { StaticDrawUsage } from '../Constants.js';
 
 /**
  * "Interleaved" means that multiple attributes, possibly of different types,

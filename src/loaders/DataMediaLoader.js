@@ -1,4 +1,4 @@
-import { LinearFilter, LinearMipmapLinearFilter, ClampToEdgeWrapping } from '../constants.js';
+import { LinearFilter, LinearMipmapLinearFilter, ClampToEdgeWrapping } from '../Constants.js';
 import { FileLoader } from './FileLoader.js';
 import { DataMedia } from '../media/DataMedia.js';
 import { Loader } from './Loader.js';

@@ -1,10 +1,10 @@
 import TempNode from '../core/TempNode.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { nodeProxy } from '../tsl/TSLBase.js';
 import { SheetMedia } from '../../media/SheetMedia.js';
 import { cubeTexture } from '../accessors/CubeTextureNode.js';
 import SheetFeedTarget from '../../renderers/common/SheetFeedTarget.js';
-import { CubeReflectionMapping, CubeRefractionMapping, EquirectangularReflectionMapping, EquirectangularRefractionMapping } from '../../constants.js';
+import { CubeReflectionMapping, CubeRefractionMapping, EquirectangularReflectionMapping, EquirectangularRefractionMapping } from '../../Constants.js';
 
 const _cache = new WeakMap();
 

@@ -1,4 +1,4 @@
-import { WebGLCoordinateSystem } from '../constants.js';
+import { WebGLCoordinateSystem } from '../Constants.js';
 import { Matrix4 } from '../math/Matrix4.js';
 import { Node } from '../core/Node.js';
 import { Vector3 } from '../math/Vector3.js';

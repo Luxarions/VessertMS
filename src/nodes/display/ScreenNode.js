@@ -1,5 +1,5 @@
 import Node from '../core/Node.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { renderGroup } from '../core/UniformGroupNode.js';
 import { uniform } from '../core/UniformNode.js';
 import { nodeImmutable, vec2 } from '../tsl/TSLBase.js';

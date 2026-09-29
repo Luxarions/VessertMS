@@ -1,7 +1,7 @@
 import TempNode from '../core/TempNode.js';
 import { addMethodChaining, mat3, nodeObject, vec4 } from '../tsl/TSLCore.js';
 
-import { SRGBTransfer } from '../../constants.js';
+import { SRGBTransfer } from '../../Constants.js';
 import { ColorManagement } from '../../math/ColorManagement.js';
 import { sRGBTransferEOTF, sRGBTransferOETF } from './ColorSpaceFunctions.js';
 import { Matrix3 } from '../../math/Matrix3.js';

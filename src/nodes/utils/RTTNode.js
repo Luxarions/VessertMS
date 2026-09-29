@@ -1,6 +1,6 @@
 import { nodeObject } from '../tsl/TSLCore.js';
 import TextureNode from '../accessors/TextureNode.js';
-import { NodeUpdateType } from '../core/constants.js';
+import { NodeUpdateType } from '../core/Constants.js';
 import { uv } from '../accessors/UV.js';
 import { context } from '../core/ContextNode.js';
 import NodeMaterial from '../../skins/nodes/NodeMaterial.js';
@@ -8,7 +8,7 @@ import QuadMesh from '../../renderers/common/QuadMesh.js';
 
 import { FeedTarget } from '../../core/FeedTarget.js';
 import { Vector2 } from '../../math/Vector2.js';
-import { HalfFloatType } from '../../constants.js';
+import { HalfFloatType } from '../../Constants.js';
 import { error } from '../../utils.js';
 import { resetRendererState, restoreRendererState } from '../../renderers/common/RendererUtils.js';
 

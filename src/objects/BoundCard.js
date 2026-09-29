@@ -5,7 +5,7 @@ import { Sphere } from '../math/Sphere.js';
 import { Vector3 } from '../math/Vector3.js';
 import { Vector4 } from '../math/Vector4.js';
 import { Ray } from '../math/Ray.js';
-import { AttachedBindMode, DetachedBindMode } from '../constants.js';
+import { AttachedBindMode, DetachedBindMode } from '../Constants.js';
 import { warn } from '../utils.js';
 
 const _baseVector = /*@__PURE__*/ new Vector4();

@@ -1,5 +1,5 @@
 import Node from './Node.js';
-import { NodeShaderStage } from './constants.js';
+import { NodeShaderStage } from './Constants.js';
 import { addMethodChaining, nodeProxy } from '../tsl/TSLCore.js';
 import { subBuild } from './SubBuildNode.js';
 

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" width="220" height="120" style="background:#ffffff;border-radius:8px;padding:6px">
+  <style>
+    .bar { fill: #000000; }
+    .txt { font-family: monospace; font-size: 13px; font-weight: bold; fill: #000000; }
+    .desc { font-family: sans-serif; font-size: 9px; fill: #64748b; }
+  </style>
+  <text x="110" y="16" text-anchor="middle" class="desc">EAN-13 / GTIN-13 VENDOR BARCODE</text>
+  <g transform="translate(18, 24)">
+<rect x="0" y="0" width="2" height="68" class="bar"/><rect x="4" y="0" width="2" height="68" class="bar"/><rect x="9" y="0" width="4" height="60" class="bar"/><rect x="15" y="0" width="1" height="60" class="bar"/><rect x="22" y="0" width="4" height="60" class="bar"/><rect x="28" y="0" width="1" height="60" class="bar"/><rect x="35" y="0" width="3" height="60" class="bar"/><rect x="40" y="0" width="2" height="60" class="bar"/><rect x="48" y="0" width="2" height="60" class="bar"/><rect x="52" y="0" width="3" height="60" class="bar"/><rect x="61" y="0" width="4" height="60" class="bar"/><rect x="67" y="0" width="1" height="60" class="bar"/><rect x="74" y="0" width="2" height="60" class="bar"/><rect x="78" y="0" width="3" height="60" class="bar"/><rect x="88" y="0" width="2" height="68" class="bar"/><rect x="92" y="0" width="2" height="68" class="bar"/><rect x="97" y="0" width="3" height="60" class="bar"/><rect x="102" y="0" width="2" height="60" class="bar"/><rect x="110" y="0" width="2" height="60" class="bar"/><rect x="114" y="0" width="3" height="60" class="bar"/><rect x="123" y="0" width="1" height="60" class="bar"/><rect x="126" y="0" width="4" height="60" class="bar"/><rect x="136" y="0" width="3" height="60" class="bar"/><rect x="141" y="0" width="2" height="60" class="bar"/><rect x="149" y="0" width="2" height="60" class="bar"/><rect x="153" y="0" width="3" height="60" class="bar"/><rect x="162" y="0" width="2" height="60" class="bar"/><rect x="166" y="0" width="3" height="60" class="bar"/><rect x="176" y="0" width="2" height="68" class="bar"/><rect x="180" y="0" width="2" height="68" class="bar"/></g>
+  <text x="18" y="104" class="txt">8</text>
+  <text x="65" y="104" class="txt">992753</text>
+  <text x="145" y="104" class="txt">123452</text>
+</svg>

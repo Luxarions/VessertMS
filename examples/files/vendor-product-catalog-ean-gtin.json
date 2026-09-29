@@ -1,0 +1,88 @@
+{
+  "vendor": "Vessert Social Commerce & Retail Catalog Engine",
+  "version": "GS1-Standard-2026",
+  "barcode_standards_supported": [
+    "EAN-13",
+    "EAN-8",
+    "UPC-A",
+    "GTIN-14",
+    "ISBN-13"
+  ],
+  "items": [
+    {
+      "product_id": "prod_sneaker_001",
+      "name": "Vessert Quantum Runner (Limited Edition)",
+      "brand": "Vessert Apparel",
+      "ean_13": "8992753123452",
+      "gtin_14": "18992753123452",
+      "sku": "VS-QTR-BLK-42",
+      "category": "Apparel & Accessories > Shoes",
+      "country_of_origin": "IDN",
+      "currency": "USD",
+      "price_regular": 149,
+      "price_discounted": 119.2,
+      "inventory_quantity": 450,
+      "barcode_symbology": "EAN-13",
+      "in_stock": true,
+      "shoppable_pin_tags": {
+        "x_ratio": 0.45,
+        "y_ratio": 0.72
+      }
+    },
+    {
+      "product_id": "prod_hoodie_002",
+      "name": "Vessert Architectural Heavyweight Hoodie",
+      "brand": "Luxarions Studio",
+      "ean_13": "8991001234568",
+      "gtin_14": "18991001234568",
+      "sku": "LX-HD-OLED-L",
+      "category": "Apparel & Accessories > Clothing > Hoodies",
+      "country_of_origin": "IDN",
+      "currency": "USD",
+      "price_regular": 85,
+      "price_discounted": 68,
+      "inventory_quantity": 230,
+      "barcode_symbology": "EAN-13",
+      "in_stock": true,
+      "shoppable_pin_tags": {
+        "x_ratio": 0.5,
+        "y_ratio": 0.4
+      }
+    },
+    {
+      "product_id": "prod_audio_003",
+      "name": "Spatial Studio Pro Over-Ear Headphones",
+      "brand": "KlangAcoustics",
+      "ean_13": "4006381333931",
+      "gtin_14": "14006381333931",
+      "sku": "KA-SPO-900",
+      "category": "Electronics > Audio > Headphones",
+      "country_of_origin": "DEU",
+      "currency": "EUR",
+      "price_regular": 299,
+      "price_discounted": 269,
+      "inventory_quantity": 80,
+      "barcode_symbology": "EAN-13",
+      "in_stock": true,
+      "shoppable_pin_tags": {
+        "x_ratio": 0.38,
+        "y_ratio": 0.32
+      }
+    },
+    {
+      "product_id": "prod_book_004",
+      "name": "The Design of Modern Social Rendering Engines",
+      "brand": "Vessert Press",
+      "isbn_13": "9780201379624",
+      "ean_13": "9780201379624",
+      "gtin_14": "09780201379624",
+      "sku": "BK-SOC-ENG-2026",
+      "category": "Media > Books > Technology",
+      "currency": "USD",
+      "price_regular": 49.99,
+      "inventory_quantity": 1200,
+      "barcode_symbology": "EAN-13 / ISBN-13",
+      "in_stock": true
+    }
+  ]
+}

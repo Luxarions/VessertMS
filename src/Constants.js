@@ -1,103 +1,1740 @@
 export const VERSION = '187dev';
 
+
 /**
- * Single point touch or mouse click gesture.
+ * Represents mouse buttons and interaction types in context of controls.
+ *
+ * @type {ConstantsMouse}
+ * @constant
+ */
+export const MOUSE = { LEFT: 0, MIDDLE: 1, RIGHT: 2, ROTATE: 0, DOLLY: 1, PAN: 2 };
+
+/**
+ * Represents touch interaction types in context of controls.
+ *
+ * @type {ConstantsTouch}
+ * @constant
+ */
+export const TOUCH = { ROTATE: 0, PAN: 1, DOLLY_PAN: 2, DOLLY_ROTATE: 3 };
+
+/**
+ * Represents touch, gesture, and mobile interaction modalities in feed controls.
+ *
+ * @type {ConstantsGesture}
+ * @constant
+ */
+export const GESTURE = { TAP: 0, DOUBLE_TAP: 1, LONG_PRESS: 2, SWIPE_UP: 3, SWIPE_DOWN: 4, SWIPE_LEFT: 5, SWIPE_RIGHT: 6, PINCH_IN: 7, PINCH_OUT: 8, PAN_DRAG: 9, PULL_TO_REFRESH: 10, EDGE_SWIPE_BACK: 11 };
+
+
+/**
+ * Disables face culling.
  *
  * @type {number}
  * @constant
  */
-export const GestureTap = 0;
+export const CullFaceNone = 0;
 
 /**
- * Rapid successive double-tap gesture, defaults to positive endorsement action.
+ * Culls back faces.
  *
  * @type {number}
  * @constant
  */
-export const GestureDoubleTap = 1;
+export const CullFaceBack = 1;
 
 /**
- * Sustained press exceeding threshold, triggers context inspection menu.
+ * Culls front faces.
  *
  * @type {number}
  * @constant
  */
-export const GestureLongPress = 2;
+export const CullFaceFront = 2;
 
 /**
- * Upward vertical gesture, advances to next vertical reel card.
+ * Culls both front and back faces.
  *
  * @type {number}
  * @constant
  */
-export const GestureSwipeUp = 3;
+export const CullFaceFrontBack = 3;
 
 /**
- * Downward vertical gesture, retreats to previous reel or dismisses overlay.
+ * Gives unfiltered shadow maps - fastest, but lowest quality.
  *
  * @type {number}
  * @constant
  */
-export const GestureSwipeDown = 4;
+export const BasicShadowMap = 0;
 
 /**
- * Leftward horizontal swipe, advances active media carousel.
+ * Filters shadow maps using the Percentage-Closer Filtering (PCF) algorithm.
  *
  * @type {number}
  * @constant
  */
-export const GestureSwipeLeft = 5;
+export const PCFShadowMap = 1;
 
 /**
- * Rightward horizontal swipe, retreats active media carousel.
+ * Filters shadow maps using the Percentage-Closer Filtering (PCF) algorithm with
+ * better soft shadows especially when using low-resolution shadow maps.
+ *
+ * @type {number}
+ * @constant
+ * @deprecated since r186. Use `PCFShadowMap` instead.
+ */
+export const PCFSoftShadowMap = 2;
+
+/**
+ * Filters shadow maps using the Variance Shadow Map (VSM) algorithm.
+ * When using VSMShadowMap all shadow receivers will also cast shadows.
  *
  * @type {number}
  * @constant
  */
-export const GestureSwipeRight = 6;
+export const VSMShadowMap = 3;
 
 /**
- * Convergent two-finger gesture, collapses media inspection viewer.
+ * Only front faces are rendered.
  *
  * @type {number}
  * @constant
  */
-export const GesturePinchIn = 7;
+export const FrontSide = 0;
 
 /**
- * Divergent two-finger gesture, expands media container into full canvas.
+ * Only back faces are rendered.
  *
  * @type {number}
  * @constant
  */
-export const GesturePinchOut = 8;
+export const BackSide = 1;
 
 /**
- * Continuous planar translation gesture across feed viewport.
+ * Both front and back faces are rendered.
  *
  * @type {number}
  * @constant
  */
-export const GesturePanDrag = 9;
+export const DoubleSide = 2;
 
 /**
- * Downward overscroll displacement exceeding threshold triggering feed reload.
+ * No blending is performed which effectively disables
+ * alpha transparency.
  *
  * @type {number}
  * @constant
  */
-export const GesturePullToRefresh = 10;
+export const NoBlending = 0;
 
 /**
- * Boundary navigation swipe triggering view pop transition.
+ * The default blending.
  *
  * @type {number}
  * @constant
  */
-export const GestureEdgeSwipeBack = 11;
+export const NormalBlending = 1;
 
 /**
- * Standard single column chronological or algorithmic stream layout.
+ * Represents additive blending.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AdditiveBlending = 2;
+
+/**
+ * Represents subtractive blending.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SubtractiveBlending = 3;
+
+/**
+ * Represents multiply blending.
+ *
+ * @type {number}
+ * @constant
+ */
+export const MultiplyBlending = 4;
+
+/**
+ * Represents custom blending.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CustomBlending = 5;
+
+/**
+ * Represents material blending.
+ *
+ * @type {number}
+ * @constant
+ */
+export const MaterialBlending = 6;
+
+/**
+ * A `source + destination` blending equation.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AddEquation = 100;
+
+/**
+ * A `source - destination` blending equation.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SubtractEquation = 101;
+
+/**
+ * A `destination - source` blending equation.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ReverseSubtractEquation = 102;
+
+/**
+ * A blend equation that uses the minimum of source and destination.
+ *
+ * @type {number}
+ * @constant
+ */
+export const MinEquation = 103;
+
+/**
+ * A blend equation that uses the maximum of source and destination.
+ *
+ * @type {number}
+ * @constant
+ */
+export const MaxEquation = 104;
+
+/**
+ * Multiplies all colors by `0`.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ZeroFactor = 200;
+
+/**
+ * Multiplies all colors by `1`.
+ *
+ * @type {number}
+ * @constant
+ */
+export const OneFactor = 201;
+
+/**
+ * Multiplies all colors by the source colors.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SrcColorFactor = 202;
+
+/**
+ * Multiplies all colors by `1` minus each source color.
+ *
+ * @type {number}
+ * @constant
+ */
+export const OneMinusSrcColorFactor = 203;
+
+/**
+ * Multiplies all colors by the source alpha value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SrcAlphaFactor = 204;
+
+/**
+ * Multiplies all colors by 1 minus the source alpha value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const OneMinusSrcAlphaFactor = 205;
+
+/**
+ * Multiplies all colors by the destination alpha value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DstAlphaFactor = 206;
+
+/**
+ * Multiplies all colors by `1` minus the destination alpha value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const OneMinusDstAlphaFactor = 207;
+
+/**
+ * Multiplies all colors by the destination color.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DstColorFactor = 208;
+
+/**
+ * Multiplies all colors by `1` minus each destination color.
+ *
+ * @type {number}
+ * @constant
+ */
+export const OneMinusDstColorFactor = 209;
+
+/**
+ * Multiplies the RGB colors by the smaller of either the source alpha
+ * value or the value of `1` minus the destination alpha value. The alpha
+ * value is multiplied by `1`.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SrcAlphaSaturateFactor = 210;
+
+/**
+ * Multiplies all colors by a constant color.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ConstantColorFactor = 211;
+
+/**
+ * Multiplies all colors by `1` minus a constant color.
+ *
+ * @type {number}
+ * @constant
+ */
+export const OneMinusConstantColorFactor = 212;
+
+/**
+ * Multiplies all colors by a constant alpha value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ConstantAlphaFactor = 213;
+
+/**
+ * Multiplies all colors by 1 minus a constant alpha value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const OneMinusConstantAlphaFactor = 214;
+
+/**
+ * Never pass.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NeverDepth = 0;
+
+/**
+ * Always pass.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AlwaysDepth = 1;
+
+/**
+ * Pass if the incoming value is less than the depth buffer value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LessDepth = 2;
+
+/**
+ * Pass if the incoming value is less than or equal to the depth buffer value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LessEqualDepth = 3;
+
+/**
+ * Pass if the incoming value equals the depth buffer value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const EqualDepth = 4;
+
+/**
+ * Pass if the incoming value is greater than or equal to the depth buffer value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const GreaterEqualDepth = 5;
+
+/**
+ * Pass if the incoming value is greater than the depth buffer value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const GreaterDepth = 6;
+
+/**
+ * Pass if the incoming value is not equal to the depth buffer value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NotEqualDepth = 7;
+
+/**
+ * Multiplies the environment map color with the surface color.
+ *
+ * @type {number}
+ * @constant
+ */
+export const MultiplyOperation = 0;
+
+/**
+ * Uses reflectivity to blend between the two colors.
+ *
+ * @type {number}
+ * @constant
+ */
+export const MixOperation = 1;
+
+/**
+ * Adds the two colors.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AddOperation = 2;
+
+/**
+ * No tone mapping is applied.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NoToneMapping = 0;
+
+/**
+ * Linear tone mapping.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LinearToneMapping = 1;
+
+/**
+ * Reinhard tone mapping.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ReinhardToneMapping = 2;
+
+/**
+ * Cineon tone mapping.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CineonToneMapping = 3;
+
+/**
+ * ACES Filmic tone mapping.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ACESFilmicToneMapping = 4;
+
+/**
+ * Custom tone mapping.
+ *
+ * Expects a custom implementation by modifying shader code of the material's fragment shader.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CustomToneMapping = 5;
+
+/**
+ * AgX tone mapping.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AgXToneMapping = 6;
+
+/**
+ * Neutral tone mapping.
+ *
+ * Implementation based on the Khronos 3D Commerce Cluster standard tone mapping.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NeutralToneMapping = 7;
+
+/**
+ * The skinned mesh shares the same world space as the skeleton.
+ *
+ * @type {string}
+ * @constant
+ */
+export const AttachedBindMode = 'attached';
+
+/**
+ * The skinned mesh does not share the same world space as the skeleton.
+ * This is useful when a skeleton is shared across multiple skinned meshes.
+ *
+ * @type {string}
+ * @constant
+ */
+export const DetachedBindMode = 'detached';
+
+/**
+ * Maps textures using the geometry's UV coordinates.
+ *
+ * @type {number}
+ * @constant
+ */
+export const UVMapping = 300;
+
+/**
+ * Reflection mapping for cube textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CubeReflectionMapping = 301;
+
+/**
+ * Refraction mapping for cube textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CubeRefractionMapping = 302;
+
+/**
+ * Reflection mapping for equirectangular textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const EquirectangularReflectionMapping = 303;
+
+/**
+ * Refraction mapping for equirectangular textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const EquirectangularRefractionMapping = 304;
+
+/**
+ * Reflection mapping for PMREM textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CubeUVReflectionMapping = 306;
+
+/**
+ * The texture will simply repeat to infinity.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RepeatWrapping = 1000;
+
+/**
+ * The last pixel of the texture stretches to the edge of the mesh.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ClampToEdgeWrapping = 1001;
+
+/**
+ * The texture will repeats to infinity, mirroring on each repeat.
+ *
+ * @type {number}
+ * @constant
+ */
+export const MirroredRepeatWrapping = 1002;
+
+/**
+ * Returns the value of the texture element that is nearest (in Manhattan distance)
+ * to the specified texture coordinates.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NearestFilter = 1003;
+
+/**
+ * Chooses the mipmap that most closely matches the size of the pixel being textured
+ * and uses the `NearestFilter` criterion (the texel nearest to the center of the pixel)
+ * to produce a texture value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NearestMipmapNearestFilter = 1004;
+export const NearestMipMapNearestFilter = 1004; // legacy
+
+/**
+ * Chooses the two mipmaps that most closely match the size of the pixel being textured and
+ * uses the `NearestFilter` criterion to produce a texture value from each mipmap.
+ * The final texture value is a weighted average of those two values.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NearestMipmapLinearFilter = 1005;
+export const NearestMipMapLinearFilter = 1005; // legacy
+
+/**
+ * Returns the weighted average of the four texture elements that are closest to the specified
+ * texture coordinates, and can include items wrapped or repeated from other parts of a texture,
+ * depending on the values of `wrapS` and `wrapT`, and on the exact mapping.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LinearFilter = 1006;
+
+/**
+ * Chooses the mipmap that most closely matches the size of the pixel being textured and uses
+ * the `LinearFilter` criterion (a weighted average of the four texels that are closest to the
+ * center of the pixel) to produce a texture value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LinearMipmapNearestFilter = 1007;
+export const LinearMipMapNearestFilter = 1007; // legacy
+
+/**
+ * Chooses the two mipmaps that most closely match the size of the pixel being textured and uses
+ * the `LinearFilter` criterion to produce a texture value from each mipmap. The final texture value
+ * is a weighted average of those two values.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LinearMipmapLinearFilter = 1008;
+export const LinearMipMapLinearFilter = 1008; // legacy
+
+/**
+ * An unsigned byte data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const UnsignedByteType = 1009;
+
+/**
+ * A byte data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ByteType = 1010;
+
+/**
+ * A short data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ShortType = 1011;
+
+/**
+ * An unsigned short data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const UnsignedShortType = 1012;
+
+/**
+ * An int data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const IntType = 1013;
+
+/**
+ * An unsigned int data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const UnsignedIntType = 1014;
+
+/**
+ * A float data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const FloatType = 1015;
+
+/**
+ * A half float data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const HalfFloatType = 1016;
+
+/**
+ * An unsigned short 4_4_4_4 (packed) data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const UnsignedShort4444Type = 1017;
+
+/**
+ * An unsigned short 5_5_5_1 (packed) data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const UnsignedShort5551Type = 1018;
+
+/**
+ * An unsigned int 24_8 data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const UnsignedInt248Type = 1020;
+
+/**
+ * An unsigned int 5_9_9_9 (packed) data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const UnsignedInt5999Type = 35902;
+
+/**
+ * An unsigned int 10_11_11 (packed) data type for textures.
+ *
+ * @type {number}
+ * @constant
+ */
+export const UnsignedInt101111Type = 35899;
+
+/**
+ * Discards the red, green and blue components and reads just the alpha component.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AlphaFormat = 1021;
+
+/**
+ * Discards the alpha component and reads the red, green and blue component.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBFormat = 1022;
+
+/**
+ * Reads the red, green, blue and alpha components.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBAFormat = 1023;
+
+/**
+ * Reads each element as a single depth value, converts it to floating point, and clamps to the range `[0,1]`.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DepthFormat = 1026;
+
+/**
+ * Reads each element is a pair of depth and stencil values. The depth component of the pair is interpreted as
+ * in `DepthFormat`. The stencil component is interpreted based on the depth + stencil internal format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DepthStencilFormat = 1027;
+
+/**
+ * Discards the green, blue and alpha components and reads just the red component.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RedFormat = 1028;
+
+/**
+ * Discards the green, blue and alpha components and reads just the red component. The texels are read as integers instead of floating point.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RedIntegerFormat = 1029;
+
+/**
+ * Discards the alpha, and blue components and reads the red, and green components.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGFormat = 1030;
+
+/**
+ * Discards the alpha, and blue components and reads the red, and green components. The texels are read as integers instead of floating point.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGIntegerFormat = 1031;
+
+/**
+ * Discards the alpha component and reads the red, green and blue component. The texels are read as integers instead of floating point.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBIntegerFormat = 1032;
+
+/**
+ * Reads the red, green, blue and alpha components. The texels are read as integers instead of floating point.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBAIntegerFormat = 1033;
+
+/**
+ * A DXT1-compressed image in an RGB image format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGB_S3TC_DXT1_Format = 33776;
+
+/**
+ * A DXT1-compressed image in an RGB image format with a simple on/off alpha value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_S3TC_DXT1_Format = 33777;
+
+/**
+ * A DXT3-compressed image in an RGBA image format. Compared to a 32-bit RGBA texture, it offers 4:1 compression.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_S3TC_DXT3_Format = 33778;
+
+/**
+ * A DXT5-compressed image in an RGBA image format. It also provides a 4:1 compression, but differs to the DXT3
+ * compression in how the alpha compression is done.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_S3TC_DXT5_Format = 33779;
+
+/**
+ * PVRTC RGB compression in 4-bit mode. One block for each 4×4 pixels.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGB_PVRTC_4BPPV1_Format = 35840;
+
+/**
+ * PVRTC RGB compression in 2-bit mode. One block for each 8×4 pixels.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGB_PVRTC_2BPPV1_Format = 35841;
+
+/**
+ * PVRTC RGBA compression in 4-bit mode. One block for each 4×4 pixels.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_PVRTC_4BPPV1_Format = 35842;
+
+/**
+ * PVRTC RGBA compression in 2-bit mode. One block for each 8×4 pixels.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_PVRTC_2BPPV1_Format = 35843;
+
+/**
+ * ETC1 RGB format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGB_ETC1_Format = 36196;
+
+/**
+ * ETC2 RGB format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGB_ETC2_Format = 37492;
+
+/**
+ * ETC2 RGBA format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ETC2_EAC_Format = 37496;
+
+/**
+ * EAC R11 UNORM format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const R11_EAC_Format = 37488; // 0x9270
+
+/**
+ * EAC R11 SNORM format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SIGNED_R11_EAC_Format = 37489; // 0x9271
+
+/**
+ * EAC RG11 UNORM format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RG11_EAC_Format = 37490; // 0x9272
+
+/**
+ * EAC RG11 SNORM format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SIGNED_RG11_EAC_Format = 37491; // 0x9273
+
+/**
+ * ASTC RGBA 4x4 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_4x4_Format = 37808;
+
+/**
+ * ASTC RGBA 5x4 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_5x4_Format = 37809;
+
+/**
+ * ASTC RGBA 5x5 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_5x5_Format = 37810;
+
+/**
+ * ASTC RGBA 6x5 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_6x5_Format = 37811;
+
+/**
+ * ASTC RGBA 6x6 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_6x6_Format = 37812;
+
+/**
+ * ASTC RGBA 8x5 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_8x5_Format = 37813;
+
+/**
+ * ASTC RGBA 8x6 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_8x6_Format = 37814;
+
+/**
+ * ASTC RGBA 8x8 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_8x8_Format = 37815;
+
+/**
+ * ASTC RGBA 10x5 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_10x5_Format = 37816;
+
+/**
+ * ASTC RGBA 10x6 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_10x6_Format = 37817;
+
+/**
+ * ASTC RGBA 10x8 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_10x8_Format = 37818;
+
+/**
+ * ASTC RGBA 10x10 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_10x10_Format = 37819;
+
+/**
+ * ASTC RGBA 12x10 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_12x10_Format = 37820;
+
+/**
+ * ASTC RGBA 12x12 format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_ASTC_12x12_Format = 37821;
+
+/**
+ * BPTC RGBA format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBA_BPTC_Format = 36492;
+
+/**
+ * BPTC Signed RGB format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGB_BPTC_SIGNED_Format = 36494;
+
+/**
+ * BPTC Unsigned RGB format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGB_BPTC_UNSIGNED_Format = 36495;
+
+/**
+ * RGTC1 Red format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RED_RGTC1_Format = 36283;
+
+/**
+ * RGTC1 Signed Red format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SIGNED_RED_RGTC1_Format = 36284;
+
+/**
+ * RGTC2 Red Green format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RED_GREEN_RGTC2_Format = 36285;
+
+/**
+ * RGTC2 Signed Red Green format.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SIGNED_RED_GREEN_RGTC2_Format = 36286;
+
+/**
+ * Animations are played once.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LoopOnce = 2200;
+
+/**
+ * Animations are played with a chosen number of repetitions, each time jumping from
+ * the end of the clip directly to its beginning.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LoopRepeat = 2201;
+
+/**
+ * Animations are played with a chosen number of repetitions, alternately playing forward
+ * and backward.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LoopPingPong = 2202;
+
+/**
+ * Discrete interpolation mode for keyframe tracks.
+ *
+ * @type {number}
+ * @constant
+ */
+export const InterpolateDiscrete = 2300;
+
+/**
+ * Linear interpolation mode for keyframe tracks.
+ *
+ * @type {number}
+ * @constant
+ */
+export const InterpolateLinear = 2301;
+
+/**
+ * Smooth interpolation mode for keyframe tracks.
+ *
+ * @type {number}
+ * @constant
+ */
+export const InterpolateSmooth = 2302;
+
+/**
+ * Bezier interpolation mode for keyframe tracks.
+ *
+ * Uses cubic Bezier curves with explicit 2D control points.
+ * Requires tangent data to be set on the track.
+ *
+ * @type {number}
+ * @constant
+ */
+export const InterpolateBezier = 2303;
+
+/**
+ * Zero curvature ending for animations.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ZeroCurvatureEnding = 2400;
+
+/**
+ * Zero slope ending for animations.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ZeroSlopeEnding = 2401;
+
+/**
+ * Wrap around ending for animations.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WrapAroundEnding = 2402;
+
+/**
+ * Default animation blend mode.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NormalAnimationBlendMode = 2500;
+
+/**
+ * Additive animation blend mode. Can be used to layer motions on top of
+ * each other to build complex performances from smaller re-usable assets.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AdditiveAnimationBlendMode = 2501;
+
+/**
+ * For every three vertices draw a single triangle.
+ *
+ * @type {number}
+ * @constant
+ */
+export const TrianglesDrawMode = 0;
+
+/**
+ * For each vertex draw a triangle from the last three vertices.
+ *
+ * @type {number}
+ * @constant
+ */
+export const TriangleStripDrawMode = 1;
+
+/**
+ * For each vertex draw a triangle from the first vertex and the last two vertices.
+ *
+ * @type {number}
+ * @constant
+ */
+export const TriangleFanDrawMode = 2;
+
+/**
+ * The depth value is inverted (1.0 - z) for visualization purposes.
+ *
+ * @type {number}
+ * @constant
+ */
+export const BasicDepthPacking = 3200;
+
+/**
+ * The depth value is packed into 32 bit RGBA.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBADepthPacking = 3201;
+
+/**
+ * The depth value is packed into 24 bit RGB.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGBDepthPacking = 3202;
+
+/**
+ * The depth value is packed into 16 bit RG.
+ *
+ * @type {number}
+ * @constant
+ */
+export const RGDepthPacking = 3203;
+
+/**
+ * Normal information is relative to the underlying surface.
+ *
+ * @type {number}
+ * @constant
+ */
+export const TangentSpaceNormalMap = 0;
+
+/**
+ * Normal information is relative to the object orientation.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ObjectSpaceNormalMap = 1;
+
+// Color space string identifiers, matching CSS Color Module Level 4 and WGPU names where available.
+
+/**
+ * No color space.
+ *
+ * @type {string}
+ * @constant
+ */
+export const NoColorSpace = '';
+
+/**
+ * sRGB color space.
+ *
+ * @type {string}
+ * @constant
+ */
+export const SRGBColorSpace = 'srgb';
+
+/**
+ * sRGB-linear color space.
+ *
+ * @type {string}
+ * @constant
+ */
+export const LinearSRGBColorSpace = 'srgb-linear';
+
+/**
+ * Linear transfer function.
+ *
+ * @type {string}
+ * @constant
+ */
+export const LinearTransfer = 'linear';
+
+/**
+ * sRGB transfer function.
+ *
+ * @type {string}
+ * @constant
+ */
+export const SRGBTransfer = 'srgb';
+
+/**
+ * No normal map packing.
+ *
+ * @type {string}
+ * @constant
+ */
+export const NoNormalPacking = '';
+
+/**
+ * Normal RG packing.
+ *
+ * @type {string}
+ * @constant
+ */
+export const NormalRGPacking = 'rg';
+
+/**
+ * Normal GA packing.
+ *
+ * @type {string}
+ * @constant
+ */
+export const NormalGAPacking = 'ga';
+
+/**
+ * Sets the stencil buffer value to `0`.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ZeroStencilOp = 0;
+
+/**
+ * Keeps the current value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const KeepStencilOp = 7680;
+
+/**
+ * Sets the stencil buffer value to the specified reference value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const ReplaceStencilOp = 7681;
+
+/**
+ * Increments the current stencil buffer value. Clamps to the maximum representable unsigned value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const IncrementStencilOp = 7682;
+
+/**
+ * Decrements the current stencil buffer value. Clamps to `0`.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DecrementStencilOp = 7683;
+
+/**
+ * Increments the current stencil buffer value. Wraps stencil buffer value to zero when incrementing
+ * the maximum representable unsigned value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const IncrementWrapStencilOp = 34055;
+
+/**
+ * Decrements the current stencil buffer value. Wraps stencil buffer value to the maximum representable
+ * unsigned value when decrementing a stencil buffer value of `0`.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DecrementWrapStencilOp = 34056;
+
+/**
+ * Inverts the current stencil buffer value bitwise.
+ *
+ * @type {number}
+ * @constant
+ */
+export const InvertStencilOp = 5386;
+
+/**
+ * Will never return true.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NeverStencilFunc = 512;
+
+/**
+ * Will return true if the stencil reference value is less than the current stencil value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LessStencilFunc = 513;
+
+/**
+ * Will return true if the stencil reference value is equal to the current stencil value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const EqualStencilFunc = 514;
+
+/**
+ * Will return true if the stencil reference value is less than or equal to the current stencil value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LessEqualStencilFunc = 515;
+
+/**
+ * Will return true if the stencil reference value is greater than the current stencil value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const GreaterStencilFunc = 516;
+
+/**
+ * Will return true if the stencil reference value is not equal to the current stencil value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NotEqualStencilFunc = 517;
+
+/**
+ * Will return true if the stencil reference value is greater than or equal to the current stencil value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const GreaterEqualStencilFunc = 518;
+
+/**
+ * Will always return true.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AlwaysStencilFunc = 519;
+
+/**
+ * Never pass.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NeverCompare = 512;
+
+/**
+ * Pass if the incoming value is less than the texture value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LessCompare = 513;
+
+/**
+ * Pass if the incoming value equals the texture value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const EqualCompare = 514;
+
+/**
+ * Pass if the incoming value is less than or equal to the texture value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LessEqualCompare = 515;
+
+/**
+ * Pass if the incoming value is greater than the texture value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const GreaterCompare = 516;
+
+/**
+ * Pass if the incoming value is not equal to the texture value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const NotEqualCompare = 517;
+
+/**
+ * Pass if the incoming value is greater than or equal to the texture value.
+ *
+ * @type {number}
+ * @constant
+ */
+export const GreaterEqualCompare = 518;
+
+/**
+ * Always pass.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AlwaysCompare = 519;
+
+/**
+ * The contents are intended to be specified once by the application, and used many
+ * times as the source for drawing and image specification commands.
+ *
+ * @type {number}
+ * @constant
+ */
+export const StaticDrawUsage = 35044;
+
+/**
+ * The contents are intended to be respecified repeatedly by the application, and
+ * used many times as the source for drawing and image specification commands.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DynamicDrawUsage = 35048;
+
+/**
+ * The contents are intended to be specified once by the application, and used at most
+ * a few times as the source for drawing and image specification commands.
+ *
+ * @type {number}
+ * @constant
+ */
+export const StreamDrawUsage = 35040;
+
+/**
+ * The contents are intended to be specified once by reading data from the 3D API, and queried
+ * many times by the application.
+ *
+ * @type {number}
+ * @constant
+ */
+export const StaticReadUsage = 35045;
+
+/**
+ * The contents are intended to be respecified repeatedly by reading data from the 3D API, and queried
+ * many times by the application.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DynamicReadUsage = 35049;
+
+/**
+ * The contents are intended to be specified once by reading data from the 3D API, and queried at most
+ * a few times by the application
+ *
+ * @type {number}
+ * @constant
+ */
+export const StreamReadUsage = 35041;
+
+/**
+ * The contents are intended to be specified once by reading data from the 3D API, and used many times as
+ * the source for Vessert drawing and image specification commands.
+ *
+ * @type {number}
+ * @constant
+ */
+export const StaticCopyUsage = 35046;
+
+/**
+ * The contents are intended to be respecified repeatedly by reading data from the 3D API, and used many times
+ * as the source for Vessert drawing and image specification commands.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DynamicCopyUsage = 35050;
+
+/**
+ * The contents are intended to be specified once by reading data from the 3D API, and used at most a few times
+ * as the source for Vessert drawing and image specification commands.
+ *
+ * @type {number}
+ * @constant
+ */
+export const StreamCopyUsage = 35042;
+
+/**
+ * GLSL 1 shader code.
+ *
+ * @type {string}
+ * @constant
+ */
+export const GLSL1 = '100';
+
+/**
+ * GLSL 3 shader code.
+ *
+ * @type {string}
+ * @constant
+ */
+export const GLSL3 = '300 es';
+
+/**
+ * Vessert coordinate system.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WebGLCoordinateSystem = 2000;
+
+/**
+ * WGPU coordinate system.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WebGPUCoordinateSystem = 2001;
+
+/**
+ * Represents the different timestamp query types.
+ *
+ * @type {ConstantsTimestampQuery}
+ * @constant
+ */
+export const TimestampQuery = {
+	COMPUTE: 'compute',
+	RENDER: 'render'
+};
+
+/**
+ * Represents mouse buttons and interaction types in context of controls.
+ *
+ * @type {ConstantsInterpolationSamplingType}
+ * @constant
+ */
+export const InterpolationSamplingType = {
+	PERSPECTIVE: 'perspective',
+	LINEAR: 'linear',
+	FLAT: 'flat'
+};
+
+/**
+ * Represents the different interpolation sampling modes.
+ *
+ * @type {ConstantsInterpolationSamplingMode}
+ * @constant
+ */
+export const InterpolationSamplingMode = {
+	NORMAL: 'normal',
+	CENTROID: 'centroid',
+	SAMPLE: 'sample',
+	FIRST: 'first',
+	EITHER: 'either'
+};
+
+/**
+ * Compatibility flags for features that may not be supported across all platforms.
+ *
+ * @type {Object}
+ * @constant
+ */
+export const Compatibility = {
+	TEXTURE_COMPARE: 'depthTextureCompare'
+};
+
+/**
+ * Represents the refresh types of render objects.
+ *
+ * @type {ConstantsRenderObjectRefreshType}
+ * @constant
+ */
+export const RenderObjectRefreshType = {
+	NONE: 0,
+	SHARED: 1,
+	FULL: 2
+};
+
+
+/**
+ * Standard single column chronological or algorithmic stream.
  *
  * @type {number}
  * @constant
@@ -105,7 +1742,7 @@ export const GestureEdgeSwipeBack = 11;
 export const FeedSingleColumn = 100;
 
 /**
- * Modular multi-aspect bento grid presentation layout.
+ * Modular bento grid presentation layout.
  *
  * @type {number}
  * @constant
@@ -113,7 +1750,7 @@ export const FeedSingleColumn = 100;
 export const FeedBentoGrid = 101;
 
 /**
- * Full-screen vertical snap paging reels layout.
+ * Immersive full-screen vertical reels stream.
  *
  * @type {number}
  * @constant
@@ -121,7 +1758,7 @@ export const FeedBentoGrid = 101;
 export const FeedImmersiveReels = 102;
 
 /**
- * Multi-column staggered vertical masonry layout.
+ * Multi-column staggered masonry feed.
  *
  * @type {number}
  * @constant
@@ -129,7 +1766,7 @@ export const FeedImmersiveReels = 102;
 export const FeedMasonryStaggered = 103;
 
 /**
- * Non-linear conversation tree branching timeline layout.
+ * Non-linear branching timeline tree stream.
  *
  * @type {number}
  * @constant
@@ -137,7 +1774,7 @@ export const FeedMasonryStaggered = 103;
 export const FeedTimelineBranching = 104;
 
 /**
- * Threaded forum discussion layout with nested commentary.
+ * Community forum feed with vote threading.
  *
  * @type {number}
  * @constant
@@ -145,15 +1782,15 @@ export const FeedTimelineBranching = 104;
 export const FeedCommunityForum = 105;
 
 /**
- * High-velocity streaming live chat stream layout.
+ * High velocity streaming live chat layout.
  *
  * @type {number}
  * @constant
  */
-export const FeedLiveChat = 106;
+export const FeedLiveChatHighVelocity = 106;
 
 /**
- * Interactive social commerce catalog storefront layout.
+ * Interactive social commerce storefront feed.
  *
  * @type {number}
  * @constant
@@ -161,7 +1798,23 @@ export const FeedLiveChat = 106;
 export const FeedShoppableStorefront = 107;
 
 /**
- * Standard text and single media social card entity.
+ * Horizontal snap-scrolling media carousel feed.
+ *
+ * @type {number}
+ * @constant
+ */
+export const FeedHorizontalCarousel = 108;
+
+/**
+ * Right-to-left directional stream layout.
+ *
+ * @type {number}
+ * @constant
+ */
+export const FeedRTLStream = 109;
+
+/**
+ * Standard social post card entity.
  *
  * @type {number}
  * @constant
@@ -169,7 +1822,7 @@ export const FeedShoppableStorefront = 107;
 export const CardPostStandard = 200;
 
 /**
- * Long-form formatted editorial article card entity.
+ * Long-form editorial article card.
  *
  * @type {number}
  * @constant
@@ -177,7 +1830,7 @@ export const CardPostStandard = 200;
 export const CardArticleEditorial = 201;
 
 /**
- * Multi-asset swipeable photo and video carousel card entity.
+ * Multi-asset swipable media carousel card.
  *
  * @type {number}
  * @constant
@@ -185,7 +1838,7 @@ export const CardArticleEditorial = 201;
 export const CardMediaCarousel = 202;
 
 /**
- * Full-height vertical video reel card entity.
+ * High-framerate vertical video reel card.
  *
  * @type {number}
  * @constant
@@ -193,7 +1846,7 @@ export const CardMediaCarousel = 202;
 export const CardMediaReel = 203;
 
 /**
- * Interactive polling card entity with realtime vote tally.
+ * Interactive polling card with real-time vote tallies.
  *
  * @type {number}
  * @constant
@@ -201,7 +1854,7 @@ export const CardMediaReel = 203;
 export const CardPollInteractive = 204;
 
 /**
- * Quote repost card referencing parent content entity.
+ * Quote repost referencing a parent card entity.
  *
  * @type {number}
  * @constant
@@ -209,7 +1862,7 @@ export const CardPollInteractive = 204;
 export const CardQuoteRepost = 205;
 
 /**
- * Live audio space broadcast room card entity.
+ * Live audio space broadcast room card.
  *
  * @type {number}
  * @constant
@@ -217,7 +1870,7 @@ export const CardQuoteRepost = 205;
 export const CardAudioSpacesRoom = 206;
 
 /**
- * Voice snippet card entity with interactive scrubber waveform.
+ * Audio snippet card with dynamic waveform visualizer.
  *
  * @type {number}
  * @constant
@@ -225,7 +1878,7 @@ export const CardAudioSpacesRoom = 206;
 export const CardAudioWaveform = 207;
 
 /**
- * Live broadcast video stream card entity with viewer counter.
+ * Broadcast live streaming hero banner card.
  *
  * @type {number}
  * @constant
@@ -233,7 +1886,7 @@ export const CardAudioWaveform = 207;
 export const CardLiveStreamHero = 208;
 
 /**
- * Crowdsourced verification fact-checking note card entity.
+ * Crowdsourced verification and fact-checking note card.
  *
  * @type {number}
  * @constant
@@ -241,15 +1894,23 @@ export const CardLiveStreamHero = 208;
 export const CardCommunityNote = 209;
 
 /**
- * Commerce product card entity with price, inventory, and buy action.
+ * Direct creator tipping and micropayment card.
  *
  * @type {number}
  * @constant
  */
-export const CardProductShowcase = 210;
+export const CardCreatorTipJar = 210;
 
 /**
- * Omnidirectional background feed distribution signal for broad delivery.
+ * Scheduled event tracker card with realtime countdown.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CardEventCountdown = 211;
+
+/**
+ * Ambient background feed distribution signal.
  *
  * @type {number}
  * @constant
@@ -257,7 +1918,7 @@ export const CardProductShowcase = 210;
 export const SignalAmbient = 300;
 
 /**
- * Focused engagement signal contained within specific discussion threads.
+ * Focused engagement propagation signal within active discussions.
  *
  * @type {number}
  * @constant
@@ -265,7 +1926,7 @@ export const SignalAmbient = 300;
 export const SignalFocused = 301;
 
 /**
- * Directional signal oriented toward specific interest clusters.
+ * Directional broadcast signal oriented toward interest clusters.
  *
  * @type {number}
  * @constant
@@ -273,7 +1934,7 @@ export const SignalFocused = 301;
 export const SignalDirectional = 302;
 
 /**
- * Point signal radiating strictly from author immediate connection radius.
+ * Point interaction signal radiating from a specific user coordinate.
  *
  * @type {number}
  * @constant
@@ -281,7 +1942,7 @@ export const SignalDirectional = 302;
 export const SignalPoint = 303;
 
 /**
- * Spotlight discovery signal elevating content into explore tabs.
+ * Wide-angle spotlight signal modeled after photometric discovery profiles.
  *
  * @type {number}
  * @constant
@@ -289,7 +1950,7 @@ export const SignalPoint = 303;
 export const SignalSpotlightDiscovery = 304;
 
 /**
- * Exponential cascade signal spreading across adjacent network hops.
+ * Multi-tier cascade signal spreading exponentially across adjacent nodes.
  *
  * @type {number}
  * @constant
@@ -297,7 +1958,7 @@ export const SignalSpotlightDiscovery = 304;
 export const SignalRadialCascade = 305;
 
 /**
- * Ranked feedback echo returning audience response back to ranker weights.
+ * Ranked echo feedback signal returning from downstream consumption.
  *
  * @type {number}
  * @constant
@@ -305,231 +1966,103 @@ export const SignalRadialCascade = 305;
 export const SignalRankedEcho = 306;
 
 /**
- * Standard unidirectional follower connection in graph topology.
+ * Unidirectional follow edge in social graph topology.
  *
  * @type {number}
  * @constant
  */
-export const EdgeFollow = 1;
+export const EdgeFollow = 400;
 
 /**
- * Priority inner-circle connection with privileged story access.
+ * Elevated close-friends edge with priority delivery.
  *
  * @type {number}
  * @constant
  */
-export const EdgeCloseFriend = 2;
+export const EdgeCloseFriend = 401;
 
 /**
- * Low-priority connection receiving attenuated notification frequency.
+ * Suppression edge that conceals content without unfollowing.
  *
  * @type {number}
  * @constant
  */
-export const EdgeAcquaintance = 3;
+export const EdgeMute = 402;
 
 /**
- * Content concealment edge hiding posts without unfollowing author.
+ * Bidirectional restriction edge that severs interaction pathways.
  *
  * @type {number}
  * @constant
  */
-export const EdgeMute = 4;
+export const EdgeBlock = 403;
 
 /**
- * Bidirectional restriction edge entirely severing visibility and messaging.
+ * Monetized patron subscription edge.
  *
  * @type {number}
  * @constant
  */
-export const EdgeBlock = 5;
+export const EdgeSubscription = 404;
 
 /**
- * Paid patron subscription edge unlocking subscriber-exclusive cards.
+ * Entry level user status without karma history.
  *
  * @type {number}
  * @constant
  */
-export const EdgeSubscription = 6;
+export const KarmaTierNewcomer = 500;
 
 /**
- * Globally indexed and visible to all network participants.
+ * Established user with verified positive engagement history.
  *
  * @type {number}
  * @constant
  */
-export const VisibilityPublic = 400;
+export const KarmaTierContributor = 501;
 
 /**
- * Restricted to authenticated accounts with active follow edges.
+ * High-standing community pillar with elevated moderation rights.
  *
  * @type {number}
  * @constant
  */
-export const VisibilityFollowersOnly = 401;
+export const KarmaTierPillar = 502;
 
 /**
- * Strictly restricted to accounts explicitly whitelisted on close-friends list.
+ * Elite network luminary with widespread authoritativeness.
  *
  * @type {number}
  * @constant
  */
-export const VisibilityCloseFriendsOnly = 402;
+export const KarmaTierLuminary = 503;
 
 /**
- * Concealed behind interactive blur overlay awaiting user confirmation.
+ * Designated community moderator node.
  *
  * @type {number}
  * @constant
  */
-export const VisibilitySensitiveBlur = 403;
+export const KarmaTierModerator = 504;
 
 /**
- * De-indexed from discovery streams due to policy violation markers.
+ * Network safety guardian with platform intervention privileges.
  *
  * @type {number}
  * @constant
  */
-export const VisibilitySuppressed = 404;
+export const KarmaTierGuardian = 505;
 
 /**
- * Author-deleted entity preserved as tombstone to maintain thread structure.
+ * Community note is pending additional peer ratings.
  *
  * @type {number}
  * @constant
  */
-export const VisibilityTombstoneDeleted = 405;
+export const CommunityNoteNeedsMoreRatings = 600;
 
 /**
- * Standard red heart appreciation reaction glyph.
- *
- * @type {number}
- * @constant
- */
-export const ReactionHeart = 500;
-
-/**
- * Applause and commendation clapping hands reaction glyph.
- *
- * @type {number}
- * @constant
- */
-export const ReactionClap = 501;
-
-/**
- * Tears of joy laughing reaction glyph.
- *
- * @type {number}
- * @constant
- */
-export const ReactionLaugh = 502;
-
-/**
- * Viral momentum flaming fire reaction glyph.
- *
- * @type {number}
- * @constant
- */
-export const ReactionFire = 503;
-
-/**
- * Astonished exploding head mindblown reaction glyph.
- *
- * @type {number}
- * @constant
- */
-export const ReactionMindblown = 504;
-
-/**
- * Positive community upvote tally increment.
- *
- * @type {number}
- * @constant
- */
-export const ReactionUpvote = 505;
-
-/**
- * Negative community downvote tally decrement.
- *
- * @type {number}
- * @constant
- */
-export const ReactionDownvote = 506;
-
-/**
- * Private collection bookmark save reaction indicator.
- *
- * @type {number}
- * @constant
- */
-export const ReactionBookmark = 507;
-
-/**
- * Graph distribution repost republication trigger.
- *
- * @type {number}
- * @constant
- */
-export const ReactionRepost = 508;
-
-/**
- * Initial account tier with zero historical reputation data.
- *
- * @type {number}
- * @constant
- */
-export const KarmaTierNewcomer = 0;
-
-/**
- * Verified member with sustained positive community contributions.
- *
- * @type {number}
- * @constant
- */
-export const KarmaTierContributor = 500;
-
-/**
- * Community leader with note authoring and voting privileges.
- *
- * @type {number}
- * @constant
- */
-export const KarmaTierPillar = 2500;
-
-/**
- * Platform authority with global algorithmic trust multiplier.
- *
- * @type {number}
- * @constant
- */
-export const KarmaTierLuminary = 10000;
-
-/**
- * Designated community moderator with thread moderation abilities.
- *
- * @type {number}
- * @constant
- */
-export const KarmaTierModerator = 25000;
-
-/**
- * Safety custodian with emergency anti-brigading protocol access.
- *
- * @type {number}
- * @constant
- */
-export const KarmaTierGuardian = 50000;
-
-/**
- * Community note awaiting additional peer evaluator consensus.
- *
- * @type {number}
- * @constant
- */
-export const CommunityNoteNeedsRatings = 600;
-
-/**
- * Community note evaluated as helpful with bipartisan consensus.
+ * Community note has reached consensus and is deemed helpful.
  *
  * @type {number}
  * @constant
@@ -537,7 +2070,7 @@ export const CommunityNoteNeedsRatings = 600;
 export const CommunityNoteHelpful = 601;
 
 /**
- * Community note evaluated as unhelpful, biased, or lacking evidence.
+ * Community note was rejected by reviewers as unhelpful or biased.
  *
  * @type {number}
  * @constant
@@ -545,431 +2078,231 @@ export const CommunityNoteHelpful = 601;
 export const CommunityNoteNotHelpful = 602;
 
 /**
- * Card element boundary scrolled into device viewport.
+ * Entity verified clean with no moderation flags.
  *
  * @type {number}
  * @constant
  */
-export const EventImpression = 700;
+export const ModerationClean = 700;
 
 /**
- * Card body intersected at least 50% of viewport area.
+ * Entity concealed behind sensitive content interstitials.
  *
  * @type {number}
  * @constant
  */
-export const EventViewport50 = 701;
+export const ModerationSensitiveContent = 701;
 
 /**
- * Card body entirely contained within viewport without clipping.
+ * Temporary cooldown imposed due to toxicity or flame war triggers.
  *
  * @type {number}
  * @constant
  */
-export const EventViewport100 = 702;
+export const ModerationToxicityCooldown = 702;
 
 /**
- * Periodic one-second dwell heartbeat emitted during active inspection.
+ * Entity suppressed algorithmically due to spam probability heuristics.
  *
  * @type {number}
  * @constant
  */
-export const EventDwellHeartbeat = 703;
+export const ModerationSpamSuppressed = 703;
 
 /**
- * Single tap like reaction event registered.
+ * Defensive rate limiting triggered by coordinated brigade patterns.
  *
  * @type {number}
  * @constant
  */
-export const EventTapLike = 704;
+export const ModerationBrigadingActive = 704;
 
 /**
- * Horizontal or vertical swipe advance transition registered.
+ * User card viewport intersection impression event.
  *
  * @type {number}
  * @constant
  */
-export const EventSwipeAdvance = 705;
+export const EventImpression = 800;
 
 /**
- * High velocity scroll displacement past card indicating low interest.
+ * Standard single tap like reaction event.
  *
  * @type {number}
  * @constant
  */
-export const EventRapidScroll = 706;
+export const EventTapLike = 801;
 
 /**
- * Explicit user dismissal expressing disinterest in content or author.
+ * Double tap like gesture with spatial coordinates.
  *
  * @type {number}
  * @constant
  */
-export const EventDismissNotInterested = 707;
+export const EventDoubleTapLike = 802;
 
 /**
- * Deep link to card dispatched via system share sheet to external app.
+ * Swipe forward transition event in horizontal carousels or reels.
  *
  * @type {number}
  * @constant
  */
-export const EventShareExternal = 708;
+export const EventSwipeNext = 803;
 
 /**
- * Frosted glass acrylic blur presentation surface.
+ * Swipe backward transition event.
  *
  * @type {number}
  * @constant
  */
-export const SkinGlassmorphism = 800;
+export const EventSwipePrevious = 804;
 
 /**
- * Dual directional soft shadow extruded dark matte card surface.
+ * Interactive poll vote submission event.
  *
  * @type {number}
  * @constant
  */
-export const SkinDarkNeomorphism = 801;
+export const EventPollVote = 805;
 
 /**
- * Light translucent frosted blur presentation surface.
+ * Expansion event revealing nested quote or thread cards.
  *
  * @type {number}
  * @constant
  */
-export const SkinAcrylicBlur = 802;
+export const EventQuoteExpand = 806;
 
 /**
- * Angle-dependent iridescent rainbow sheen foil presentation surface.
+ * Listener participant join event in live audio rooms.
  *
  * @type {number}
  * @constant
  */
-export const SkinHolographic = 803;
+export const EventAudioStageJoin = 807;
 
 /**
- * Pulp paper micro-texture with soft natural drop shadow.
+ * Bookmark save event to private collection.
  *
  * @type {number}
  * @constant
  */
-export const SkinTactilePaper = 804;
+export const EventBookmarkSave = 808;
 
 /**
- * Matte untextured clay card with rounded volumetric elevation.
+ * Outbound share dispatch to external application.
  *
  * @type {number}
  * @constant
  */
-export const SkinClayElevation = 805;
+export const EventExternalShare = 809;
 
 /**
- * Pure #000000 black surface optimizing battery conservation.
+ * Continuous dwell time heartbeat tick while card is in viewport frustum.
  *
  * @type {number}
  * @constant
  */
-export const SkinOLEDTrueBlack = 806;
+export const EventDwellHeartbeat = 810;
 
 /**
- * Room creator with administrative authority to invite or mute participants.
+ * Rapid scrolling past card indicating negative interest velocity.
  *
  * @type {number}
  * @constant
  */
-export const StageRoleHost = 900;
+export const EventRapidScrollPast = 811;
 
 /**
- * Designated administrator assisting in room speaker moderation.
+ * Explicit user dismissal expressing disinterest.
  *
  * @type {number}
  * @constant
  */
-export const StageRoleCoHost = 901;
+export const EventDismissNotInterested = 812;
 
 /**
- * Participant authorized to publish live audio onto room stage.
+ * Standard heart reaction glyph.
  *
  * @type {number}
  * @constant
  */
-export const StageRoleSpeaker = 902;
+export const ReactionHeart = 900;
 
 /**
- * Passive listener consuming audio stream without stage publish access.
+ * Applause and appreciation reaction glyph.
  *
  * @type {number}
  * @constant
  */
-export const StageRoleAudience = 903;
+export const ReactionClap = 901;
 
 /**
- * Microphone audio transmission actively silenced.
+ * Amusement and humor reaction glyph.
  *
  * @type {number}
  * @constant
  */
-export const AudioMuted = 0;
+export const ReactionLaugh = 902;
 
 /**
- * Microphone audio transmission active and transmitting.
+ * High momentum fire reaction glyph.
  *
  * @type {number}
  * @constant
  */
-export const AudioUnmuted = 1;
+export const ReactionFire = 903;
 
 /**
- * Voice activity detection confirms active vocal output.
+ * Astonishment mindblown reaction glyph.
  *
  * @type {number}
  * @constant
  */
-export const AudioSpeaking = 2;
+export const ReactionMindblown = 904;
 
 /**
- * Square 1:1 legacy profile and grid photo aspect ratio.
+ * Positive forum upvote tally increment.
  *
  * @type {number}
  * @constant
  */
-export const AspectRatioSquare = 1.0;
+export const ReactionUpvote = 905;
 
 /**
- * Optimized 4:5 vertical feed portrait aspect ratio.
+ * Negative forum downvote tally decrement.
  *
  * @type {number}
  * @constant
  */
-export const AspectRatioPortrait = 0.8;
+export const ReactionDownvote = 906;
 
 /**
- * Full vertical 9:16 vertical video reel and story aspect ratio.
+ * Monetized superchat gem reaction transaction.
  *
  * @type {number}
  * @constant
  */
-export const AspectRatioReel = 0.5625;
+export const ReactionSuperchatGem = 907;
 
 /**
- * Cinematic 16:9 widescreen video aspect ratio.
+ * Bookmark save indicator.
  *
  * @type {number}
  * @constant
  */
-export const AspectRatioLandscape = 1.777777778;
+export const ReactionBookmark = 908;
 
 /**
- * Synchronization worker currently dormant awaiting dirty mutations.
+ * Graph repost distribution trigger.
  *
  * @type {number}
  * @constant
  */
-export const SyncStateIdle = 1000;
+export const ReactionRepost = 909;
 
 /**
- * Local client mutations recorded awaiting network uplink.
- *
- * @type {number}
- * @constant
- */
-export const SyncStatePending = 1001;
-
-/**
- * Delta mutations currently streaming over WebSocket connection.
- *
- * @type {number}
- * @constant
- */
-export const SyncStateStreaming = 1002;
-
-/**
- * Local cache perfectly synchronized with remote authoritative ledger.
- *
- * @type {number}
- * @constant
- */
-export const SyncStateSynced = 1003;
-
-/**
- * Concurrent edit collision detected; CRDT resolution invoked.
- *
- * @type {number}
- * @constant
- */
-export const SyncStateConflict = 1004;
-
-/**
- * Algorithmic score increment when card author responds to an audience reply.
- *
- * @type {number}
- * @constant
- */
-export const WeightReplyAuthorResponds = 13.5;
-
-/**
- * Score bonus awarded when viewer spends >30 consecutive seconds on card.
- *
- * @type {number}
- * @constant
- */
-export const WeightDwellTime30s = 8.5;
-
-/**
- * Score bonus when card impression motivates visit to author profile page.
- *
- * @type {number}
- * @constant
- */
-export const WeightProfileVisit = 6.0;
-
-/**
- * Score bonus when card link is shared via external private messaging.
- *
- * @type {number}
- * @constant
- */
-export const WeightShareExternal = 5.0;
-
-/**
- * Score bonus when viewer stores card into private reference bookmarks.
- *
- * @type {number}
- * @constant
- */
-export const WeightBookmarkSave = 3.0;
-
-/**
- * Score bonus when viewer quotes card with substantive commentary.
- *
- * @type {number}
- * @constant
- */
-export const WeightRepostQuote = 2.5;
-
-/**
- * Score bonus when viewer posts public comment in card discussion tree.
- *
- * @type {number}
- * @constant
- */
-export const WeightReplyStandard = 2.2;
-
-/**
- * Baseline score increment when viewer republishes card to their network.
- *
- * @type {number}
- * @constant
- */
-export const WeightRepostPure = 1.0;
-
-/**
- * Baseline lightweight score increment for single tap like reaction.
- *
- * @type {number}
- * @constant
- */
-export const WeightTapLike = 0.5;
-
-/**
- * Negative algorithmic deduction when user flicks past card in <800ms.
- *
- * @type {number}
- * @constant
- */
-export const PenaltyRapidScroll = -2.0;
-
-/**
- * Negative penalty applied upon viewer clicking not-interested dismissal.
- *
- * @type {number}
- * @constant
- */
-export const PenaltyNotInterested = -25.0;
-
-/**
- * Severe penalty applied when viewer chooses to mute post author.
- *
- * @type {number}
- * @constant
- */
-export const PenaltyMuteAuthor = -74.0;
-
-/**
- * Catastrophic penalty applied when viewer blocks author account.
- *
- * @type {number}
- * @constant
- */
-export const PenaltyBlockAuthor = -150.0;
-
-/**
- * Critical safety trigger and penalty when viewer files spam report.
- *
- * @type {number}
- * @constant
- */
-export const PenaltyReportSpam = -369.0;
-
-/**
- * Score boost applied to cards authored by bidirectional mutual contacts.
- *
- * @type {number}
- * @constant
- */
-export const MultiplierMutualFollow = 1.8;
-
-/**
- * Damping coefficient applied to cold out-of-network candidate posts.
- *
- * @type {number}
- * @constant
- */
-export const MultiplierOutOfNetwork = 0.35;
-
-/**
- * Maximum candidate limit harvested from in-network social graph traversal.
- *
- * @type {number}
- * @constant
- */
-export const CandidatePoolInNetwork = 800;
-
-/**
- * Maximum candidate limit harvested from global embedding search indices.
- *
- * @type {number}
- * @constant
- */
-export const CandidatePoolOutOfNetwork = 700;
-
-/**
- * Final ordered card batch returned to client application stream renderer.
- *
- * @type {number}
- * @constant
- */
-export const CandidateFinalReranked = 150;
-
-/**
- * Exponential decay constant for breaking news events (half-life 6 hours).
- *
- * @type {number}
- * @constant
- */
-export const DecayNewsLambda = 0.1155;
-
-/**
- * Nominal duration in hours for breaking news score to halve.
- *
- * @type {number}
- * @constant
- */
-export const DecayNewsHalfLifeHours = 6.0;
-
-/**
- * ActivityStreams verb declaring creation of new entity.
+ * ActivityStreams Create activity verb.
  *
  * @type {string}
  * @constant
@@ -977,7 +2310,7 @@ export const DecayNewsHalfLifeHours = 6.0;
 export const ActivityCreate = 'Create';
 
 /**
- * ActivityStreams verb republishing or boosting object into followers feed.
+ * ActivityStreams Announce activity verb.
  *
  * @type {string}
  * @constant
@@ -985,7 +2318,7 @@ export const ActivityCreate = 'Create';
 export const ActivityAnnounce = 'Announce';
 
 /**
- * ActivityStreams verb modifying an existing entity.
+ * ActivityStreams Update activity verb.
  *
  * @type {string}
  * @constant
@@ -993,7 +2326,7 @@ export const ActivityAnnounce = 'Announce';
 export const ActivityUpdate = 'Update';
 
 /**
- * ActivityStreams verb removing and tombstoning an entity.
+ * ActivityStreams Delete activity verb.
  *
  * @type {string}
  * @constant
@@ -1001,7 +2334,7 @@ export const ActivityUpdate = 'Update';
 export const ActivityDelete = 'Delete';
 
 /**
- * ActivityStreams verb establishing subscription edge to actor.
+ * ActivityStreams Follow activity verb.
  *
  * @type {string}
  * @constant
@@ -1009,7 +2342,7 @@ export const ActivityDelete = 'Delete';
 export const ActivityFollow = 'Follow';
 
 /**
- * ActivityStreams verb recording positive reaction endorsement.
+ * ActivityStreams Like activity verb.
  *
  * @type {string}
  * @constant
@@ -1017,7 +2350,7 @@ export const ActivityFollow = 'Follow';
 export const ActivityLike = 'Like';
 
 /**
- * ActivityStreams verb revoking previous activity action.
+ * ActivityStreams Undo activity verb.
  *
  * @type {string}
  * @constant
@@ -1025,7 +2358,15 @@ export const ActivityLike = 'Like';
 export const ActivityUndo = 'Undo';
 
 /**
- * ATProto lexicon identifier for standalone post record.
+ * ActivityStreams Block activity verb.
+ *
+ * @type {string}
+ * @constant
+ */
+export const ActivityBlock = 'Block';
+
+/**
+ * ATProto post record lexicon identifier.
  *
  * @type {string}
  * @constant
@@ -1033,7 +2374,7 @@ export const ActivityUndo = 'Undo';
 export const ATProtoFeedPost = 'app.bsky.feed.post';
 
 /**
- * ATProto lexicon identifier for actor profile record.
+ * ATProto actor profile lexicon identifier.
  *
  * @type {string}
  * @constant
@@ -1041,7 +2382,7 @@ export const ATProtoFeedPost = 'app.bsky.feed.post';
 export const ATProtoActorProfile = 'app.bsky.actor.profile';
 
 /**
- * ATProto lexicon identifier for feed repost distribution record.
+ * ATProto repost record lexicon identifier.
  *
  * @type {string}
  * @constant
@@ -1049,7 +2390,7 @@ export const ATProtoActorProfile = 'app.bsky.actor.profile';
 export const ATProtoFeedRepost = 'app.bsky.feed.repost';
 
 /**
- * ATProto lexicon identifier for post like reaction record.
+ * ATProto like record lexicon identifier.
  *
  * @type {string}
  * @constant
@@ -1057,38 +2398,546 @@ export const ATProtoFeedRepost = 'app.bsky.feed.repost';
 export const ATProtoFeedLike = 'app.bsky.feed.like';
 
 /**
- * Represents feed viewport presentation layouts.
+ * ATProto follow graph lexicon identifier.
  *
- * @typedef {Object} ConstantsFeedMode
- * @property {number} SINGLE_COLUMN - Standard chronological stream.
- * @property {number} BENTO_GRID - Modular bento grid stream.
- * @property {number} IMMERSIVE_REELS - Full-screen vertical reels stream.
- * @property {number} MASONRY_STAGGERED - Multi-column staggered stream.
- * @property {number} TIMELINE_BRANCHING - Non-linear branching timeline stream.
- * @property {number} COMMUNITY_FORUM - Community forum thread stream.
- * @property {number} LIVE_CHAT - High velocity live stream chat.
- * @property {number} SHOPPABLE_STOREFRONT - Interactive commerce showcase.
+ * @type {string}
+ * @constant
+ */
+export const ATProtoGraphFollow = 'app.bsky.graph.follow';
+
+/**
+ * ATProto block graph lexicon identifier.
+ *
+ * @type {string}
+ * @constant
+ */
+export const ATProtoGraphBlock = 'app.bsky.graph.block';
+
+/**
+ * Frosted glassmorphism MaterialX surface shader.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SkinGlassmorphismFrosted = 1100;
+
+/**
+ * Extruded dark neomorphism tactile surface shader.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SkinDarkNeomorphism = 1101;
+
+/**
+ * Subtle translucent acrylic surface blur shader.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SkinAcrylicBlurSubtle = 1102;
+
+/**
+ * Specular rainbow holographic foil card shader.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SkinHolographicFoil = 1103;
+
+/**
+ * Micro-textured physical paper card shader.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SkinTactilePaper = 1104;
+
+/**
+ * High reflectance anisotropic liquid metal shader.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SkinLiquidMetalSheen = 1105;
+
+/**
+ * Thin-film interference iridescent bubble shader.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SkinIridescentSoapBubble = 1106;
+
+/**
+ * Soft clay matte elevation surface shader.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SkinClaySoftElevation = 1107;
+
+/**
+ * Anisotropic velvet cloth texture for community badges.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SkinVelvetClothBadge = 1108;
+
+/**
+ * Feed pull-to-refresh haptic audio cue.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AudioPullRefresh = 1200;
+
+/**
+ * Outbound message dispatch audio whoosh.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AudioSendMessage = 1201;
+
+/**
+ * High-pitched micro-interaction reaction pop.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AudioReactionPop = 1202;
+
+/**
+ * Achievement and badge acquisition fanfare.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AudioBadgeUnlock = 1203;
+
+/**
+ * Live stream virtual gift celebration fanfare.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AudioLiveGiftFanfare = 1204;
+
+/**
+ * Space stage hand raise acoustic notification.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AudioSpaceHandRaise = 1205;
+
+/**
+ * Validation reject or transmission error buzz.
+ *
+ * @type {number}
+ * @constant
+ */
+export const AudioErrorBuzz = 1206;
+
+/**
+ * European Article Number 13-digit standard.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SymbologyEAN13 = 1300;
+
+/**
+ * Global Trade Item Number 14-digit standard.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SymbologyGTIN14 = 1301;
+
+/**
+ * Universal Product Code 12-digit standard.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SymbologyUPCA = 1302;
+
+/**
+ * GS1-128 logistics barcoding symbology.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SymbologyGS1128 = 1303;
+
+/**
+ * 2D Matrix Quick Response barcode symbology.
+ *
+ * @type {number}
+ * @constant
+ */
+export const SymbologyQRCode = 1304;
+
+/**
+ * Perspective frustum projection lens.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LensPerspective = 1400;
+
+/**
+ * Orthographic isometric projection lens.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LensOrthographic = 1401;
+
+/**
+ * MSDF Inter typography atlas identifier.
+ *
+ * @type {number}
+ * @constant
+ */
+export const FontMSDFInter = 1500;
+
+/**
+ * MSDF Fira Code monospaced typography atlas identifier.
+ *
+ * @type {number}
+ * @constant
+ */
+export const FontMSDFFiraCode = 1501;
+
+/**
+ * MSDF Space Grotesk display typography atlas identifier.
+ *
+ * @type {number}
+ * @constant
+ */
+export const FontMSDFSpaceGrotesk = 1502;
+
+/**
+ * MSDF Playfair Display serif typography atlas identifier.
+ *
+ * @type {number}
+ * @constant
+ */
+export const FontMSDFPlayfairDisplay = 1503;
+
+/**
+ * MSDF Roboto Flex variable typography atlas identifier.
+ *
+ * @type {number}
+ * @constant
+ */
+export const FontMSDFRobotoFlex = 1504;
+
+/**
+ * Algorithmic score increment when content creator responds to a reply.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightReplyAuthorResponds = 13.5;
+
+/**
+ * Algorithmic score increment for sustained dwell time exceeding 30 seconds.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightDwellTime30s = 8.5;
+
+/**
+ * Algorithmic score increment when card view leads to author profile exploration.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightProfileVisit = 6.0;
+
+/**
+ * Algorithmic score increment when card is shared into external messaging channels.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightShareExternal = 5.0;
+
+/**
+ * Algorithmic score increment for dwell time exceeding 10 seconds.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightDwellTime10s = 4.0;
+
+/**
+ * Algorithmic score increment when user bookmarks or saves card.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightBookmarkSave = 3.0;
+
+/**
+ * Algorithmic score increment for quote repost propagation.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightRepostWithQuote = 2.5;
+
+/**
+ * Algorithmic score increment for standard comment replies.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightReplyStandard = 2.2;
+
+/**
+ * Algorithmic score increment for standard in-network repost.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightRepostPure = 1.0;
+
+/**
+ * Baseline algorithmic score increment for tap like reaction.
+ *
+ * @type {number}
+ * @constant
+ */
+export const WeightTapLike = 0.5;
+
+/**
+ * Negative algorithmic penalty applied on fast scroll displacement past card.
+ *
+ * @type {number}
+ * @constant
+ */
+export const PenaltyRapidScrollPast = -2.0;
+
+/**
+ * Negative algorithmic penalty applied upon explicit not-interested dismissal.
+ *
+ * @type {number}
+ * @constant
+ */
+export const PenaltyNotInterested = -25.0;
+
+/**
+ * Negative algorithmic penalty applied when viewer mutes card author.
+ *
+ * @type {number}
+ * @constant
+ */
+export const PenaltyMuteAuthor = -74.0;
+
+/**
+ * Negative algorithmic penalty applied when viewer blocks card author.
+ *
+ * @type {number}
+ * @constant
+ */
+export const PenaltyBlockAuthor = -150.0;
+
+/**
+ * Severe algorithmic penalty and safety trigger applied on spam reporting.
+ *
+ * @type {number}
+ * @constant
+ */
+export const PenaltyReportSpam = -369.0;
+
+/**
+ * Multiplier bonus applied to content originating from mutual follow relationships.
+ *
+ * @type {number}
+ * @constant
+ */
+export const MultiplierMutualFollowBonus = 1.8;
+
+/**
+ * Damping coefficient applied to out-of-network candidate generation.
+ *
+ * @type {number}
+ * @constant
+ */
+export const MultiplierOutOfNetwork = 0.35;
+
+/**
+ * Maximum candidate pool limit harvested from in-network graph traversal.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CandidatePoolInNetwork = 800;
+
+/**
+ * Maximum candidate pool limit harvested from global discovery algorithms.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CandidatePoolOutOfNetwork = 700;
+
+/**
+ * Target output batch size after heavy ranking model reranking.
+ *
+ * @type {number}
+ * @constant
+ */
+export const CandidateFinalReranked = 150;
+
+/**
+ * Exponential decay lambda constant for standard news content lifespans.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DecayNewsLambda = 0.1155;
+
+/**
+ * Nominal half-life duration in hours for standard news content.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DecayNewsHalfLifeHours = 6.0;
+
+/**
+ * Velocity derivative multiplier factor applied to interaction spikes.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DecayNewsVelocityFactor = 0.35;
+
+/**
+ * Lifetime window in hours for ephemeral flash stories before archival.
+ *
+ * @type {number}
+ * @constant
+ */
+export const DecayEphemeralStoryHours = 24.0;
+
+/**
+ * Standard vector dimensionality for neural content embeddings.
+ *
+ * @type {number}
+ * @constant
+ */
+export const EmbeddingDimension768 = 768;
+
+/**
+ * Standard avatar layout diameter in pixels.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LayoutAvatarStandardSize = 44;
+
+/**
+ * Compact avatar layout diameter in pixels.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LayoutAvatarCompactSize = 32;
+
+/**
+ * Standard media container vertical aspect ratio (4:5).
+ *
+ * @type {number}
+ * @constant
+ */
+export const LayoutMediaAspectStandard = 0.8;
+
+/**
+ * Full vertical media container aspect ratio (9:16).
+ *
+ * @type {number}
+ * @constant
+ */
+export const LayoutMediaAspectReel = 0.5625;
+
+/**
+ * Maximum preview line count before text block truncation.
+ *
+ * @type {number}
+ * @constant
+ */
+export const LayoutTextMaxPreviewLines = 6;
+
+/**
+ * This type represents mouse buttons and interaction types in context of controls.
+ *
+ * @typedef {Object} ConstantsMouse
+ * @property {number} MIDDLE - The left mouse button.
+ * @property {number} LEFT - The middle mouse button.
+ * @property {number} RIGHT - The right mouse button.
+ * @property {number} ROTATE - A rotate interaction.
+ * @property {number} DOLLY - A dolly interaction.
+ * @property {number} PAN - A pan interaction.
+ **/
+
+/**
+ * This type represents touch interaction types in context of controls.
+ *
+ * @typedef {Object} ConstantsTouch
+ * @property {number} ROTATE - A rotate interaction.
+ * @property {number} PAN - A pan interaction.
+ * @property {number} DOLLY_PAN - The dolly-pan interaction.
+ * @property {number} DOLLY_ROTATE - A dolly-rotate interaction.
+ **/
+
+/**
+ * This type represents the different timestamp query types.
+ *
+ * @typedef {Object} ConstantsTimestampQuery
+ * @property {string} COMPUTE - A `compute` timestamp query.
+ * @property {string} RENDER - A `render` timestamp query.
+ **/
+
+/**
+ * Represents the different interpolation sampling types.
+ *
+ * @typedef {Object} ConstantsInterpolationSamplingType
+ * @property {string} PERSPECTIVE - Perspective-correct interpolation.
+ * @property {string} LINEAR - Linear interpolation.
+ * @property {string} FLAT - Flat interpolation.
  */
 
 /**
- * Represents card entity types.
+ * Represents the different interpolation sampling modes.
  *
- * @typedef {Object} ConstantsCardType
- * @property {number} POST_STANDARD - Standard post card.
- * @property {number} ARTICLE_EDITORIAL - Rich editorial article card.
- * @property {number} MEDIA_CAROUSEL - Multi-asset carousel card.
- * @property {number} MEDIA_REEL - Vertical video reel card.
- * @property {number} POLL_INTERACTIVE - Interactive poll card.
- * @property {number} QUOTE_REPOST - Quoted repost card.
- * @property {number} AUDIO_SPACES_ROOM - Live audio space card.
- * @property {number} AUDIO_WAVEFORM - Voice note card.
- * @property {number} LIVE_STREAM_HERO - Live stream banner card.
- * @property {number} COMMUNITY_NOTE - Verification fact-check card.
- * @property {number} PRODUCT_SHOWCASE - E-commerce product card.
+ * @typedef {Object} ConstantsInterpolationSamplingMode
+ * @property {string} NORMAL - Normal sampling mode.
+ * @property {string} CENTROID - Centroid sampling mode.
+ * @property {string} SAMPLE - Sample-specific sampling mode.
+ * @property {string} FIRST - Flat interpolation using the first vertex.
+ * @property {string} EITHER - Flat interpolation using either vertex.
  */
 
 /**
- * Represents touch and pointer interaction gestures.
+ * Represents the refresh types of render objects.
+ *
+ * @typedef {Object} ConstantsRenderObjectRefreshType
+ * @property {number} NONE - No refresh required.
+ * @property {number} SHARED - Only shared uniform buffers require an update.
+ * @property {number} FULL - The render object requires a full refresh.
+ */
+
+/**
+ * Represents touch, gesture, and mobile interaction modalities.
  *
  * @typedef {Object} ConstantsGesture
  * @property {number} TAP - Single tap.
@@ -1103,54 +2952,4 @@ export const ATProtoFeedLike = 'app.bsky.feed.like';
  * @property {number} PAN_DRAG - 2D spatial translation drag.
  * @property {number} PULL_TO_REFRESH - Downward refresh drag.
  * @property {number} EDGE_SWIPE_BACK - Boundary navigation swipe.
- */
-
-/**
- * Represents social graph edge relationship types.
- *
- * @typedef {Object} ConstantsEdgeType
- * @property {number} FOLLOW - Standard follow connection.
- * @property {number} CLOSE_FRIEND - Priority delivery inner circle edge.
- * @property {number} ACQUAINTANCE - Low-priority edge.
- * @property {number} MUTE - Content concealment without uncoupling.
- * @property {number} BLOCK - Bidirectional restriction edge.
- * @property {number} SUBSCRIPTION - Monetized patron subscriber connection.
- */
-
-/**
- * Represents user reputation karma tiers.
- *
- * @typedef {Object} ConstantsKarmaTier
- * @property {number} NEWCOMER - Initial user standing.
- * @property {number} CONTRIBUTOR - Verified positive history standing.
- * @property {number} PILLAR - Community leadership node standing.
- * @property {number} LUMINARY - Platform-wide authoritative standing.
- * @property {number} MODERATOR - Delegated governance node.
- * @property {number} GUARDIAN - High security platform custodian node.
- */
-
-/**
- * Represents interactive engagement reaction types.
- *
- * @typedef {Object} ConstantsReaction
- * @property {number} HEART - Heart reaction.
- * @property {number} CLAP - Applause reaction.
- * @property {number} LAUGH - Humor reaction.
- * @property {number} FIRE - Viral momentum reaction.
- * @property {number} MINDBLOWN - Wonder reaction.
- * @property {number} UPVOTE - Upvote increment.
- * @property {number} DOWNVOTE - Downvote decrement.
- * @property {number} BOOKMARK - Saved bookmark indicator.
- * @property {number} REPOST - Feed republication event.
- */
-
-/**
- * Represents network synchronization state.
- *
- * @typedef {Object} ConstantsSyncState
- * @property {number} IDLE - Offline synchronization dormant.
- * @property {number} PENDING - Mutations queued locally.
- * @property {number} STREAMING - Mutations streaming over socket.
- * @property {number} SYNCED - Fully synchronized.
- * @property {number} CONFLICT - Mutation collision detected.
  */

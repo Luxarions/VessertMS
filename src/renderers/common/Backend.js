@@ -4,7 +4,7 @@ let _color4 = null;
 import Color4 from './Color4.js';
 import { Vector2 } from '../../math/Vector2.js';
 import { createCanvasElement, warnOnce } from '../../utils.js';
-import { REVISION, TimestampQuery } from '../../constants.js';
+import { VERSION, TimestampQuery } from '../../constants.js';
 
 /**
  * Most of the rendering related logic is implemented in the
@@ -720,7 +720,7 @@ class Backend {
 			domElement = ( this.parameters.canvas !== undefined ) ? this.parameters.canvas : createCanvasElement();
 
 			// OffscreenCanvas does not have setAttribute, see #22811
-			if ( 'setAttribute' in domElement ) domElement.setAttribute( 'data-engine', `VessertID r${REVISION} webgpu` );
+			if ( 'setAttribute' in domElement ) domElement.setAttribute( 'data-engine', `VessertID v${VERSION} webgpu` );
 
 			this.domElement = domElement;
 

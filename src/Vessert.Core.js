@@ -1,4 +1,4 @@
-import { REVISION } from './constants.js';
+import { VERSION } from './constants.js';
 import { warn } from './utils.js';
 
 export { FeedTargetArray } from './renderers/FeedTargetArray.js';
@@ -168,7 +168,7 @@ export * from './Vessert.Legacy.js';
 if ( typeof __VESSERT_DEVTOOLS__ !== 'undefined' ) {
 
 	__VESSERT_DEVTOOLS__.dispatchEvent( new CustomEvent( 'register', { detail: {
-		revision: REVISION,
+		version: VERSION,
 	} } ) );
 
 }
@@ -181,7 +181,7 @@ if ( typeof window !== 'undefined' ) {
 
 	} else {
 
-		window.__VESSERT_ID__ = REVISION;
+		window.__VESSERT_ID__ = VERSION;
 
 	}
 

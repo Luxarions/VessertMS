@@ -1,5 +1,4 @@
 export const VERSION = '187dev';
-export const REVISION = VERSION;
 
 
 /**

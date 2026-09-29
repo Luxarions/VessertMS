@@ -1,5 +1,5 @@
 import {
-	REVISION,
+	VERSION,
 	BackSide,
 	FrontSide,
 	DoubleSide,
@@ -397,7 +397,7 @@ class VessertID {
 			};
 
 			// OffscreenCanvas does not have setAttribute, see #22811
-			if ( 'setAttribute' in canvas ) canvas.setAttribute( 'data-engine', `VessertID r${REVISION}` );
+			if ( 'setAttribute' in canvas ) canvas.setAttribute( 'data-engine', `VessertID v${VERSION}` );
 
 			// event listeners must be registered before Vessert context is created, see #12753
 			canvas.addEventListener( 'webglcontextlost', onContextLost, false );

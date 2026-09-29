@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vessert.org/schemas/vendor-sfu-topology-v1.json",
+  "audioSpacesProtocol": {
+    "architecture": "SelectiveForwardingUnit",
+    "opusCodec": {
+      "sampleRate": 48000,
+      "channels": 2,
+      "bitrateSpeechKbps": 24,
+      "bitrateMusicKbps": 128,
+      "packetLossConcealment": true,
+      "fec": true
+    },
+    "spatialPositioning": {
+      "mode": "BinauralHRTF",
+      "roomImpulseResponse": "small_studio",
+      "headTrackingSupported": true
+    },
+    "stageRoles": {
+      "Host": {
+        "code": 1100,
+        "canInvite": true,
+        "canMuteOthers": true,
+        "maxConcurrent": 1
+      },
+      "CoHost": {
+        "code": 1101,
+        "canInvite": true,
+        "canMuteOthers": true,
+        "maxConcurrent": 3
+      },
+      "Speaker": {
+        "code": 1102,
+        "canPublishAudio": true,
+        "maxConcurrent": 12
+      },
+      "Audience": {
+        "code": 1103,
+        "canPublishAudio": false,
+        "maxConcurrent": 50000
+      }
+    }
+  }
+}

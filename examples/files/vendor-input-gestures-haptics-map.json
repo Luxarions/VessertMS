@@ -1,0 +1,166 @@
+{
+  "$schema": "https://vessert.org/schemas/vendor-input-gestures-v1.json",
+  "touchGestures": {
+    "Tap": {
+      "code": 300,
+      "defaultAction": "select_or_expand",
+      "hapticFeedback": 401
+    },
+    "DoubleTap": {
+      "code": 301,
+      "defaultAction": "toggle_like",
+      "hapticFeedback": 403,
+      "windowMs": 300
+    },
+    "TripleTap": {
+      "code": 302,
+      "defaultAction": "toggle_bookmark",
+      "hapticFeedback": 403
+    },
+    "LongPress": {
+      "code": 303,
+      "defaultAction": "open_context_menu",
+      "thresholdMs": 500,
+      "hapticFeedback": 402
+    },
+    "SwipeUp": {
+      "code": 304,
+      "defaultAction": "reel_next",
+      "velocityMinPxPerSec": 400
+    },
+    "SwipeDown": {
+      "code": 305,
+      "defaultAction": "reel_previous_or_dismiss",
+      "velocityMinPxPerSec": 400
+    },
+    "SwipeLeft": {
+      "code": 306,
+      "defaultAction": "carousel_slide_next"
+    },
+    "SwipeRight": {
+      "code": 307,
+      "defaultAction": "carousel_slide_previous"
+    },
+    "PinchZoomIn": {
+      "code": 308,
+      "defaultAction": "media_lightbox_expand",
+      "scaleThreshold": 1.25
+    },
+    "PinchZoomOut": {
+      "code": 309,
+      "defaultAction": "media_lightbox_collapse",
+      "scaleThreshold": 0.8
+    },
+    "PanDrag": {
+      "code": 310,
+      "defaultAction": "spatial_canvas_translate"
+    },
+    "FlingVelocity": {
+      "code": 311,
+      "defaultAction": "inertial_scroll",
+      "frictionDamping": 0.95
+    },
+    "PullToRefresh": {
+      "code": 312,
+      "defaultAction": "refresh_feed_head",
+      "displacementPx": 80,
+      "hapticFeedback": 402
+    },
+    "EdgeSwipeBack": {
+      "code": 313,
+      "defaultAction": "navigator_pop_route",
+      "edgeMarginPx": 24
+    },
+    "TiltParallax": {
+      "code": 314,
+      "defaultAction": "card_depth_displacement",
+      "maxAngleDeg": 15
+    },
+    "ForceTouch3D": {
+      "code": 315,
+      "defaultAction": "peek_and_pop_preview",
+      "pressureNormalized": 0.75
+    }
+  },
+  "hapticProfiles": {
+    "HapticSelectionTick": {
+      "code": 400,
+      "durationMs": 10,
+      "intensity": 0.25
+    },
+    "HapticImpactLight": {
+      "code": 401,
+      "durationMs": 15,
+      "intensity": 0.4
+    },
+    "HapticImpactMedium": {
+      "code": 402,
+      "durationMs": 25,
+      "intensity": 0.7
+    },
+    "HapticImpactHeavy": {
+      "code": 403,
+      "durationMs": 40,
+      "intensity": 1.0
+    },
+    "HapticNotificationSuccess": {
+      "code": 404,
+      "pattern": [
+        15,
+        50,
+        25
+      ],
+      "intensity": 0.8
+    },
+    "HapticNotificationWarning": {
+      "code": 405,
+      "pattern": [
+        30,
+        40,
+        30,
+        40,
+        30
+      ],
+      "intensity": 0.9
+    },
+    "HapticNotificationError": {
+      "code": 406,
+      "pattern": [
+        60,
+        50,
+        90
+      ],
+      "intensity": 1.0
+    }
+  },
+  "keyboardShortcuts": {
+    "KeyJ": {
+      "code": "KeyJ",
+      "action": "next_item"
+    },
+    "KeyK": {
+      "code": "KeyK",
+      "action": "previous_item"
+    },
+    "KeyL": {
+      "code": "KeyL",
+      "action": "like_active_card"
+    },
+    "KeyR": {
+      "code": "KeyR",
+      "action": "reply_active_card"
+    },
+    "KeyT": {
+      "code": "KeyT",
+      "action": "repost_active_card"
+    },
+    "KeyB": {
+      "code": "KeyB",
+      "action": "bookmark_active_card"
+    },
+    "Slash": {
+      "code": "Slash",
+      "action": "focus_search_bar"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "provider": "Vendor Cloud Object Storage Engine (S3 / Cloud Storage / MinIO)",
+  "bucket_name": "vessert-social-media-assets-prod",
+  "cdn_origin_shield": "https://cdn.vessert.network",
+  "cors_rules": [
+    {
+      "allowed_origins": [
+        "*"
+      ],
+      "allowed_methods": [
+        "GET",
+        "HEAD",
+        "PUT"
+      ],
+      "allowed_headers": [
+        "Content-Type",
+        "Content-MD5",
+        "x-amz-acl",
+        "Range"
+      ],
+      "max_age_seconds": 86400
+    }
+  ],
+  "lifecycle_rules": [
+    {
+      "rule_id": "ephemeral_stories_24h_expiry",
+      "prefix": "stories/",
+      "status": "Enabled",
+      "expiration_days": 1
+    },
+    {
+      "rule_id": "temp_upload_abort_incomplete_multipart",
+      "status": "Enabled",
+      "abort_incomplete_multipart_upload_days": 2
+    },
+    {
+      "rule_id": "standard_media_tiering_glacier",
+      "prefix": "archives/",
+      "status": "Enabled",
+      "transitions": [
+        {
+          "days": 90,
+          "storage_class": "INFREQUENT_ACCESS"
+        },
+        {
+          "days": 365,
+          "storage_class": "GLACIER"
+        }
+      ]
+    }
+  ]
+}

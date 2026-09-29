@@ -1,0 +1,19 @@
+{
+  "protocol": "Vessert Offline-First Sync & CRDT",
+  "version": "1.0",
+  "conflict_resolution_strategy": "Last-Write-Wins (LWW) with Lamport Timestamps",
+  "mutation_lifecycle": [
+    "1. Optimistic apply to in-memory graph node",
+    "2. Commit to local IndexedDB & SQLite outbox",
+    "3. Enqueue to BackgroundSync API worker",
+    "4. Dispatch network request with idempotency token",
+    "5. Server reconciles state & sends canonical node diff",
+    "6. Mark local outbox item as synced"
+  ],
+  "retry_backoff": {
+    "initial_interval_ms": 1000,
+    "backoff_multiplier": 2,
+    "max_interval_ms": 60000,
+    "max_retries": 5
+  }
+}

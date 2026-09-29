@@ -1,0 +1,28 @@
+{
+  "system": "Origin Private File System (OPFS)",
+  "purpose": "Direct zero-copy GPU video segment & compressed texture cache via Web Workers",
+  "max_storage_budget_gb": 5,
+  "eviction_policy": "LRU_with_priority_pins",
+  "folder_hierarchy": {
+    "/media_cache/video_chunks/": {
+      "file_naming": "{video_id}_{quality}_{segment_index}.ts",
+      "ttl_seconds": 604800,
+      "priority": "normal"
+    },
+    "/media_cache/compressed_textures/": {
+      "file_naming": "{texture_hash}.ktx2",
+      "ttl_seconds": 2592000,
+      "priority": "high"
+    },
+    "/media_cache/audio_voice_notes/": {
+      "file_naming": "{note_id}.ogg",
+      "ttl_seconds": 1209600,
+      "priority": "normal"
+    },
+    "/drafts/attachments/": {
+      "file_naming": "{draft_id}_{file_index}.bin",
+      "ttl_seconds": 0,
+      "priority": "permanent_until_published"
+    }
+  }
+}

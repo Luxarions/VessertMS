@@ -1,0 +1,98 @@
+{
+  "database_name": "vessert_social_graph_db",
+  "version": 4,
+  "engine_target": "IndexedDB / Dexie.js / Native IDB",
+  "storage_quota_estimate_mb": 1024,
+  "stores": [
+    {
+      "name": "cached_posts",
+      "keyPath": "id",
+      "autoIncrement": false,
+      "indexes": [
+        {
+          "name": "by_author",
+          "keyPath": "author_id",
+          "unique": false
+        },
+        {
+          "name": "by_created_at",
+          "keyPath": "created_at",
+          "unique": false
+        },
+        {
+          "name": "by_rank_score",
+          "keyPath": "rank_score",
+          "unique": false
+        },
+        {
+          "name": "by_root_thread",
+          "keyPath": "root_id",
+          "unique": false
+        }
+      ]
+    },
+    {
+      "name": "profiles_cache",
+      "keyPath": "id",
+      "autoIncrement": false,
+      "indexes": [
+        {
+          "name": "by_handle",
+          "keyPath": "handle",
+          "unique": true
+        },
+        {
+          "name": "by_did",
+          "keyPath": "did",
+          "unique": true
+        }
+      ]
+    },
+    {
+      "name": "media_blobs",
+      "keyPath": "url",
+      "autoIncrement": false,
+      "indexes": [
+        {
+          "name": "by_media_type",
+          "keyPath": "media_type",
+          "unique": false
+        },
+        {
+          "name": "by_cached_at",
+          "keyPath": "cached_at",
+          "unique": false
+        }
+      ]
+    },
+    {
+      "name": "feed_snapshots",
+      "keyPath": "feed_key",
+      "autoIncrement": false,
+      "indexes": [
+        {
+          "name": "by_updated_at",
+          "keyPath": "updated_at",
+          "unique": false
+        }
+      ]
+    },
+    {
+      "name": "offline_sync_outbox",
+      "keyPath": "mutation_id",
+      "autoIncrement": false,
+      "indexes": [
+        {
+          "name": "by_status",
+          "keyPath": "status",
+          "unique": false
+        },
+        {
+          "name": "by_created_at",
+          "keyPath": "created_at",
+          "unique": false
+        }
+      ]
+    }
+  ]
+}

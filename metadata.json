@@ -1,0 +1,7 @@
+{
+  "name": "Custom Project Studio",
+  "description": "Ruang kerja aplikasi yang telah dibersihkan total dan siap dibangun sesuai konsep spesifik Anda.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

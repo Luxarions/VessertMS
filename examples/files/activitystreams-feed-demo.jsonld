@@ -1,0 +1,53 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "type": "OrderedCollection",
+  "id": "https://vessert.network/feeds/discovery",
+  "totalItems": 3,
+  "orderedItems": [
+    {
+      "id": "https://vessert.network/posts/101",
+      "type": "Create",
+      "actor": {
+        "type": "Person",
+        "id": "https://vessert.network/users/bayu",
+        "name": "Bayu Prasetyo",
+        "preferredUsername": "bayu",
+        "summary": "Architecting VessertID Social Rendering Engine"
+      },
+      "object": {
+        "type": "Note",
+        "id": "https://vessert.network/notes/101",
+        "attributedTo": "https://vessert.network/users/bayu",
+        "content": "VessertID 4.0: Rendering graf konten sosial kini memiliki fondasi mesin hardware-accelerated mandiri.",
+        "published": "2026-09-29T12:00:00Z",
+        "tag": [
+          {
+            "type": "Hashtag",
+            "name": "#VessertID"
+          },
+          {
+            "type": "Hashtag",
+            "name": "#SocialRenderingEngine"
+          }
+        ]
+      }
+    },
+    {
+      "id": "https://vessert.network/posts/102",
+      "type": "Create",
+      "actor": {
+        "type": "Person",
+        "id": "https://vessert.network/users/gisella",
+        "name": "Gisella Ambar",
+        "preferredUsername": "gisella"
+      },
+      "object": {
+        "type": "Note",
+        "id": "https://vessert.network/notes/102",
+        "attributedTo": "https://vessert.network/users/gisella",
+        "content": "Pengujian transisi layout masonry dan adaptive card padding berjalan 120 FPS mulus di mobile.",
+        "published": "2026-09-29T12:15:00Z"
+      }
+    }
+  ]
+}

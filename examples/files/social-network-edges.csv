@@ -1,0 +1,5 @@
+source_user,target_user,weight,affinity_type,timestamp
+bayu,gisella,0.98,collaborator,1790683200
+gisella,bayu,0.95,collaborator,1790683300
+luxarion,bayu,0.85,follower,1790683400
+developer_community,vessert_core,1.0,organization,1790683500

@@ -1,0 +1,25 @@
+{
+  "nodes": [
+    {
+      "id": "u1",
+      "handle": "@bayu",
+      "rank": 1,
+      "followers": 24000,
+      "verified": true
+    },
+    {
+      "id": "u2",
+      "handle": "@gisella",
+      "rank": 0.92,
+      "followers": 18500,
+      "verified": true
+    },
+    {
+      "id": "u3",
+      "handle": "@dev_community",
+      "rank": 0.88,
+      "followers": 95000,
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "template": "ProfileBioCard",
+  "version": "1.0.0",
+  "headerBannerHeight": 180,
+  "avatarOverlap": 48,
+  "statChips": [
+    "posts",
+    "followers",
+    "following",
+    "affinityScore"
+  ]
+}

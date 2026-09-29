@@ -1,0 +1,24 @@
+{
+  "name": "Nordic Clean Light",
+  "id": "vessert-light-nordic",
+  "colors": {
+    "surface_base": "#f8fafc",
+    "surface_card": "#ffffff",
+    "surface_elevated": "#f1f5f9",
+    "accent_primary": "#0284c7",
+    "accent_glow": "rgba(2, 132, 199, 0.15)",
+    "text_primary": "#0f172a",
+    "text_secondary": "#475569",
+    "text_tertiary": "#94a3b8",
+    "border_subtle": "#e2e8f0",
+    "border_focus": "#0284c7",
+    "signal_hot": "#e11d48",
+    "signal_trending": "#d97706"
+  },
+  "metrics": {
+    "card_radius": 14,
+    "card_gap": 10,
+    "card_padding": 14,
+    "elevation_blur": 16
+  }
+}

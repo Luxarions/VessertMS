@@ -1,0 +1,13 @@
+/* VessertID 3D Perspective Card Rotation */
+.vessert-card-perspective-viewport {
+  perspective: 1200px;
+}
+
+.vessert-card-flip-node {
+  transition: transform 450ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.vessert-card-flip-node.flipped {
+  transform: rotateY(180deg);
+}

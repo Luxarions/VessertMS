@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<materialx version="1.38">
+  <!-- VessertID MaterialX UI Skin Specification: Frosted Glassmorphism -->
+  <standard_surface name="UI_Glass_Skin" type="surfaceshader">
+    <input name="base" type="float" value="0.15" />
+    <input name="base_color" type="color3" value="0.95, 0.98, 1.0" />
+    <input name="specular_roughness" type="float" value="0.22" />
+    <input name="transmission" type="float" value="0.82" />
+    <input name="transmission_depth" type="float" value="1.2" />
+    <input name="opacity" type="color3" value="0.85, 0.85, 0.85" />
+  </standard_surface>
+  <surfacematerial name="FrostedCardSkin" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="UI_Glass_Skin" />
+  </surfacematerial>
+</materialx>

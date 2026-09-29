@@ -1,0 +1,49 @@
+{
+  "template": "CardPostStandard",
+  "version": "1.0.0",
+  "structure": {
+    "header": {
+      "type": "Row",
+      "items": [
+        {
+          "type": "AvatarLayout",
+          "size": 44,
+          "presenceIndicator": true
+        },
+        {
+          "type": "AuthorBioBlock",
+          "showVerified": true,
+          "showHandle": true
+        },
+        {
+          "type": "ActionMenuButton",
+          "align": "end"
+        }
+      ]
+    },
+    "body": {
+      "type": "ContentBlock",
+      "richText": true,
+      "maxCollapsedLines": 5,
+      "mediaContainer": {
+        "aspectRatios": [
+          "1:1",
+          "4:5",
+          "16:9"
+        ],
+        "carouselMultiSheet": true
+      }
+    },
+    "footer": {
+      "type": "EngagementBar",
+      "actions": [
+        "like",
+        "comment",
+        "repost",
+        "share",
+        "bookmark"
+      ],
+      "counters": true
+    }
+  }
+}

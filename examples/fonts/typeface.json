@@ -1,0 +1,16 @@
+{
+  "glyphs": {
+    "A": {
+      "ha": 1400,
+      "x_min": 0,
+      "x_max": 1390,
+      "o": "m 0 0 l 700 1500 l 1400 0 z"
+    }
+  },
+  "familyName": "VessertSans",
+  "ascender": 1000,
+  "descender": -200,
+  "underlinePosition": -100,
+  "underlineThickness": 50,
+  "resolution": 1000
+}

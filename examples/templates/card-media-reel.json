@@ -1,0 +1,11 @@
+{
+  "template": "CardMediaReel",
+  "version": "1.0.0",
+  "aspectRatio": "9:16",
+  "fullBleed": true,
+  "overlayLayout": {
+    "bottomControls": true,
+    "floatingActionCol": "right",
+    "gradientFadeScrim": true
+  }
+}

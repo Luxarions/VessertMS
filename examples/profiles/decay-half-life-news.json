@@ -1,0 +1,8 @@
+{
+  "profile": "decay-half-life-news",
+  "half_life_hours": 6,
+  "minimum_visibility_floor": 0.05,
+  "velocity_weight": 0.35,
+  "exponential_lambda": 0.1155,
+  "description": "Calculates exponential attention decay for real-time news and breaking updates"
+}

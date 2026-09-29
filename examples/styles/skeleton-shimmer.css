@@ -1,0 +1,20 @@
+/* VessertID Skeleton Shimmer Rule */
+@keyframes vessert-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.vessert-skeleton-card {
+  position: relative;
+  background: rgba(148, 163, 184, 0.12);
+  border-radius: var(--vessert-card-radius, 14px);
+  overflow: hidden;
+}
+
+.vessert-skeleton-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+  animation: vessert-shimmer 1.4s infinite;
+}

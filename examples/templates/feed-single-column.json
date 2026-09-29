@@ -1,0 +1,21 @@
+{
+  "template": "FeedSingleColumn",
+  "version": "1.0.0",
+  "layout": {
+    "direction": "vertical",
+    "alignment": "center",
+    "maxWidth": 640,
+    "itemSpacing": 16,
+    "padding": {
+      "top": 24,
+      "bottom": 32,
+      "left": 16,
+      "right": 16
+    }
+  },
+  "culling": {
+    "overscanTop": 2,
+    "overscanBottom": 3,
+    "estimatedItemHeight": 420
+  }
+}

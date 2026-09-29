@@ -1,0 +1,11 @@
+{
+  "profile": "engagement-boost",
+  "weights": {
+    "reaction": 1,
+    "reply_nested": 2.5,
+    "repost_quote": 3,
+    "bookmark_save": 2,
+    "dwell_time_seconds_factor": 0.05
+  },
+  "diminishing_returns_cap": 5000
+}

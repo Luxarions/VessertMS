@@ -1,0 +1,84 @@
+{
+  "$schema": "https://atproto.com/specs/lexicon",
+  "lexicons": [
+    {
+      "lexicon": 1,
+      "id": "app.bsky.feed.generator",
+      "defs": {
+        "main": {
+          "type": "record",
+          "key": "tid",
+          "record": {
+            "type": "object",
+            "required": [
+              "did",
+              "displayName",
+              "createdAt"
+            ],
+            "properties": {
+              "did": {
+                "type": "string",
+                "format": "did"
+              },
+              "displayName": {
+                "type": "string",
+                "maxLength": 240
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 3000
+              },
+              "avatar": {
+                "type": "blob",
+                "accept": [
+                  "image/png",
+                  "image/jpeg"
+                ]
+              },
+              "acceptsInteractions": {
+                "type": "boolean"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "datetime"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "lexicon": 1,
+      "id": "app.bsky.feed.threadgate",
+      "defs": {
+        "main": {
+          "type": "record",
+          "key": "tid",
+          "record": {
+            "type": "object",
+            "required": [
+              "post",
+              "createdAt"
+            ],
+            "properties": {
+              "post": {
+                "type": "string",
+                "format": "at-uri"
+              },
+              "allow": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "datetime"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "taxonomy_version": "2.4.0",
+  "categories": [
+    {
+      "category_id": "hate_speech",
+      "severity_levels": {
+        "tier_1_severe": {
+          "action": "IMMEDIATE_TAKEDOWN_AND_ACCOUNT_LOCK",
+          "confidence_threshold": 0.88
+        },
+        "tier_2_moderate": {
+          "action": "SUPPRESS_FROM_DISCOVERY_QUEUE_REVIEW",
+          "confidence_threshold": 0.72
+        },
+        "tier_3_borderline": {
+          "action": "ADD_COMMUNITY_NOTE_CONTEXT",
+          "confidence_threshold": 0.6
+        }
+      }
+    },
+    {
+      "category_id": "misinformation_public_safety",
+      "severity_levels": {
+        "tier_1_severe": {
+          "action": "ATTACH_WARNING_LABEL_DISABLE_RESHARE",
+          "confidence_threshold": 0.85
+        },
+        "tier_2_moderate": {
+          "action": "DOWNRANK_IN_ALGORITHM_POOL_50PCT",
+          "confidence_threshold": 0.68
+        }
+      }
+    },
+    {
+      "category_id": "spam_brigading",
+      "severity_levels": {
+        "tier_1_severe": {
+          "action": "RATE_LIMIT_IP_AND_DISCARD_SIGNALS",
+          "confidence_threshold": 0.8
+        },
+        "tier_2_moderate": {
+          "action": "FLAG_COOLDOWN_DELAY_INBOX",
+          "confidence_threshold": 0.65
+        }
+      }
+    },
+    {
+      "category_id": "synthetic_media_deepfake",
+      "severity_levels": {
+        "tier_1_unlabeled": {
+          "action": "FORCE_LABEL_SYNTHETIC_METADATA",
+          "confidence_threshold": 0.75
+        }
+      }
+    }
+  ]
+}

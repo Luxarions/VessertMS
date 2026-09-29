@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "protocol": "vessert-mesh-signaling",
+  "version": "1.0.0",
+  "topology": "hybrid-mesh-sfu",
+  "ice_servers": [
+    {
+      "urls": [
+        "stun:stun.l.google.com:19302",
+        "stun:stun1.l.google.com:19302"
+      ]
+    },
+    {
+      "urls": "turn:turn.vessert.network:3478",
+      "username": "vessert_relay",
+      "credential": "ephemeral_token_2026"
+    }
+  ],
+  "session_types": {
+    "audio_space": {
+      "max_speakers": 12,
+      "max_listeners": 5000,
+      "audio_codec": "opus",
+      "bitrate_kbps": 64,
+      "dtx": true,
+      "fec": true
+    },
+    "live_video_room": {
+      "max_publishers": 4,
+      "video_codecs": [
+        "AV1",
+        "VP9",
+        "H264"
+      ],
+      "simulcast_layers": [
+        {
+          "rid": "high",
+          "max_bitrate_bps": 2500000,
+          "scale_resolution_down_by": 1.0,
+          "max_fps": 60
+        },
+        {
+          "rid": "medium",
+          "max_bitrate_bps": 800000,
+          "scale_resolution_down_by": 2.0,
+          "max_fps": 30
+        },
+        {
+          "rid": "low",
+          "max_bitrate_bps": 250000,
+          "scale_resolution_down_by": 4.0,
+          "max_fps": 15
+        }
+      ]
+    }
+  },
+  "signaling_actions": [
+    "room_join",
+    "room_leave",
+    "sdp_offer",
+    "sdp_answer",
+    "ice_candidate",
+    "hand_raise",
+    "speaker_grant",
+    "mute_state"
+  ]
+}

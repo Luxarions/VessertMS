@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "store_version": "3.0.0",
+  "entity_keys": [
+    "user_id",
+    "author_id",
+    "card_id"
+  ],
+  "feature_views": {
+    "user_realtime_engagement": {
+      "ttl_seconds": 604800,
+      "features": [
+        {
+          "name": "user_last_10_likes_embeddings_mean",
+          "type": "float32[768]"
+        },
+        {
+          "name": "user_mean_dwell_time_ms_30m",
+          "type": "float32"
+        },
+        {
+          "name": "user_active_interest_tags",
+          "type": "string[]"
+        },
+        {
+          "name": "user_negative_actions_count_24h",
+          "type": "int32"
+        }
+      ]
+    },
+    "author_authority_metrics": {
+      "ttl_seconds": 86400,
+      "features": [
+        {
+          "name": "author_pagerank_in_network",
+          "type": "float32"
+        },
+        {
+          "name": "author_reply_rate_to_comments",
+          "type": "float32"
+        },
+        {
+          "name": "author_historical_toxicity_ratio",
+          "type": "float32"
+        },
+        {
+          "name": "author_follower_count_log10",
+          "type": "float32"
+        }
+      ]
+    },
+    "card_contextual_signals": {
+      "ttl_seconds": 259200,
+      "features": [
+        {
+          "name": "card_semantic_embedding",
+          "type": "float32[768]"
+        },
+        {
+          "name": "card_velocity_engagement_slope_5m",
+          "type": "float32"
+        },
+        {
+          "name": "card_multimodal_has_video",
+          "type": "boolean"
+        },
+        {
+          "name": "card_community_note_score",
+          "type": "float32"
+        }
+      ]
+    }
+  }
+}

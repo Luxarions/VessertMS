@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.1.0",
+  "channels": {
+    "web_push": {
+      "standard": "RFC8291",
+      "encryption": "aes128gcm",
+      "ttl_seconds": 86400
+    },
+    "apns": {
+      "headers": {
+        "apns-priority": "10",
+        "apns-push-type": "alert"
+      }
+    },
+    "fcm": {
+      "android": {
+        "priority": "high",
+        "notification": {
+          "channel_id": "vessert_social_alerts"
+        }
+      }
+    }
+  },
+  "payload_templates": {
+    "mention": {
+      "title": "{actor_name} mentioned you",
+      "body": "\"{card_snippet}\"",
+      "icon": "{actor_avatar_url}",
+      "badge": "/media/badges/badge-verified.svg",
+      "data": {
+        "route": "/card/{card_id}",
+        "type": "mention"
+      },
+      "actions": [
+        {
+          "action": "reply",
+          "title": "Reply",
+          "type": "text_input"
+        },
+        {
+          "action": "like",
+          "title": "Like",
+          "type": "button"
+        }
+      ]
+    },
+    "audio_space_live": {
+      "title": "{speaker_name} is live in Spaces",
+      "body": "\"{room_title}\"",
+      "data": {
+        "route": "/space/{room_id}",
+        "type": "audio_space"
+      },
+      "actions": [
+        {
+          "action": "listen",
+          "title": "Join Space",
+          "type": "button"
+        }
+      ]
+    }
+  }
+}

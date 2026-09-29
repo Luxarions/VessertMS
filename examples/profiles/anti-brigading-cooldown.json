@@ -1,5 +1,0 @@
-{
-  "velocity_anomaly_threshold": 50,
-  "cooldown_period_minutes": 15,
-  "rate_limit_per_second": 3
-}
